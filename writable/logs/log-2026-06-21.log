@@ -1,0 +1,1392 @@
+DEBUG - 2026-06-21 00:11:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:11:56 --> Error: Class "PublicController" not found
+[Method: GET, Route: img/logo.png]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:13:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:13:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:13:52 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:14:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:14:01 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:14:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:14:24 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:14:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:14:25 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:15:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:15:27 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:16:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:16:14 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:16:51 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:17:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:17:18 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:17:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:17:32 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:17:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:17:44 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:17:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:17:58 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+CRITICAL - 2026-06-21 00:18:30 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:20:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:20:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:21:04 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:22:10 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:22:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:22:43 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:23:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:24:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:24:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:24:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:28:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:28:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:28:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:28:41 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:29:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:29:50 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:30:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:30:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:30:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:31:07 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:31:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:31:46 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:31:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:31:50 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:31:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:31:52 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:31:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:31:54 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:32:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:32:53 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:33:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:33:13 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:35:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:35:20 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:35:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:35:25 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:35:31 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:35:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:35:33 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:35:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:35:35 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:35:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 00:35:41 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+CRITICAL - 2026-06-21 00:35:58 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 00:36:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:37:11 --> Session: Initialization under CLI aborted.
+ERROR - 2026-06-21 00:37:56 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run(Array)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#10 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run(Array)
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2026-06-21 00:37:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: CLI, Route: db:seed]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+ 3 SYSTEMPATH/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+ 4 SYSTEMPATH/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+ 5 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run([...])
+ 6 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 7 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 00:38:14 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run(Array)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#10 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run(Array)
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2026-06-21 00:38:14 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: CLI, Route: db:seed]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+ 3 SYSTEMPATH/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+ 4 SYSTEMPATH/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+ 5 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 6 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [])
+ 7 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 00:39:38 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run(Array)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#10 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run(Array)
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2026-06-21 00:39:38 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: CLI, Route: db:seed]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+ 3 SYSTEMPATH/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+ 4 SYSTEMPATH/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+ 5 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run([...])
+ 6 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 7 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 00:39:56 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-06-21 00:39:56 --> ErrorException: require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory', '/Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/BaseCommand.php', 133)
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+ 4 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([])
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 8 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 00:40:51 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-06-21 00:40:51 --> ErrorException: require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory', '/Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/BaseCommand.php', 133)
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+ 4 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([...])
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [...])
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 8 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 00:43:23 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run(Array)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#10 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run(Array)
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2026-06-21 00:43:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: CLI, Route: db:seed]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+ 3 SYSTEMPATH/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+ 4 SYSTEMPATH/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+ 5 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run([...])
+ 6 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 7 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 00:47:26 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run(Array)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#10 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run(Array)
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2026-06-21 00:47:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: CLI, Route: db:seed]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+ 3 SYSTEMPATH/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+ 4 SYSTEMPATH/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+ 5 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 6 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [])
+ 7 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+DEBUG - 2026-06-21 00:49:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:49:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:49:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:50:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:50:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:50:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:50:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:50:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 00:51:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 00:55:56 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-06-21 00:55:56 --> ErrorException: require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory', '/Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/BaseCommand.php', 133)
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+ 4 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([])
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 8 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 01:03:53 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-06-21 01:03:53 --> ErrorException: require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory', '/Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/BaseCommand.php', 133)
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+ 4 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([...])
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [...])
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 8 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 01:04:02 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-06-21 01:04:02 --> ErrorException: require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory', '/Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/BaseCommand.php', 133)
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+ 4 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([...])
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [...])
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 8 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 01:04:33 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-06-21 01:04:33 --> ErrorException: require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory', '/Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/BaseCommand.php', 133)
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+ 4 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([])
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [])
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 8 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+DEBUG - 2026-06-21 01:04:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 01:05:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 01:05:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 01:05:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 01:06:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 01:06:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 01:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 01:06:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 01:06:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 01:06:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 01:06:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 01:06:55 --> CSRF token verified.
+ERROR - 2026-06-21 01:06:55 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1647): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Model.php(297): CodeIgniter\Database\BaseBuilder->get()
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#6 /Users/fred/projects/mdgoatco/app/Models/UserModel.php(62): CodeIgniter\BaseModel->first()
+#7 /Users/fred/projects/mdgoatco/app/Controllers/AuthController.php(132): App\Models\UserModel->findByEmail('earlvunifred@gm...')
+#8 /Users/fred/projects/mdgoatco/app/Controllers/AuthController.php(93): App\Controllers\AuthController->doStaffLogin('super_admin', '/admin/dashboar...', '/auth/admin')
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CodeIgniter.php(974): App\Controllers\AuthController->doLoginAdmin()
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#13 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /Users/fred/projects/mdgoatco/public/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Users/fred/pro...')
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1647): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Model.php(297): CodeIgniter\Database\BaseBuilder->get()
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/BaseModel.php(714): CodeIgniter\Model->doFirst()
+#5 /Users/fred/projects/mdgoatco/app/Models/UserModel.php(62): CodeIgniter\BaseModel->first()
+#6 /Users/fred/projects/mdgoatco/app/Controllers/AuthController.php(132): App\Models\UserModel->findByEmail('earlvunifred@gm...')
+#7 /Users/fred/projects/mdgoatco/app/Controllers/AuthController.php(93): App\Controllers\AuthController->doStaffLogin('super_admin', '/admin/dashboar...', '/auth/admin')
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CodeIgniter.php(974): App\Controllers\AuthController->doLoginAdmin()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /Users/fred/projects/mdgoatco/public/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/rewrite.php(44): require_once('/Users/fred/pro...')
+#15 {main}
+CRITICAL - 2026-06-21 01:06:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: POST, Route: auth/admin]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1647): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `email` = :email:
+AND `deleted_at` IS NULL
+AND `users`.`deleted_at` IS NULL
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH/Model.php(297): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(714): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Models/UserModel.php(62): CodeIgniter\BaseModel->first()
+ 6 APPPATH/Controllers/AuthController.php(132): App\Models\UserModel->findByEmail('earlvunifred@gmail.com')
+ 7 APPPATH/Controllers/AuthController.php(93): App\Controllers\AuthController->doStaffLogin('super_admin', '/admin/dashboard', '/auth/admin')
+ 8 SYSTEMPATH/CodeIgniter.php(974): App\Controllers\AuthController->doLoginAdmin()
+ 9 SYSTEMPATH/CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+10 SYSTEMPATH/CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 01:07:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:49:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:49:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 12:49:09 --> Error: Class "PublicController" not found
+[Method: GET, Route: auth/login]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 12:52:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:52:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:53:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:54:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:54:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:54:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 12:54:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 12:56:51 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/ShowTableInfo.php(121): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\ShowTableInfo->run(Array)
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:table', Array)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/ShowTableInfo.php(121): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\ShowTableInfo->run(Array)
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:table', Array)
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#8 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#9 {main}
+CRITICAL - 2026-06-21 12:56:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: CLI, Route: db:table/users]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FROM `mdgoatco`')
+ 3 SYSTEMPATH/Commands/Database/ShowTableInfo.php(121): CodeIgniter\Database\BaseConnection->listTables()
+ 4 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\ShowTableInfo->run([...])
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:table', [...])
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 8 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 12:57:12 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(699): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\MigrateStatus->run(Array)
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate:status', Array)
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(699): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\MigrateStatus->run(Array)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate:status', Array)
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2026-06-21 12:57:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: CLI, Route: migrate:status]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FROM `mdgoatco`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+ 4 SYSTEMPATH/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+ 5 SYSTEMPATH/Database/MigrationRunner.php(699): CodeIgniter\Database\MigrationRunner->ensureTable()
+ 6 SYSTEMPATH/Commands/Database/MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+ 7 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\MigrateStatus->run([])
+ 8 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate:status', [])
+ 9 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+10 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+11 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 12:57:28 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-06-21 12:57:28 --> ErrorException: require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory', '/Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/BaseCommand.php', 133)
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+ 4 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([...])
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [...])
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 8 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 12:57:43 --> Error connecting to the database: mysqli_sql_exception: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run(Array)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#10 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No such file or directory in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run(Array)
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2026-06-21 12:57:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: No such file or directory
+[Method: CLI, Route: db:seed/DatabaseSeeder]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+ 3 SYSTEMPATH/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+ 4 SYSTEMPATH/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+ 5 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run([...])
+ 6 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 7 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 13:03:22 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(699): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\MigrateStatus->run(Array)
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate:status', Array)
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(699): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\MigrateStatus->run(Array)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate:status', Array)
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2026-06-21 13:03:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: CLI, Route: migrate:status/#/should/now/list/your/migrations/instead/of/erroring]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FROM `mdgoatco`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+ 4 SYSTEMPATH/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+ 5 SYSTEMPATH/Database/MigrationRunner.php(699): CodeIgniter\Database\MigrationRunner->ensureTable()
+ 6 SYSTEMPATH/Commands/Database/MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+ 7 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\MigrateStatus->run([...])
+ 8 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate:status', [...])
+ 9 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+10 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+11 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 13:03:22 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#13 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#14 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#15 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(173): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(89): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/SignalTrait.php(245): CodeIgniter\Commands\Database\Migrate::{closure:CodeIgniter\Commands\Database\Migrate::run():88}()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(88): CodeIgniter\Commands\Database\Migrate->withSignalsBlocked(Object(Closure))
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run(Array)
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#12 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#13 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2026-06-21 13:03:22 --> ErrorException: require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: migrate]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory', '/Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/BaseCommand.php', 133)
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Migrate.php(104): CodeIgniter\CLI\BaseCommand->showError(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+ 4 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Migrate->run([...])
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', [...])
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 8 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 13:03:22 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run(Array)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#10 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run(Array)
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2026-06-21 13:03:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: CLI, Route: db:seed/DatabaseSeeder]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/Database.php(74): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/Config.php(111): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+ 3 SYSTEMPATH/Database/Seeder.php(103): CodeIgniter\Database\Config::forge('default')
+ 4 SYSTEMPATH/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+ 5 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run([...])
+ 6 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 7 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2026-06-21 13:07:10 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'mdgoatco', 3306, '', 0)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(699): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\MigrateStatus->run(Array)
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate:status', Array)
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#11 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(555): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+#2 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+#4 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(699): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Commands/Database/MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+#7 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Commands.php(72): CodeIgniter\Commands\Database\MigrateStatus->run(Array)
+#8 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate:status', Array)
+#9 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(442): CodeIgniter\CLI\Console->run()
+#10 /Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 /Users/fred/projects/mdgoatco/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2026-06-21 13:07:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: CLI, Route: migrate:status]
+in SYSTEMPATH/Database/BaseConnection.php on line 606.
+ 1 SYSTEMPATH/Database/BaseConnection.php(795): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseConnection.php(1706): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FROM `mdgoatco`')
+ 3 SYSTEMPATH/Database/BaseConnection.php(1726): CodeIgniter\Database\BaseConnection->listTables()
+ 4 SYSTEMPATH/Database/MigrationRunner.php(821): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+ 5 SYSTEMPATH/Database/MigrationRunner.php(699): CodeIgniter\Database\MigrationRunner->ensureTable()
+ 6 SYSTEMPATH/Commands/Database/MigrateStatus.php(115): CodeIgniter\Database\MigrationRunner->getHistory('')
+ 7 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\MigrateStatus->run([])
+ 8 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate:status', [])
+ 9 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+10 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+11 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+DEBUG - 2026-06-21 13:08:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:08:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:08:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:09:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:09:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:09:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:09:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:09:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-21 13:12:58 --> Column count doesn't match value count at row 1
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 300.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(300): mysqli->query('INSERT INTO `payments` ()
+VALUES (\'500000\',\'21C2446A\',\'2026-06-11 13:12:58\',\'UGX\',\'Goat Banking wallet top-up\',\'6\',\'GBANK-C65B98B2F3\',\'4648fa1e0d5c7d59879ddb6afee36c2b\',\'Mobile Money\',NULL,\'completed\',\'2\',\'2026-06-11 13:12:58\'), ()', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(908): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `payments` ()
+VALUES (\'500000\',\'21C2446A\',\'2026-06-11 13:12:58\',\'UGX\',\'Goat Banking wallet top-up\',\'6\',\'GBANK-C65B98B2F3\',\'4648fa1e0d5c7d59879ddb6afee36c2b\',\'Mobile Money\',NULL,\'completed\',\'2\',\'2026-06-11 13:12:58\'), ()')
+ 3 SYSTEMPATH/Database/BaseConnection.php(825): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `payments` ()
+VALUES (\'500000\',\'21C2446A\',\'2026-06-11 13:12:58\',\'UGX\',\'Goat Banking wallet top-up\',\'6\',\'GBANK-C65B98B2F3\',\'4648fa1e0d5c7d59879ddb6afee36c2b\',\'Mobile Money\',NULL,\'completed\',\'2\',\'2026-06-11 13:12:58\'), ()')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1839): CodeIgniter\Database\BaseConnection->query('INSERT INTO `payments` ()
+VALUES (\'500000\',\'21C2446A\',\'2026-06-11 13:12:58\',\'UGX\',\'Goat Banking wallet top-up\',\'6\',\'GBANK-C65B98B2F3\',\'4648fa1e0d5c7d59879ddb6afee36c2b\',\'Mobile Money\',NULL,\'completed\',\'2\',\'2026-06-11 13:12:58\'), ()', null, false)
+ 5 SYSTEMPATH/Database/BaseBuilder.php(2228): CodeIgniter\Database\BaseBuilder->batchExecute('_insertBatch', 100)
+ 6 APPPATH/Database/Seeds/DatabaseSeeder.php(740): CodeIgniter\Database\BaseBuilder->insertBatch([...])
+ 7 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\PaymentSeeder->run()
+ 8 APPPATH/Database/Seeds/DatabaseSeeder.php(38): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\PaymentSeeder')
+ 9 SYSTEMPATH/Database/Seeder.php(155): App\Database\Seeds\DatabaseSeeder->run()
+10 SYSTEMPATH/Commands/Database/Seed.php(79): CodeIgniter\Database\Seeder->call('App\\Database\\Seeds\\DatabaseSeeder')
+11 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+12 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+13 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+14 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+15 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2026-06-21 13:12:58 --> ErrorException: require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory
+[Method: CLI, Route: db:seed/DatabaseSeeder]
+in SYSTEMPATH/CLI/BaseCommand.php on line 133.
+ 1 SYSTEMPATH/CLI/BaseCommand.php(133): CodeIgniter\Debug\Exceptions->errorHandler(2, 'require(/Users/fred/projects/mdgoatco/app/Views/errors/cli/error_exception.php): Failed to open stream: No such file or directory', '/Users/fred/projects/mdgoatco/vendor/codeigniter4/framework/system/CLI/BaseCommand.php', 133)
+ 2 SYSTEMPATH/CLI/BaseCommand.php(133): require()
+ 3 SYSTEMPATH/Commands/Database/Seed.php(81): CodeIgniter\CLI\BaseCommand->showError(Object(CodeIgniter\Database\Exceptions\DatabaseException))
+ 4 SYSTEMPATH/CLI/Commands.php(72): CodeIgniter\Commands\Database\Seed->run([])
+ 5 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 6 SYSTEMPATH/Boot.php(442): CodeIgniter\CLI\Console->run()
+ 7 SYSTEMPATH/Boot.php(166): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 8 ROOTPATH/spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+DEBUG - 2026-06-21 13:24:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:24:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:24:22 --> CSRF token verified.
+DEBUG - 2026-06-21 13:24:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:24:35 --> CSRF token verified.
+DEBUG - 2026-06-21 13:24:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:24:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:24:47 --> CSRF token verified.
+DEBUG - 2026-06-21 13:24:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:25:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:25:12 --> CSRF token verified.
+DEBUG - 2026-06-21 13:25:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:26:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:26:21 --> CSRF token verified.
+DEBUG - 2026-06-21 13:26:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:26:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:26:52 --> CSRF token verified.
+CRITICAL - 2026-06-21 13:26:53 --> TypeError: App\Models\UserModel::updateLastLogin(): Argument #1 ($userId) must be of type int, string given, called in /Users/fred/projects/mdgoatco/app/Controllers/AuthController.php on line 65
+[Method: POST, Route: auth/login]
+in APPPATH/Models/UserModel.php on line 97.
+ 1 APPPATH/Controllers/AuthController.php(65): App\Models\UserModel->updateLastLogin('1')
+ 2 SYSTEMPATH/CodeIgniter.php(974): App\Controllers\AuthController->doLogin()
+ 3 SYSTEMPATH/CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH/CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 13:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-21 13:27:02 --> CSRF token verified.
+DEBUG - 2026-06-21 13:27:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 13:27:02 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 13:27:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 13:27:04 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 13:28:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:28:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:28:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:28:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 13:28:35 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-21 13:28:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:28:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-21 13:28:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-21 13:28:40 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
