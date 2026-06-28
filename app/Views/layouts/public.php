@@ -16,8 +16,7 @@
 </head>
 
 <body>
-
-    <!-- ===== FLASH MESSAGES ===== -->
+    <!-- Flash messages -->
     <?php if (session()->has('success')): ?>
         <div class="flash flash-success"><?= esc(session('success')) ?> <button class="flash-close" onclick="this.parentElement.remove()">×</button></div>
     <?php endif ?>
@@ -28,7 +27,14 @@
         <div class="flash flash-warning"><?= esc(session('warning')) ?> <button class="flash-close" onclick="this.parentElement.remove()">×</button></div>
     <?php endif ?>
 
+    <!-- ===== HEADER (included once) ===== -->
+    <?= view('public/partials/header') ?>
+
+    <!-- ===== PAGE CONTENT ===== -->
     <?= $this->renderSection('content') ?>
+
+    <!-- ===== FOOTER (included once) ===== -->
+    <?= view('public/partials/footer') ?>
 
     <script src="<?= base_url('js/public.js') ?>"></script>
     <?= $this->renderSection('scripts') ?>
