@@ -1,51 +1,15 @@
 <?= $this->extend('layouts/public') ?>
 <?= $this->section('content') ?>
 
-<header>
-  <nav class="nav wrap">
-    <a href="<?= site_url('/') ?>" class="logo">
-      <img src="<?= base_url('img/logo.png') ?>" class="logo" alt="MD Goatco Farm Limited">
-      <div class="logo-text">
-        <strong>MD Goatco Farm Limited</strong>
-        <small>Ethics · Service · Genetics</small>
-      </div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="<?= site_url('/') ?>">Home</a></li>
-      <li><a href="<?= site_url('/') ?>#about">About</a></li>
-      <li><a href="<?= site_url('/') ?>#services">Services</a></li>
-      <li><a href="<?= site_url('/') ?>#goat-banking">Goat Banking</a></li>
-      <li><a href="<?= site_url('/') ?>#contact">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="<?= site_url('auth/login') ?>" class="btn btn-outline btn-sm">Log in</a>
-      <a href="<?= site_url('auth/register') ?>" class="btn btn-primary btn-sm">Join Goat Banking</a>
-    </div>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-  <div class="nav-mobile-menu wrap">
-    <a href="<?= site_url('/') ?>">Home</a>
-    <a href="<?= site_url('/') ?>#about">About</a>
-    <a href="<?= site_url('/') ?>#services">Services</a>
-    <a href="<?= site_url('/') ?>#contact">Contact</a>
-    <div class="nav-mobile-actions">
-      <a href="<?= site_url('auth/login') ?>" class="btn btn-outline">Log in</a>
-      <a href="<?= site_url('auth/register') ?>" class="btn btn-primary">Join Goat Banking</a>
-    </div>
-  </div>
-</header>
-
 <div class="page-hero">
   <div class="wrap">
     <p class="breadcrumb"><a href="<?= site_url('/') ?>">Home</a> › Terms &amp; Conditions</p>
     <h1>Terms &amp; Conditions</h1>
     <p>The agreement between you and MD Goatco Farm Limited governing your use of our website and Goat Banking program.</p>
     <div class="page-meta">
-      <span>📅 Effective: 1 June 2026</span>
-      <span>🔄 Last updated: 1 June 2026</span>
-      <span>📍 Governed by: Laws of Uganda</span>
+      <span><i class="fas fa-calendar"></i> Effective: 1 June 2026</span>
+      <span><i class="fas fa-sync-alt"></i> Last updated: 1 June 2026</span>
+      <span><i class="fas fa-globe"></i> Governed by: Laws of Uganda</span>
     </div>
   </div>
 </div>
