@@ -1,353 +1,178 @@
 <?= $this->extend('layouts/public') ?>
 <?= $this->section('content') ?>
+<?php $loggedIn = session()->has('user_id'); ?>
 
-<!-- ===== HERO ===== -->
-<section class="hero" id="home">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <div class="eyebrow">Mukono, Uganda · Est. 2012</div>
-      <h1>Every goat has a name.<br>Now it has <em>a record</em>, too.</h1>
-      <p class="lead">MD Goatco Farm Limited raises healthy, well-bred goats — and gives you a way to grow with us. Buy into our Goat Banking program, follow your animals from kid to market, and let our vets and managers handle the rest.</p>
-      <div class="hero-actions">
-        <a href="#goat-banking" class="btn btn-white">Explore Goat Banking</a>
-        <a href="#services" class="btn btn-ghost-white">What we do</a>
+<header>
+  <nav class="nav wrap">
+    <a href="<?= site_url('/') ?>" class="logo">
+      <img src="<?= base_url('img/logo.png') ?>" alt="MD Goatco Farm">
+      <div class="logo-text">
+        <strong>MD Goatco Farm Limited</strong>
+        <small>Ethics · Service · Genetics</small>
       </div>
-      <div class="hero-stats">
-        <div class="hero-stat"><strong>1,247</strong><span>Goats on farm</span></div>
-        <div class="hero-stat"><strong>380</strong><span>Banking members</span></div>
-        <div class="hero-stat"><strong>12 yrs</strong><span>Experience</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#goat-banking">Goat Banking</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <?php if ($loggedIn): ?>
+        <a href="<?= site_url('dashboard') ?>" class="btn btn-outline btn-sm">My Dashboard</a>
+        <a href="<?= site_url('auth/logout') ?>" class="btn btn-primary btn-sm">Sign out</a>
+      <?php else: ?>
+        <a href="<?= site_url('auth/login') ?>" class="btn btn-outline btn-sm">Log in</a>
+        <a href="<?= site_url('auth/register') ?>" class="btn btn-primary btn-sm">Join Goat Banking</a>
+      <?php endif ?>
+    </div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="nav-mobile-menu wrap">
+    <a href="#about">About</a><a href="#services">Services</a>
+    <a href="#goat-banking">Goat Banking</a><a href="#contact">Contact</a>
+    <div class="nav-mobile-actions">
+      <?php if ($loggedIn): ?>
+        <a href="<?= site_url('dashboard') ?>" class="btn btn-outline">My Dashboard</a>
+        <a href="<?= site_url('auth/logout') ?>" class="btn btn-primary">Sign out</a>
+      <?php else: ?>
+        <a href="<?= site_url('auth/login') ?>" class="btn btn-outline">Log in</a>
+        <a href="<?= site_url('auth/register') ?>" class="btn btn-primary">Join Goat Banking</a>
+      <?php endif ?>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <div class="hero-tag">🐐 Goat Banking Program — Uganda</div>
+      <h1>Invest in goats.<br><em>Grow your future.</em></h1>
+      <p class="hero-sub">MD Goatco Farm manages your goats on our Mukono farm — you earn returns. Ethics, genetics and professional veterinary care, always.</p>
+      <div class="hero-cta">
+        <?php if ($loggedIn): ?>
+          <a href="<?= site_url('dashboard') ?>" class="btn btn-primary btn-lg">My Dashboard →</a>
+        <?php else: ?>
+          <a href="<?= site_url('auth/register') ?>" class="btn btn-primary btn-lg">Start Goat Banking</a>
+          <a href="#goat-banking" class="btn btn-outline btn-lg">Learn more</a>
+        <?php endif ?>
       </div>
     </div>
     <div class="hero-img">
-      <div class="hero-badge">
-        <strong>+4.2 kg</strong>
-        Avg growth this quarter
-      </div>
-      <img src="https://images.pexels.com/photos/19911954/pexels-photo-19911954.jpeg?auto=compress&cs=tinysrgb&w=900"
-        alt="Goats on the MD Goatco Farm" loading="eager">
-    </div>
-  </div>
-</section>
-
-<!-- ===== TAGLINE STRIP ===== -->
-<div class="tagline-strip">
-  <div class="tagline-inner wrap">
-    <div class="tagline-item"><span class="tagline-dot"></span>Ethics in every decision</div>
-    <div class="tagline-item"><span class="tagline-dot"></span>Service to our members</div>
-    <div class="tagline-item"><span class="tagline-dot"></span>Genetics you can trust</div>
-    <div class="tagline-item"><span class="tagline-dot"></span>Fully digital records</div>
-    <div class="tagline-item"><span class="tagline-dot"></span>Resident veterinary team</div>
-  </div>
-</div>
-
-<!-- ===== ABOUT ===== -->
-<section id="about">
-  <div class="wrap about-grid">
-    <div class="about-img">
-      <img src="https://images.pexels.com/photos/25549225/pexels-photo-25549225.jpeg?auto=compress&cs=tinysrgb&w=1200"
-        alt="Goat at MD Goatco Farm" loading="lazy">
-    </div>
-    <div class="about-copy">
-      <div class="eyebrow">Who we are</div>
-      <h2>A real farm, run the modern way</h2>
-      <p>For over a decade, MD Goatco Farm Limited has reared Boer, Galla and local crossbreeds for meat, breeding and dairy — built on careful records that used to live in notebooks and Excel sheets.</p>
-      <p>We're moving those records online, so every goat, every member, and every vet visit is tracked in one place — accessible to the right people, at any time.</p>
-      <ul class="about-list">
-        <li>Individually tagged, tracked goats — not just headcounts</li>
-        <li>Vet visits, vaccinations and weight logs on record</li>
-        <li>Members can follow their own goats from anywhere</li>
-        <li>Role-based dashboards for vets, managers and members</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ===== SERVICES ===== -->
-<section id="services" class="section-alt">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">What we do</div>
-      <h2>From the kraal to your dashboard</h2>
-      <p>Four pillars of the farm, all feeding one digital record system.</p>
-    </div>
-    <div class="photo-strip">
-      <img src="https://images.pexels.com/photos/19911954/pexels-photo-19911954.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Goat farm" loading="lazy">
-      <img src="https://images.pexels.com/photos/25549225/pexels-photo-25549225.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Goat close up" loading="lazy">
-      <img src="https://images.pexels.com/photos/326929/pexels-photo-326929.jpeg?auto=compress&cs=tinysrgb&w=700" alt="Young goat" loading="lazy">
-    </div>
-    <div class="service-grid">
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M4 18c0-5 2-9 8-9s8 4 8 9" stroke-linecap="round" />
-            <circle cx="12" cy="6" r="2.4" />
-            <path d="M2 18h20" stroke-linecap="round" />
-          </svg>
-        </div>
-        <h3>Goat Rearing &amp; Sales</h3>
-        <p>Boer, Galla and local crossbreeds raised for meat, breeding stock and dairy — sold farm-direct or through partners.</p>
-        <span class="service-tag">Core herd</span>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z" stroke-linecap="round" stroke-linejoin="round" />
-            <path d="M12 9v6M9 12h6" stroke-linecap="round" />
-          </svg>
-        </div>
-        <h3>Veterinary Care</h3>
-        <p>Routine checkups, vaccinations and treatment, logged against each goat's record by our resident vet team.</p>
-        <span class="service-tag">Animal health</span>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <rect x="3" y="7" width="18" height="12" rx="2" />
-            <path d="M3 11h18M7 15h.01" stroke-linecap="round" />
-            <path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" stroke-linecap="round" />
-          </svg>
-        </div>
-        <h3>Goat Banking</h3>
-        <p>Buy into a flock, follow your goats by name, and track their growth and value over time from your dashboard.</p>
-        <span class="service-tag">Member program</span>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z" stroke-linejoin="round" />
-            <path d="M12 12l8-4.5M12 12v9M12 12L4 7.5" stroke-linejoin="round" />
-          </svg>
-        </div>
-        <h3>Farm Consultancy</h3>
-        <p>Setting up your own goat enterprise? We advise on breeds, housing, feeding and record-keeping systems.</p>
-        <span class="service-tag">Advisory</span>
+      <div class="hero-card">
+        <div class="hc-stat"><strong>Ethics</strong><span>KikoXBoer genetics</span></div>
+        <div class="hc-stat"><strong>Service</strong><span>Full-time vet team</span></div>
+        <div class="hc-stat"><strong>Genetics</strong><span>High-yield breeds</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== GOAT BANKING ===== -->
-<section id="goat-banking" class="banking-wrap">
+<!-- ABOUT -->
+<section id="about" class="section">
   <div class="wrap">
-    <div class="banking-head">
-      <div>
-        <div class="eyebrow">The Goat Banking program</div>
-        <h2>Your goats. Your dashboard. Our farm.</h2>
-        <p>When you join Goat Banking, your animals are tagged, tracked and visible to you at all times — alongside the specialists who care for them every day.</p>
-        <a href="<?= site_url('auth/register') ?>" class="btn btn-primary">Apply for Goat Banking</a>
-      </div>
-      <div class="banking-img">
-        <img src="https://images.pexels.com/photos/19911954/pexels-photo-19911954.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Goat Banking" loading="lazy">
-      </div>
-    </div>
-    <div class="role-grid">
-      <div class="role-card">
-        <div class="role-photo" style="background-image:url('https://images.pexels.com/photos/19911954/pexels-photo-19911954.jpeg?auto=compress&cs=tinysrgb&w=700')"></div>
-        <div class="role-body">
-          <span class="role-tag">Member dashboard</span>
-          <h4>For Goat Banking members</h4>
-          <ul>
-            <li>See every goat in your account by name and tag</li>
-            <li>Track weight, health status and growth over time</li>
-            <li>View holdings statements and any payouts</li>
-          </ul>
-        </div>
-      </div>
-      <div class="role-card">
-        <div class="role-photo" style="background-image:url('https://images.pexels.com/photos/326929/pexels-photo-326929.jpeg?auto=compress&cs=tinysrgb&w=700')"></div>
-        <div class="role-body">
-          <span class="role-tag">Vet dashboard</span>
-          <h4>For our veterinary team</h4>
-          <ul>
-            <li>Daily checkups, vaccinations and treatments due</li>
-            <li>Log health records to each goat's file instantly</li>
-            <li>Flag animals needing follow-up to farm manager</li>
-          </ul>
-        </div>
-      </div>
-      <div class="role-card">
-        <div class="role-photo" style="background-image:url('https://images.pexels.com/photos/25549225/pexels-photo-25549225.jpeg?auto=compress&cs=tinysrgb&w=700')"></div>
-        <div class="role-body">
-          <span class="role-tag">Manager dashboard</span>
-          <h4>For farm managers</h4>
-          <ul>
-            <li>Whole-herd view: numbers, locations, health flags</li>
-            <li>Member accounts, applications and onboarding</li>
-            <li>Reports in minutes, not a full day in Excel</li>
-          </ul>
-        </div>
-      </div>
+    <div class="section-label">About Us</div>
+    <h2 class="section-heading">A working farm, not a promise</h2>
+    <p class="section-sub">MD Goatco Farm Limited is a registered Ugandan company operating a commercial goat farm on the Mukono–Kayunga Road. We breed, rear and sell high-quality goats — and through our Goat Banking program, we give members a stake in that business.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section section-alt">
+  <div class="wrap">
+    <div class="section-label">Services</div>
+    <h2 class="section-heading">What we do</h2>
+    <div class="services-grid">
+      <div class="service-card"><div class="sc-icon">🐐</div><h3>Goat Rearing</h3><p>We rear KikoXBoer and pure-bred goats from kids to maturity using best-practice feeding, housing and veterinary care.</p></div>
+      <div class="service-card"><div class="sc-icon">🩺</div><h3>Veterinary Care</h3><p>Full-time veterinary team handles vaccinations, health checks, treatment and breeding — every animal, every day.</p></div>
+      <div class="service-card"><div class="sc-icon">💰</div><h3>Goat Banking</h3><p>Members invest in the farm by owning goats. We manage everything — you receive returns from sales, offspring and value growth.</p></div>
+      <div class="service-card"><div class="sc-icon">📊</div><h3>Farm Consultancy</h3><p>We share our expertise with other farmers — breed selection, nutrition, pen design and herd management best practices.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===== WHY CHOOSE US ===== -->
-<section>
+<!-- GOAT BANKING -->
+<section id="goat-banking" class="section goat-banking-section">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Why choose MD Goatco</div>
-      <h2>Built on care, kept honest by records</h2>
+    <div class="section-label">Goat Banking</div>
+    <h2 class="section-heading">How it works</h2>
+    <div class="steps-grid">
+      <div class="step"><div class="step-num">1</div><h4>Apply online</h4><p>Fill in the application form with your details, upload your ID and choose how many goats you'd like to invest in.</p></div>
+      <div class="step"><div class="step-num">2</div><h4>Get approved</h4><p>Our team reviews your application within 2–3 working days and contacts you with the next steps and payment details.</p></div>
+      <div class="step"><div class="step-num">3</div><h4>Goats assigned</h4><p>Once payment is confirmed, goats are tagged in your name and you receive portal access to track them in real time.</p></div>
+      <div class="step"><div class="step-num">4</div><h4>Earn returns</h4><p>We manage everything — feeding, vet care, breeding. You receive your returns as agreed in your onboarding schedule.</p></div>
     </div>
-    <div class="why-grid">
-      <div class="why-item"><span class="why-num">01</span>
-        <div>
-          <h3>Every goat is tagged and named</h3>
-          <p>No animal is just a number — each has an ID, a health history, and for Banking members, an owner on record.</p>
-        </div>
-      </div>
-      <div class="why-item"><span class="why-num">02</span>
-        <div>
-          <h3>Resident veterinary team</h3>
-          <p>Routine care isn't an afterthought. Our vets keep a written, dated record for every single animal.</p>
-        </div>
-      </div>
-      <div class="why-item"><span class="why-num">03</span>
-        <div>
-          <h3>Transparent member dashboards</h3>
-          <p>Invested through Goat Banking? Log in and see exactly how your animals are doing — no need to call us.</p>
-        </div>
-      </div>
-      <div class="why-item"><span class="why-num">04</span>
-        <div>
-          <h3>Experienced farm management</h3>
-          <p>Over a decade rearing goats, now backed by digital records instead of paper books and spreadsheets.</p>
-        </div>
-      </div>
+    <?php if (! $loggedIn): ?>
+    <div style="text-align:center;margin-top:40px">
+      <a href="<?= site_url('auth/register') ?>" class="btn btn-primary btn-lg">Apply for Goat Banking →</a>
+      <p style="margin-top:12px;font-size:0.84rem;color:var(--slate)">Already applied? <a href="<?= site_url('auth/status') ?>">Check your application status</a></p>
     </div>
+    <?php endif ?>
   </div>
 </section>
 
-<!-- ===== TESTIMONIALS ===== -->
-<section class="section-alt">
+<!-- CONTACT -->
+<section id="contact" class="section section-alt">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">From our members</div>
-      <h2>"I can see my goats from my phone"</h2>
-    </div>
-    <div class="test-grid">
-      <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <p>"I joined Goat Banking with three goats. I can log in and see exactly how they're growing — no more waiting for a phone call."</p>
-        <div class="test-who">
-          <div class="test-avatar" style="background-image:url('https://images.pexels.com/photos/19911954/pexels-photo-19911954.jpeg?auto=compress&cs=tinysrgb&w=200')"></div>
-          <div><strong>Esther N.</strong><span>Goat Banking member, Mukono</span></div>
-        </div>
-      </div>
-      <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <p>"Vaccination records used to live in a notebook that could get lost. Now every goat's history is one search away."</p>
-        <div class="test-who">
-          <div class="test-avatar" style="background-image:url('https://images.pexels.com/photos/326929/pexels-photo-326929.jpeg?auto=compress&cs=tinysrgb&w=200')"></div>
-          <div><strong>Dr. Wasswa</strong><span>Farm veterinarian</span></div>
-        </div>
-      </div>
-      <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <p>"Reports that took a full day in Excel now take minutes. We spend that time actually managing the herd."</p>
-        <div class="test-who">
-          <div class="test-avatar" style="background-image:url('https://images.pexels.com/photos/25549225/pexels-photo-25549225.jpeg?auto=compress&cs=tinysrgb&w=200')"></div>
-          <div><strong>Brian K.</strong><span>Farm manager</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA ===== -->
-<div class="cta-wrap">
-  <div class="wrap">
-    <div class="cta">
-      <div class="eyebrow">Ready when you are</div>
-      <h2>Open your Goat Banking account</h2>
-      <p>Tell us about yourself and your next of kin. Our team will review your application and contact you within 2–3 working days.</p>
-      <div class="cta-actions">
-        <a href="<?= site_url('auth/register') ?>" class="btn btn-white">Register for Goat Banking</a>
-        <a href="<?= site_url('auth/login') ?>" class="btn btn-ghost-white">I already have an account</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== CONTACT ===== -->
-<section id="contact">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Get in touch</div>
-      <h2>We'd love to hear from you</h2>
-      <p>Questions about Goat Banking, the farm, or anything else — reach us via the form or directly.</p>
-    </div>
+    <div class="section-label">Contact</div>
+    <h2 class="section-heading">Get in touch</h2>
     <div class="contact-grid">
       <div class="contact-info">
-        <div class="contact-card">
-          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <div>
-            <div class="contact-label">Visit us</div>
-            <div class="contact-value">Mukono–Kayunga Road<br>Mukono District, Uganda</div>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-          <div>
-            <div class="contact-label">Phone / WhatsApp</div>
-            <a href="tel:+256700000000" class="contact-value">+256 700 000 000</a>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-          <div>
-            <div class="contact-label">Email</div>
-            <a href="mailto:hello@mdgoatco.farm" class="contact-value">hello@mdgoatco.farm</a>
-          </div>
-        </div>
-        <div class="contact-card">
-          <div class="contact-icon"><i class="fas fa-clock"></i></div>
-          <div>
-            <div class="contact-label">Office hours</div>
-            <div class="contact-value">Monday – Friday: 8 AM – 5 PM<br>Saturday: 8 AM – 12 noon</div>
-          </div>
-        </div>
+        <div class="contact-card"><div class="contact-icon">📍</div><div><div class="contact-label">Farm address</div><div class="contact-value">Mukono–Kayunga Road, Mukono District, Uganda</div></div></div>
+        <div class="contact-card"><div class="contact-icon">📞</div><div><div class="contact-label">Phone / WhatsApp</div><a href="tel:+256700000000" class="contact-value">+256 700 000 000</a></div></div>
+        <div class="contact-card"><div class="contact-icon">✉️</div><div><div class="contact-label">Email</div><a href="mailto:hello@mdgoatco.farm" class="contact-value">hello@mdgoatco.farm</a></div></div>
+        <div class="contact-card"><div class="contact-icon">🕐</div><div><div class="contact-label">Office hours</div><div class="contact-value">Mon–Fri 8AM–5PM · Sat 8AM–12PM</div></div></div>
       </div>
-
       <div class="contact-form-card">
-        <h3>Send us a message</h3>
-        <?= form_open('contact', ['class' => 'contact-form']) ?>
-        <?= csrf_field() ?>
-        <div class="field-row">
-          <div class="field">
-            <label for="name">Your name *</label>
-            <input type="text" id="name" name="name" value="<?= esc(old('name')) ?>" placeholder="e.g. Robert Kizito" required>
-          </div>
-          <div class="field">
-            <label for="email">Email address *</label>
-            <input type="email" id="email" name="email" value="<?= esc(old('email')) ?>" placeholder="you@example.com" required>
-          </div>
-        </div>
-        <div class="field">
-          <label for="subject">Subject *</label>
-          <select id="subject" name="subject" required>
-            <option value="">Select…</option>
-            <option <?= old('subject') === 'Goat Banking enquiry' ? 'selected' : '' ?>>Goat Banking enquiry</option>
-            <option <?= old('subject') === 'Goat purchase / sales' ? 'selected' : '' ?>>Goat purchase / sales</option>
-            <option <?= old('subject') === 'Farm consultancy' ? 'selected' : '' ?>>Farm consultancy</option>
-            <option <?= old('subject') === 'General enquiry' ? 'selected' : '' ?>>General enquiry</option>
-            <option <?= old('subject') === 'Other' ? 'selected' : '' ?>>Other</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="message">Message *</label>
-          <textarea id="message" name="message" required
-            placeholder="Tell us what you'd like to know…"><?= esc(old('message')) ?></textarea>
-        </div>
-        <?php if (!empty($errors ?? [])): ?>
-          <div class="form-errors">
-            <?php foreach ($errors as $e): ?><p><?= esc($e) ?></p><?php endforeach ?>
-          </div>
+        <?php if (session()->has('success')): ?>
+        <div class="flash flash-success"><?= esc(session('success')) ?></div>
         <?php endif ?>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send message</button>
+        <?= form_open('contact', ['class'=>'contact-form']) ?>
+          <?= csrf_field() ?>
+          <div class="field-row">
+            <div class="field"><label>Your name *</label><input type="text" name="name" value="<?= esc(old('name')) ?>" required placeholder="e.g. Robert Kizito"></div>
+            <div class="field"><label>Email *</label><input type="email" name="email" value="<?= esc(old('email')) ?>" required placeholder="you@example.com"></div>
+          </div>
+          <div class="field">
+            <label>Subject *</label>
+            <select name="subject" required>
+              <option value="">Select…</option>
+              <option <?= old('subject')==='Goat Banking enquiry'?'selected':''?>>Goat Banking enquiry</option>
+              <option <?= old('subject')==='Goat purchase / sales'?'selected':''?>>Goat purchase / sales</option>
+              <option <?= old('subject')==='Farm consultancy'?'selected':''?>>Farm consultancy</option>
+              <option <?= old('subject')==='General enquiry'?'selected':''?>>General enquiry</option>
+              <option <?= old('subject')==='Other'?'selected':''?>>Other</option>
+            </select>
+          </div>
+          <div class="field"><label>Message *</label><textarea name="message" rows="4" required placeholder="How can we help?"><?= esc(old('message')) ?></textarea></div>
+          <?php if (!empty($errors??[])): ?><div class="form-errors"><?php foreach($errors as $e): ?><p><?= esc($e)?></p><?php endforeach?></div><?php endif ?>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send message</button>
         <?= form_close() ?>
       </div>
     </div>
   </div>
 </section>
 
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><div class="foot-logo"><img src="<?= base_url('img/logo.png') ?>" alt="MD Goatco"><strong>MD Goatco Farm Limited</strong></div><p class="foot-tagline">A working goat farm in Mukono, Uganda.</p></div>
+      <div><h5>Explore</h5><ul><li><a href="#about">About us</a></li><li><a href="#services">Services</a></li><li><a href="#goat-banking">Goat Banking</a></li></ul></div>
+      <div><h5>Account</h5><ul>
+        <?php if ($loggedIn): ?>
+          <li><a href="<?= site_url('dashboard') ?>">My Dashboard</a></li>
+          <li><a href="<?= site_url('auth/logout') ?>">Sign out</a></li>
+        <?php else: ?>
+          <li><a href="<?= site_url('auth/login') ?>">Log in</a></li>
+          <li><a href="<?= site_url('auth/register') ?>">Apply for Goat Banking</a></li>
+          <li><a href="<?= site_url('auth/status') ?>">Check application</a></li>
+        <?php endif ?>
+      </ul></div>
+      <div><h5>Legal</h5><ul><li><a href="<?= site_url('privacy-policy') ?>">Privacy Policy</a></li><li><a href="<?= site_url('terms') ?>">Terms &amp; Conditions</a></li></ul>
+      <h5 style="margin-top:16px">Contact</h5><ul><li><a href="mailto:hello@mdgoatco.farm">hello@mdgoatco.farm</a></li><li>+256 700 000 000</li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© <?= date('Y') ?> MD Goatco Farm Limited · Registered in Uganda</span><span>Ethics · Service · Genetics</span></div>
+  </div>
+</footer>
 <?= $this->endSection() ?>

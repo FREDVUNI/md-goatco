@@ -78,10 +78,10 @@ That's it — `composer install` pulls in CodeIgniter 4 and every dependency thi
 | Role | URL | Email | Password |
 |---|---|---|---|
 | Super Admin | `/auth/admin` | admin@mdgoatco.farm | Admin@2026! |
-| Farm Manager | `/auth/manager` | manager@mdgoatco.farm | Manager@2026! |
-| Farm Manager | `/auth/manager` | grace.farm@mdgoatco.farm | Manager@2026! |
-| Veterinarian | `/auth/vet` | vet@mdgoatco.farm | Vet@2026! |
-| Veterinarian | `/auth/vet` | dr.namatovu@mdgoatco.farm | Vet@2026! |
+| Farm Manager | `/auth/admin` | manager@mdgoatco.farm | Manager@2026! |
+| Farm Manager | `/auth/admin` | grace.farm@mdgoatco.farm | Manager@2026! |
+| Veterinarian | `/auth/admin` | vet@mdgoatco.farm | Vet@2026! |
+| Veterinarian | `/auth/admin` | dr.namatovu@mdgoatco.farm | Vet@2026! |
 | Member (approved) | `/auth/login` | esther.nakato@example.com | Member@2026! |
 | Member (pending) | — | patricia.achieng@example.com | Member@2026! |
 | Member (rejected) | — | florence.birungi@example.com | Member@2026! |

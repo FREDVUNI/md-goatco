@@ -1,0 +1,290 @@
+DEBUG - 2026-06-27 16:16:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 16:16:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 16:19:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 16:19:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2026-06-27 16:19:18 --> CSRF token verified.
+CRITICAL - 2026-06-27 16:19:18 --> TypeError: App\Models\UserModel::updateLastLogin(): Argument #1 ($userId) must be of type int, string given, called in /Users/fred/projects/mdgoatco/app/Controllers/AuthController.php on line 65
+[Method: POST, Route: auth/login]
+in APPPATH/Models/UserModel.php on line 97.
+ 1 APPPATH/Controllers/AuthController.php(65): App\Models\UserModel->updateLastLogin('1')
+ 2 SYSTEMPATH/CodeIgniter.php(974): App\Controllers\AuthController->doLogin()
+ 3 SYSTEMPATH/CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+ 4 SYSTEMPATH/CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 16:19:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 16:19:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 16:19:22 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 16:19:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 16:19:24 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 16:57:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 16:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 16:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 16:57:21 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 16:57:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 16:57:43 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 17:28:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 17:31:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 17:31:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 17:31:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 17:32:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 17:32:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 17:32:02 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 17:32:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 17:32:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 17:32:08 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 17:32:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 17:32:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 17:33:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 17:33:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 17:33:01 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 19:26:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:26:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 19:26:41 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 19:33:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:33:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:33:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:33:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:33:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:34:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:35:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:36:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:37:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:38:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 19:39:48 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 19:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:42:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:45:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:52:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:56:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 19:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 20:00:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 20:02:11 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+CRITICAL - 2026-06-27 20:05:33 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+CRITICAL - 2026-06-27 20:05:51 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+CRITICAL - 2026-06-27 20:06:16 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+CRITICAL - 2026-06-27 20:07:09 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 20:08:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 20:08:39 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 20:09:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 20:09:35 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+CRITICAL - 2026-06-27 20:10:15 --> Error: Class "PublicController" not found
+[Method: GET, Route: .well-known/appspecific/com.chrome.devtools.json]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 20:11:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 20:11:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 20:13:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 20:13:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 20:15:12 --> Error: Class "PublicController" not found
+[Method: GET, Route: dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 20:16:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 20:16:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 20:16:08 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 20:16:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 20:16:10 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 20:16:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 20:16:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 20:16:50 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 21:31:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 21:31:44 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 21:31:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 21:31:47 --> Error: Class "PublicController" not found
+[Method: GET, Route: admin/dashboard]
+in SYSTEMPATH/CodeIgniter.php on line 944.
+ 1 SYSTEMPATH/CodeIgniter.php(1006): CodeIgniter\CodeIgniter->createController()
+ 2 SYSTEMPATH/CodeIgniter.php(369): CodeIgniter\CodeIgniter->display404errors(Object(CodeIgniter\Exceptions\PageNotFoundException))
+ 3 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 4 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 5 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 6 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')
+DEBUG - 2026-06-27 21:31:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 21:31:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-27 21:31:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2026-06-27 21:31:55 --> Error: Class "App\Models\NotificationModel" not found
+[Method: GET, Route: dashboard]
+in APPPATH/Controllers/DashboardController.php on line 32.
+ 1 SYSTEMPATH/CodeIgniter.php(974): App\Controllers\DashboardController->index()
+ 2 SYSTEMPATH/CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\DashboardController))
+ 3 SYSTEMPATH/CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(64): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH/rewrite.php(44): require_once('/Users/fred/projects/mdgoatco/public/index.php')

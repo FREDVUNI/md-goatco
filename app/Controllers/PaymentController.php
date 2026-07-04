@@ -1,212 +1,110 @@
 <?php
-
 declare(strict_types=1);
-
 namespace App\Controllers;
-
-use App\Libraries\Mailer;
-use App\Libraries\PesapalLibrary;
-use App\Models\NotificationModel;
-use App\Models\PaymentModel;
+use App\Libraries\PesaPal;
+use App\Libraries\EmailService;
 use App\Models\TransactionModel;
 use App\Models\UserModel;
 
-/**
- * PaymentController
- *
- * Handles the two endpoints Pesapal talks to directly — NOT behind the
- * session/role filters, since neither the customer's browser (mid-payment,
- * possibly on a different device) nor Pesapal's own servers carry an
- * MD Goatco session:
- *
- *   GET  /payments/callback  — browser redirect back from Pesapal's hosted
- *                              payment page once the customer finishes (or
- *                              cancels). Used purely for UX; we never trust
- *                              its query parameters for the actual outcome.
- *   GET|POST /payments/ipn   — Pesapal's server-to-server notification.
- *                              This is the source of truth for payment status.
- *
- * Both paths converge on settle(), which re-verifies the real status
- * directly with Pesapal's GetTransactionStatus endpoint before crediting
- * anything — so even if someone guesses or replays a callback URL, no
- * money gets credited without Pesapal actually confirming it.
- */
 class PaymentController extends BaseController
 {
-    private PaymentModel     $payments;
+    private PesaPal $pesapal;
     private TransactionModel $transactions;
-    private PesapalLibrary   $pesapal;
+    private UserModel $users;
 
     public function __construct()
     {
-        $this->payments     = new PaymentModel();
+        $this->pesapal      = new PesaPal();
         $this->transactions = new TransactionModel();
-        $this->pesapal      = new PesapalLibrary();
+        $this->users        = new UserModel();
     }
 
-    /**
-     * Browser redirect target after the customer completes/cancels checkout
-     * on Pesapal's hosted page.
-     */
+    public function initiate()
+    {
+        $user   = $this->users->find($this->currentUserId());
+        $amount = (int) $this->request->getPost('amount');
+        $desc   = $this->request->getPost('description') ?? 'Goat Banking payment';
+        if ($amount < 1000) return redirect()->back()->with('error', 'Minimum payment is UGX 1,000.');
+        try {
+            $reference = $this->pesapal->generateReference($user['id']);
+            $order = $this->pesapal->submitOrder([
+                'id'=>$reference,'amount'=>$amount,'description'=>$desc,
+                'billing'=>['email_address'=>$user['email'],'phone_number'=>$user['phone']??'','first_name'=>$user['first_name'],'last_name'=>$user['last_name']],
+            ]);
+            $db = \Config\Database::connect();
+            $db->table('pending_payments')->insert([
+                'user_id'=>$user['id'],'reference'=>$reference,
+                'order_tracking_id'=>$order['order_tracking_id'],
+                'amount'=>$amount,'description'=>$desc,'status'=>'pending','created_at'=>date('Y-m-d H:i:s'),
+            ]);
+            return redirect()->to($order['redirect_url']);
+        } catch (\Throwable $e) {
+            log_message('error', 'Payment initiation failed: '.$e->getMessage());
+            return redirect()->back()->with('error', 'Could not initiate payment. Please try again.');
+        }
+    }
+
     public function callback()
     {
-        $orderTrackingId = $this->request->getGet('OrderTrackingId') ?: $this->request->getGet('orderTrackingId');
-        $merchantRef      = $this->request->getGet('OrderMerchantReference') ?: $this->request->getGet('orderMerchantReference');
-
-        $payment = $this->findPayment($orderTrackingId, $merchantRef);
-
-        if (! $payment) {
-            return redirect()->to('/member/dashboard')
-                ->with('error', 'We could not find that payment. If you were charged, contact support and quote your reference.');
+        $orderTrackingId = $this->request->getGet('OrderTrackingId');
+        $merchantRef     = $this->request->getGet('OrderMerchantReference');
+        if (! $orderTrackingId) return redirect()->to('/member/statements')->with('error', 'Invalid payment callback.');
+        try {
+            $status = $this->pesapal->getTransactionStatus($orderTrackingId);
+            $this->processPaymentStatus($orderTrackingId, $merchantRef, $status);
+            if (($status['payment_status_description']??'') === 'Completed') {
+                return redirect()->to('/dashboard')->with('success', 'Payment confirmed! Your account has been updated.');
+            }
+            return redirect()->to('/dashboard')->with('warning', 'Payment '.strtolower($status['payment_status_description']??'pending').'. Check your statement.');
+        } catch (\Throwable $e) {
+            log_message('error', 'Payment callback error: '.$e->getMessage());
+            return redirect()->to('/dashboard')->with('info', 'Payment is being processed. Check your statement in a few minutes.');
         }
-
-        if ($orderTrackingId) {
-            $this->settle($payment, $orderTrackingId);
-        }
-
-        return redirect()->to('/member/wallet/topup/' . $payment['merchant_reference']);
     }
 
-    /**
-     * Pesapal's server-to-server IPN. Must always respond with the exact
-     * JSON shape Pesapal expects, even if we don't recognise the payment —
-     * otherwise Pesapal will keep retrying indefinitely.
-     */
     public function ipn()
     {
-        $orderTrackingId = $this->request->getGet('OrderTrackingId') ?: $this->request->getGet('orderTrackingId');
-        $merchantRef      = $this->request->getGet('OrderMerchantReference') ?: $this->request->getGet('orderMerchantReference');
-
-        $payment = $this->findPayment($orderTrackingId, $merchantRef);
-
-        if ($payment && $orderTrackingId) {
-            $this->settle($payment, $orderTrackingId);
-        } else {
-            log_message('warning', 'Pesapal IPN for unrecognised payment. trackingId=' . $orderTrackingId . ' ref=' . $merchantRef);
-        }
-
-        return $this->response->setJSON([
-            'orderNotificationType'  => 'IPNCHANGE',
-            'orderTrackingId'        => $orderTrackingId ?? '',
-            'orderMerchantReference' => $merchantRef ?? '',
-            'status'                 => 200,
-        ]);
-    }
-
-    // ── Shared settlement logic ─────────────────────────────────────────────
-
-    private function findPayment(?string $orderTrackingId, ?string $merchantRef): ?array
-    {
-        if ($orderTrackingId) {
-            $payment = $this->payments->findByOrderTrackingId($orderTrackingId);
-            if ($payment) {
-                return $payment;
-            }
-        }
-
-        if ($merchantRef) {
-            return $this->payments->findByReference($merchantRef);
-        }
-
-        return null;
-    }
-
-    /**
-     * Re-verify the order with Pesapal and, if newly COMPLETED, credit the
-     * member's wallet and notify them. Idempotent — safe to call multiple
-     * times for the same payment (the callback AND the IPN both call it).
-     */
-    private function settle(array $payment, string $orderTrackingId): void
-    {
-        // Already finalised — nothing to do. Prevents double-crediting if
-        // both the IPN and the browser callback arrive for the same payment.
-        if (in_array($payment['status'], ['completed', 'failed', 'invalid', 'reversed'], true)) {
-            return;
-        }
-
-        if (empty($payment['order_tracking_id'])) {
-            $this->payments->attachOrderTrackingId($payment['id'], $orderTrackingId);
-        }
-
+        $orderTrackingId = $this->request->getGet('OrderTrackingId') ?? $this->request->getPost('OrderTrackingId');
+        $merchantRef     = $this->request->getGet('OrderMerchantReference') ?? $this->request->getPost('OrderMerchantReference');
+        log_message('info', 'PesaPal IPN: '.$orderTrackingId);
+        if (! $orderTrackingId) return $this->response->setStatusCode(400)->setBody('Missing OrderTrackingId');
         try {
-            $result = $this->pesapal->getTransactionStatus($orderTrackingId);
-        } catch (\Throwable $e) {
-            log_message('error', 'Pesapal status check failed for ' . $payment['merchant_reference'] . ': ' . $e->getMessage());
-            return;
-        }
-
-        $status = strtolower($result['status_description'] ?? 'pending'); // completed|failed|invalid|pending|reversed
-
-        if ($status === 'completed') {
-            $this->creditWallet($payment, $result);
-        } elseif (in_array($status, ['failed', 'invalid', 'reversed'], true)) {
-            $this->payments->markStatus($payment['id'], $status, $result);
-            $this->notifyFailure($payment);
-        }
-        // 'pending' — leave as-is, Pesapal will notify again on change.
+            $status = $this->pesapal->handleIpn($orderTrackingId);
+            $this->processPaymentStatus($orderTrackingId, $merchantRef, $status);
+        } catch (\Throwable $e) { log_message('error', 'IPN error: '.$e->getMessage()); }
+        return $this->response->setStatusCode(200)->setBody('OK');
     }
 
-    private function creditWallet(array $payment, array $pesapalResult): void
+    private function processPaymentStatus(string $orderTrackingId, ?string $merchantRef, array $status): void
     {
-        $txnId = $this->transactions->credit(
-            (int) $payment['member_id'],
-            (int) $payment['amount'],
-            'Pesapal wallet top-up — ' . $payment['merchant_reference']
-        );
-
-        if (! $txnId) {
-            log_message('error', 'Failed to credit wallet for payment ' . $payment['merchant_reference']);
-            return;
+        $db      = \Config\Database::connect();
+        $pending = $db->table('pending_payments')->where('order_tracking_id', $orderTrackingId)->get()->getRowArray();
+        if (! $pending) { log_message('warning', 'No pending payment for '.$orderTrackingId); return; }
+        $db->table('pending_payments')->where('order_tracking_id', $orderTrackingId)->update([
+            'pesapal_status'=>$status['payment_status_description']??null,
+            'confirmation_code'=>$status['confirmation_code']??null,
+            'payment_method'=>$status['payment_method']??null,
+            'status'=>strtolower($status['payment_status_description']??'pending'),
+            'updated_at'=>date('Y-m-d H:i:s'),
+        ]);
+        if (($status['payment_status_description']??'') !== 'Completed') return;
+        if ($db->table('transactions')->where('reference', $merchantRef)->countAllResults() > 0) return;
+        $currentBalance = $this->transactions->getCurrentBalance($pending['user_id']);
+        $newBalance     = $currentBalance + $pending['amount'];
+        $this->transactions->insert([
+            'member_id'=>$pending['user_id'],'type'=>'credit',
+            'amount'=>$pending['amount'],'description'=>$pending['description'],
+            'reference'=>$merchantRef,'balance_after'=>$newBalance,'created_by'=>null,
+        ]);
+        $user = $this->users->find($pending['user_id']);
+        if ($user) {
+            try {
+                (new EmailService())->sendPaymentConfirmation($user, [
+                    'amount'=>$pending['amount'],'reference'=>$merchantRef,'paid_at'=>date('Y-m-d H:i:s'),
+                    'description'=>$pending['description'],'method'=>$status['payment_method']??'PesaPal',
+                    'pesapal_transaction_id'=>$orderTrackingId,'balance_after'=>$newBalance,
+                ]);
+            } catch (\Throwable $e) {}
         }
-
-        $this->payments->markCompleted($payment['id'], $pesapalResult, $txnId);
-
-        $user = (new UserModel())->find($payment['member_id']);
-        if (! $user) {
-            return;
-        }
-
-        $balance = $this->transactions->getCurrentBalance((int) $payment['member_id']);
-
-        (new Mailer())->send(
-            $user['email'],
-            'Payment received — MD Goatco Farm',
-            'payment_confirmed',
-            [
-                'firstName' => $user['first_name'],
-                'amount'    => (int) $payment['amount'],
-                'reference' => $payment['merchant_reference'],
-                'balance'   => $balance,
-            ],
-            $user['first_name'] . ' ' . $user['last_name']
-        );
-
-        (new NotificationModel())->notifyUser(
-            (int) $user['id'],
-            'Wallet top-up received',
-            formatUgx((int) $payment['amount']) . ' has been added to your Goat Banking wallet.',
-            'success',
-            '/member/statements'
-        );
-    }
-
-    private function notifyFailure(array $payment): void
-    {
-        $user = (new UserModel())->find($payment['member_id']);
-        if (! $user) {
-            return;
-        }
-
-        (new Mailer())->send(
-            $user['email'],
-            'Payment unsuccessful — MD Goatco Farm',
-            'payment_failed',
-            [
-                'firstName' => $user['first_name'],
-                'amount'    => (int) $payment['amount'],
-                'reference' => $payment['merchant_reference'],
-            ],
-            $user['first_name'] . ' ' . $user['last_name']
-        );
     }
 }

@@ -23,7 +23,7 @@ class Paths
      * This must contain the name of your "system" folder. Include
      * the path if the folder is not in the same directory as this file.
      */
-    public string $systemDirectory = __DIR__ . '/../../vendor/codeigniter4/framework/system';
+    public $systemDirectory = __DIR__ . '/../../vendor/codeigniter4/framework/system';
 
     /**
      * ---------------------------------------------------------------
@@ -37,29 +37,27 @@ class Paths
      *
      * @see http://codeigniter.com/user_guide/general/managing_apps.html
      */
-    public string $appDirectory = __DIR__ . '/..';
+    public $appDirectory = __DIR__ . '/..';
 
     /**
      * ---------------------------------------------------------------
      * WRITABLE DIRECTORY NAME
      * ---------------------------------------------------------------
      *
-     * This variable must contain the name of your "writable" directory.
-     * The writable directory allows you to group all directories that
-     * need write permission to a single place that can be tucked away
-     * for maximum security, keeping it out of the app and/or
-     * system directories.
+     * This variable must contain the name of your "writable" folder.
+     * Include the path if the folder is not in the same directory as this file.
      */
-    public string $writableDirectory = __DIR__ . '/../../writable';
+    public $writableDirectory = __DIR__ . '/../../writable';
 
     /**
      * ---------------------------------------------------------------
      * TESTS DIRECTORY NAME
      * ---------------------------------------------------------------
      *
-     * This variable must contain the name of your "tests" directory.
+     * This variable must contain the name of your "tests" folder.
+     * Include the path if the folder is not in the same directory as this file.
      */
-    public string $testsDirectory = __DIR__ . '/../../tests';
+    public $testsDirectory = __DIR__ . '/../../tests';
 
     /**
      * ---------------------------------------------------------------
@@ -68,8 +66,7 @@ class Paths
      *
      * This variable must contain the name of the directory that
      * contains the view files used by your application. By
-     * default this is in `app/Views`. This value
-     * is used when no value is provided to `Services::renderer()`.
+     * default this is in `app/Views`.
      */
-    public string $viewDirectory = __DIR__ . '/../Views';
+    public $viewDirectory = __DIR__ . '/../Views';
 }
