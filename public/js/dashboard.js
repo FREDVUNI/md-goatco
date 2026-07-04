@@ -30,19 +30,6 @@
     if (!confirm(btn.dataset.confirm)) e.preventDefault();
   });
 
-  // ── Client-side table search ─────────────────────────────────────
-  document.querySelectorAll('[data-search-table]').forEach(function(input){
-    const tableId = input.dataset.searchTable;
-    const table   = document.getElementById(tableId);
-    if (!table) return;
-    input.addEventListener('input', function(){
-      const q = this.value.toLowerCase().trim();
-      table.querySelectorAll('tbody tr').forEach(function(row){
-        row.style.display = row.textContent.toLowerCase().includes(q) ? '' : 'none';
-      });
-    });
-  });
-
   // ── Auto-dismiss flash messages after 5 seconds ──────────────────
   document.querySelectorAll('.flash').forEach(function(el){
     setTimeout(function(){ el.style.opacity='0'; el.style.transition='opacity .4s'; setTimeout(function(){ el.remove(); }, 400); }, 5000);

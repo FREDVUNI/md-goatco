@@ -7,7 +7,15 @@ class AnimalController extends BaseController
 {
     public function index(): string
     {
-        return $this->dashboardView('vet/animals', ['pageTitle'=>'Animal Records','herd'=>(new GoatModel())->getFullHerd()]);
+        $search = $this->searchTerm();
+        [$herd, $pager] = $this->paginateBuilder((new GoatModel())->getFullHerdQuery($search));
+
+        return $this->dashboardView('vet/animals', [
+            'pageTitle' => 'Animal Records',
+            'herd'      => $herd,
+            'pager'     => $pager,
+            'search'    => $search,
+        ]);
     }
     public function show(int $id): string
     {

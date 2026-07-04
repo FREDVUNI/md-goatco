@@ -19,13 +19,24 @@ class ApplicationController extends BaseController
 
     public function index(): string
     {
+        $search = $this->searchTerm();
+        [$pending, $pager] = $this->paginateBuilder($this->applications->getPendingQuery($search));
+
         return $this->dashboardView('admin/applications', [
             'pageTitle'   => 'Applications',
-            'pending'     => $this->applications->where('status','pending')->orderBy('created_at','DESC')->findAll(),
+            'pending'     => $pending,
+            'pager'       => $pager,
+            'search'      => $search,
             'approved'    => $this->applications->where('status','approved')->orderBy('reviewed_at','DESC')->limit(20)->findAll(),
             'rejected'    => $this->applications->where('status','rejected')->orderBy('reviewed_at','DESC')->limit(20)->findAll(),
             'pendingCount'=> $this->applications->countPending(),
         ]);
+    }
+
+    public function export()
+    {
+        $rows = $this->applications->getPendingQuery($this->searchTerm())->get()->getResultArray();
+        return $this->downloadCsv($rows, 'applications_' . date('Y-m-d') . '.csv');
     }
 
     public function show(int $id): string

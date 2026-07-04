@@ -1,17 +1,16 @@
 <?= $this->extend('layouts/dashboard') ?>
 <?= $this->section('portalName') ?>Veterinary<?= $this->endSection() ?>
 <?= $this->section('sidebar') ?>
-<div class="sb-role">Veterinarian</div>
-<nav class="sb-nav">
-  <a href="<?= site_url('dashboard') ?>" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard</a>
-  <a href="<?= site_url('vet/visits/log') ?>" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/></svg>Log a Visit</a>
-  <a href="<?= site_url('vet/animals') ?>" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/></svg>Animals</a>
-  <a href="<?= site_url('vet/flags') ?>" class="sb-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>Health Flags<?php if(($flagCount??0)>0): ?><span class="sb-badge"><?= esc($flagCount) ?></span><?php endif ?></a>
-</nav>
+<?= $this->include('vet/_sidebar') ?>
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
 <div class="card">
-  <div class="card-head"><h3>🚨 My Active Health Flags</h3><span style="font-size:0.84rem;color:var(--slate-light)"><?= count($flags??[]) ?> open</span></div>
+  <div class="card-head"><h3>🚨 My Active Health Flags</h3><span style="font-size:0.84rem;color:var(--slate-light)"><?= esc($pager->getTotal() ?? count($flags??[])) ?> open</span></div>
+  <div class="table-toolbar">
+    <form method="get" style="flex:1;display:flex">
+      <input type="text" name="q" class="search-input" placeholder="Search tag, animal, or reason…" value="<?= esc($search ?? '') ?>">
+    </form>
+  </div>
   <?php if (empty($flags)): ?>
     <div class="empty-state">No active flags — great work! ✅</div>
   <?php else: ?>
@@ -35,6 +34,7 @@
       <?php endforeach ?>
     </tbody>
   </table>
+  <?= $pager->links('default', 'dashboard') ?>
   <?php endif ?>
 </div>
 <?= $this->endSection() ?>

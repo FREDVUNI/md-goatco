@@ -9,9 +9,25 @@ class HealthController extends BaseController
     public function __construct() { $this->visits = new VetVisitModel(); }
     public function index(): string
     {
-        $flags = $this->visits->getActiveFlags();
-        return $this->dashboardView('manager/health', ['pageTitle'=>'Health Flags','flags'=>$flags,'flagCount'=>count($flags)]);
+        $flagCount = count($this->visits->getActiveFlags());
+        $search    = $this->searchTerm();
+        [$flags, $pager] = $this->paginateBuilder($this->visits->getActiveFlagsQuery($search));
+
+        return $this->dashboardView('manager/health', [
+            'pageTitle' => 'Health Flags',
+            'flags'     => $flags,
+            'pager'     => $pager,
+            'search'    => $search,
+            'flagCount' => $flagCount,
+        ]);
     }
+
+    public function export()
+    {
+        $rows = $this->visits->getActiveFlagsQuery($this->searchTerm())->get()->getResultArray();
+        return $this->downloadCsv($rows, 'health_flags_' . date('Y-m-d') . '.csv');
+    }
+
     public function show(int $id): string { return redirect()->to('/manager/health'); }
     public function resolve(int $id)
     {

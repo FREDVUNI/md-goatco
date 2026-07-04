@@ -20,6 +20,15 @@ class MemberApplicationModel extends Model
 
     public function getPending(): array   { return $this->where('status','pending')->orderBy('created_at','DESC')->findAll(); }
     public function countPending(): int   { return $this->where('status','pending')->countAllResults(); }
+
+    public function getPendingQuery(?string $search = null): \CodeIgniter\Database\BaseBuilder
+    {
+        $this->where('status','pending')->orderBy('created_at','DESC');
+        if ($search) {
+            $this->groupStart()->like('first_name',$search)->orLike('last_name',$search)->orLike('phone',$search)->groupEnd();
+        }
+        return $this->builder();
+    }
     public function findByUserId(int $id): ?array { return $this->where('user_id',$id)->first(); }
     public function findByEmail(string $email): ?array
     {

@@ -6,10 +6,21 @@ class ScheduleController extends BaseController
 {
     public function index(): string
     {
-        $db    = \Config\Database::connect();
-        $tasks = $db->table('vet_schedules')->orderBy('scheduled_at','ASC')->get()->getResultArray();
-        $vets  = (new \App\Models\UserModel())->getByRole('vet');
-        return $this->dashboardView('manager/schedule', ['pageTitle'=>'Vet Schedule','tasks'=>$tasks,'vets'=>$vets]);
+        $search  = $this->searchTerm();
+        $builder = \Config\Database::connect()->table('vet_schedules')->orderBy('scheduled_at','ASC');
+        if ($search) {
+            $builder->groupStart()->like('task',$search)->orLike('description',$search)->orLike('animals_desc',$search)->groupEnd();
+        }
+        [$tasks, $pager] = $this->paginateBuilder($builder);
+        $vets = (new \App\Models\UserModel())->getByRole('vet');
+
+        return $this->dashboardView('manager/schedule', [
+            'pageTitle' => 'Vet Schedule',
+            'tasks'     => $tasks,
+            'pager'     => $pager,
+            'search'    => $search,
+            'vets'      => $vets,
+        ]);
     }
     public function create(): string
     {

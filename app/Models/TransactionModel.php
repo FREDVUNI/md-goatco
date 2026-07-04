@@ -13,6 +13,15 @@ class TransactionModel extends Model
 
     public function getByMember(int $memberId): array { return $this->where('member_id',$memberId)->orderBy('created_at','DESC')->findAll(); }
 
+    public function getByMemberQuery(int $memberId, ?string $search = null): \CodeIgniter\Database\BaseBuilder
+    {
+        $this->where('member_id',$memberId)->orderBy('created_at','DESC');
+        if ($search) {
+            $this->groupStart()->like('description',$search)->orLike('reference',$search)->groupEnd();
+        }
+        return $this->builder();
+    }
+
     public function getCurrentBalance(int $memberId): float
     {
         $last = $this->where('member_id',$memberId)->orderBy('created_at','DESC')->first();

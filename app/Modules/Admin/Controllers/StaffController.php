@@ -12,11 +12,22 @@ class StaffController extends BaseController
 
     public function index(): string
     {
+        $search = $this->searchTerm();
+        [$staff, $pager] = $this->paginateBuilder($this->users->getStaffQuery($search));
+
         return $this->dashboardView('admin/staff', [
             'pageTitle'   => 'Staff Accounts',
-            'staff'       => $this->users->getStaff(),
+            'staff'       => $staff,
+            'pager'       => $pager,
+            'search'      => $search,
             'pendingCount'=> (new \App\Models\MemberApplicationModel())->countPending(),
         ]);
+    }
+
+    public function export()
+    {
+        $rows = $this->users->getStaffQuery($this->searchTerm())->get()->getResultArray();
+        return $this->downloadCsv($rows, 'staff_' . date('Y-m-d') . '.csv');
     }
 
     public function create(): string

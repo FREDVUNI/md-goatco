@@ -1,20 +1,17 @@
 <?= $this->extend('layouts/dashboard') ?>
 <?= $this->section('portalName') ?>Administration<?= $this->endSection() ?>
 <?= $this->section('sidebar') ?>
-<div class="sb-role">Super Administrator</div>
-<nav class="sb-nav">
-  <a href="<?= site_url('dashboard') ?>" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard</a>
-  <a href="<?= site_url('admin/applications') ?>" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>Applications</a>
-  <a href="<?= site_url('admin/members') ?>" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Members</a>
-  <a href="<?= site_url('admin/payments') ?>" class="sb-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Wallet Top-ups</a>
-  <a href="<?= site_url('admin/herd') ?>" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg>Herd</a>
-  <a href="<?= site_url('admin/staff') ?>" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Staff</a>
-  <a href="<?= site_url('admin/settings') ?>" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/></svg>Settings</a>
-</nav>
+<?= $this->include('admin/_sidebar') ?>
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
 <div class="card">
-  <div class="card-head"><h3>Payment Transactions</h3><span style="font-size:0.84rem;color:var(--slate-light)"><?= count($payments??[]) ?> records</span></div>
+  <div class="card-head"><h3>Payment Transactions</h3><span style="font-size:0.84rem;color:var(--slate-light)"><?= esc($pager->getTotal() ?? count($payments??[])) ?> records</span></div>
+  <div class="table-toolbar">
+    <form method="get" style="flex:1;display:flex">
+      <input type="text" name="q" class="search-input" placeholder="Search by member or reference…" value="<?= esc($search ?? '') ?>">
+    </form>
+    <a href="<?= site_url('admin/payments/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm">📥 Download CSV</a>
+  </div>
   <?php if (empty($payments)): ?>
     <div class="empty-state">No payments recorded yet</div>
   <?php else: ?>
@@ -33,6 +30,7 @@
       <?php endforeach ?>
     </tbody>
   </table>
+  <?= $pager->links('default', 'dashboard') ?>
   <?php endif ?>
 </div>
 <?= $this->endSection() ?>

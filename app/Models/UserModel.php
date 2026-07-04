@@ -51,6 +51,16 @@ class UserModel extends Model
         return $this->whereIn('role',['manager','vet','super_admin'])->where('deleted_at',null)->findAll();
     }
 
+    public function getStaffQuery(?string $search = null): \CodeIgniter\Database\BaseBuilder
+    {
+        $this->select('id,email,role,status,first_name,last_name,phone,last_login_at,created_at')
+            ->whereIn('role',['manager','vet','super_admin'])->where('deleted_at',null)->orderBy('created_at','DESC');
+        if ($search) {
+            $this->groupStart()->like('first_name',$search)->orLike('last_name',$search)->orLike('email',$search)->groupEnd();
+        }
+        return $this->builder();
+    }
+
     public function countByRole(): array
     {
         $rows = $this->select('role, COUNT(*) as cnt')->where('deleted_at',null)->groupBy('role')->findAll();

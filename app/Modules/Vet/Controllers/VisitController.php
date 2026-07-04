@@ -63,10 +63,22 @@ class VisitController extends BaseController
 
     public function history(): string
     {
+        $vetId  = $this->currentUserId();
+        $search = $this->searchTerm();
+        [$visits, $pager] = $this->paginateBuilder($this->visits->getByVetQuery($vetId, $search));
+
         return $this->dashboardView('vet/visit_history', [
             'pageTitle' => 'Visit History',
-            'visits'    => $this->visits->getByVet($this->currentUserId()),
+            'visits'    => $visits,
+            'pager'     => $pager,
+            'search'    => $search,
         ]);
+    }
+
+    public function export()
+    {
+        $rows = $this->visits->getByVetQuery($this->currentUserId(), $this->searchTerm())->get()->getResultArray();
+        return $this->downloadCsv($rows, 'visit_history_' . date('Y-m-d') . '.csv');
     }
 
     public function show(int $id): string { return redirect()->to('/vet/visits/history'); }

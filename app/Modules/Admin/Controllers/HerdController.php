@@ -12,12 +12,23 @@ class HerdController extends BaseController
 
     public function index(): string
     {
+        $search = $this->searchTerm();
+        [$herd, $pager] = $this->paginateBuilder($this->goats->getFullHerdQuery($search));
+
         return $this->dashboardView('admin/herd', [
             'pageTitle' => 'Herd Overview',
-            'herd'      => $this->goats->getFullHerd(),
+            'herd'      => $herd,
+            'pager'     => $pager,
+            'search'    => $search,
             'stats'     => $this->goats->getStats(),
             'pendingCount' => (new \App\Models\MemberApplicationModel())->countPending(),
         ]);
+    }
+
+    public function export()
+    {
+        $rows = $this->goats->getFullHerdQuery($this->searchTerm())->get()->getResultArray();
+        return $this->downloadCsv($rows, 'herd_' . date('Y-m-d') . '.csv');
     }
 
     public function show(int $id) { return redirect()->to('/admin/herd'); }

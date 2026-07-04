@@ -8,8 +8,18 @@ class PortfolioController extends BaseController
 {
     public function index(): string
     {
-        $goats = (new GoatModel())->getWithLatestWeight($this->currentUserId());
-        return $this->dashboardView('member/portfolio', ['pageTitle'=>'My Goats','goats'=>$goats,'goatCount'=>count($goats)]);
+        $memberId  = $this->currentUserId();
+        $goatCount = count((new GoatModel())->getWithLatestWeight($memberId));
+        $search    = $this->searchTerm();
+        [$goats, $pager] = $this->paginateBuilder((new GoatModel())->getWithLatestWeightQuery($memberId, $search));
+
+        return $this->dashboardView('member/portfolio', [
+            'pageTitle' => 'My Goats',
+            'goats'     => $goats,
+            'pager'     => $pager,
+            'search'    => $search,
+            'goatCount' => $goatCount,
+        ]);
     }
     public function show(int $id)
     {

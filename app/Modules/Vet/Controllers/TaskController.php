@@ -21,37 +21,38 @@ class TaskController extends BaseController
      */
     public function index(): string
     {
-        $vetId = $this->currentUserId();
+        $vetId  = $this->currentUserId();
+        $search = $this->searchTerm();
 
-        // Get today's tasks — assigned to this vet OR unassigned
-        $tasks = $this->scheduleTable
+        $todayBuilder = \Config\Database::connect()->table('vet_schedules')
             ->select('vet_schedules.*')
             ->where('DATE(scheduled_at)', date('Y-m-d'))
             ->where('status !=', 'cancelled')
-            ->groupStart()
-                ->where('assigned_vet_id', $vetId)
-                ->orWhere('assigned_vet_id IS NULL')
-            ->groupEnd()
-            ->orderBy('scheduled_at', 'ASC')
-            ->get()->getResultArray();
+            ->groupStart()->where('assigned_vet_id', $vetId)->orWhere('assigned_vet_id IS NULL')->groupEnd()
+            ->orderBy('scheduled_at', 'ASC');
 
-        // Also get upcoming tasks (next 7 days)
-        $upcoming = $this->scheduleTable
+        $upcomingBuilder = \Config\Database::connect()->table('vet_schedules')
             ->select('vet_schedules.*')
             ->where('DATE(scheduled_at) >', date('Y-m-d'))
             ->where('DATE(scheduled_at) <=', date('Y-m-d', strtotime('+7 days')))
             ->where('status !=', 'cancelled')
-            ->groupStart()
-                ->where('assigned_vet_id', $vetId)
-                ->orWhere('assigned_vet_id IS NULL')
-            ->groupEnd()
-            ->orderBy('scheduled_at', 'ASC')
-            ->get()->getResultArray();
+            ->groupStart()->where('assigned_vet_id', $vetId)->orWhere('assigned_vet_id IS NULL')->groupEnd()
+            ->orderBy('scheduled_at', 'ASC');
+
+        if ($search) {
+            $todayBuilder->groupStart()->like('task',$search)->orLike('description',$search)->orLike('animals_desc',$search)->groupEnd();
+            $upcomingBuilder->groupStart()->like('task',$search)->orLike('description',$search)->orLike('animals_desc',$search)->groupEnd();
+        }
+
+        [$tasks, ] = $this->paginateBuilder($todayBuilder, 10, 'today');
+        [$upcoming, $pager] = $this->paginateBuilder($upcomingBuilder, 10, 'upcoming');
 
         return $this->dashboardView('vet/tasks', [
             'pageTitle' => "Today's Tasks",
             'tasks'     => $tasks,
             'upcoming'  => $upcoming,
+            'pager'     => $pager,
+            'search'    => $search,
             'today'     => date('l, j F Y'),
         ]);
     }

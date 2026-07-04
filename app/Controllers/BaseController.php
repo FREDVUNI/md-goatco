@@ -66,4 +66,50 @@ abstract class BaseController extends Controller
     {
         return redirect()->to('/dashboard');
     }
+
+    // ── Listing helpers ────────────────────────────────────────────────────
+    protected function searchTerm(): ?string
+    {
+        $q = trim((string) ($this->request->getGet('q') ?? ''));
+        return $q === '' ? null : $q;
+    }
+
+    /**
+     * Paginate a query builder that has already had its where/join/search
+     * conditions applied but has NOT been limited or executed yet.
+     * Use a non-default $group when more than one paginated table appears
+     * on the same page, so each gets its own "page"/"page_{group}" param.
+     *
+     * @return array{0: array, 1: \CodeIgniter\Pager\Pager}
+     */
+    protected function paginateBuilder(\CodeIgniter\Database\BaseBuilder $builder, int $perPage = 15, string $group = 'default'): array
+    {
+        $selector = $group === 'default' ? 'page' : 'page_' . $group;
+        $page     = max(1, (int) ($this->request->getGet($selector) ?? 1));
+        $total    = $builder->countAllResults(false); // false = don't reset, builder stays usable
+        $rows     = $builder->get($perPage, ($page - 1) * $perPage)->getResultArray();
+
+        $pager = service('pager');
+        $pager->store($group, $page, $perPage, $total);
+
+        return [$rows, $pager];
+    }
+
+    protected function downloadCsv(array $rows, string $filename): \CodeIgniter\HTTP\ResponseInterface
+    {
+        if (empty($rows)) {
+            return redirect()->back()->with('error', 'No data to export.');
+        }
+        $csv = implode(',', array_keys($rows[0])) . "\n";
+        foreach ($rows as $row) {
+            $csv .= implode(',', array_map(
+                static fn ($v) => '"' . str_replace('"', '""', (string) $v) . '"',
+                $row
+            )) . "\n";
+        }
+        return $this->response
+            ->setHeader('Content-Type', 'text/csv')
+            ->setHeader('Content-Disposition', 'attachment; filename="' . $filename . '"')
+            ->setBody($csv);
+    }
 }

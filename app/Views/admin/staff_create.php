@@ -1,11 +1,7 @@
 <?= $this->extend('layouts/dashboard') ?>
 <?= $this->section('portalName') ?>Administration<?= $this->endSection() ?>
 <?= $this->section('sidebar') ?>
-<div class="sb-role">Super Administrator</div>
-<nav class="sb-nav">
-  <a href="<?= site_url('dashboard') ?>" class="sb-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>Dashboard</a>
-  <a href="<?= site_url('admin/staff') ?>" class="sb-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Staff Accounts</a>
-</nav>
+<?= $this->include('admin/_sidebar') ?>
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
 <a href="<?= site_url('admin/staff') ?>" class="back-link">← Back to staff</a>

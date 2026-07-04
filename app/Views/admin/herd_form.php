@@ -1,11 +1,7 @@
 <?= $this->extend('layouts/dashboard') ?>
 <?= $this->section('portalName') ?>Administration<?= $this->endSection() ?>
 <?= $this->section('sidebar') ?>
-<div class="sb-role">Super Administrator</div>
-<nav class="sb-nav">
-  <a href="<?= site_url('dashboard') ?>" class="sb-item">Dashboard</a>
-  <a href="<?= site_url('admin/herd') ?>" class="sb-item active">Herd Overview</a>
-</nav>
+<?= $this->include('admin/_sidebar') ?>
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
 <a href="<?= site_url('admin/herd') ?>" class="back-link">← Back to herd</a>

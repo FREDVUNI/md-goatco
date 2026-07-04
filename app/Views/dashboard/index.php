@@ -21,143 +21,13 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 <?= $this->section('sidebar') ?>
 
 <?php if ($isAdmin): ?>
-  <div class="sb-role">Super Administrator</div>
-  <nav class="sb-nav">
-    <div class="sb-section">Main</div>
-    <a href="<?= site_url('dashboard') ?>" class="sb-item active">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-      Dashboard
-    </a>
-    <a href="<?= site_url('admin/applications') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-      Applications
-      <?php if (($pendingCount ?? 0) > 0): ?><span class="sb-badge"><?= esc($pendingCount) ?></span><?php endif ?>
-    </a>
-    <a href="<?= site_url('admin/members') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-      Members
-    </a>
-    <div class="sb-section">Farm</div>
-    <a href="<?= site_url('admin/herd') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg>
-      Herd Overview
-    </a>
-    <div class="sb-section">Staff</div>
-    <a href="<?= site_url('admin/staff') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M4.93 19.07l1.41-1.41M2 12h2M20 12h2M4.93 4.93l1.41 1.41M19.07 19.07l-1.41-1.41M12 2v2M12 20v2"/></svg>
-      Staff Accounts
-    </a>
-    <div class="sb-section">System</div>
-    <a href="<?= site_url('admin/settings') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-      Settings
-    </a>
-  </nav>
-
+  <?= $this->include('admin/_sidebar') ?>
 <?php elseif ($isManager): ?>
-  <div class="sb-role">Farm Manager</div>
-  <nav class="sb-nav">
-    <div class="sb-section">Main</div>
-    <a href="<?= site_url('dashboard') ?>" class="sb-item active">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-      Dashboard
-    </a>
-    <div class="sb-section">Herd</div>
-    <a href="<?= site_url('manager/herd') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg>
-      Herd Registry
-    </a>
-    <a href="<?= site_url('manager/health') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-      Health Flags
-      <?php if (($flagCount ?? 0) > 0): ?><span class="sb-badge"><?= esc($flagCount) ?></span><?php endif ?>
-    </a>
-    <div class="sb-section">Members</div>
-    <a href="<?= site_url('manager/members') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-      Members
-    </a>
-    <div class="sb-section">Veterinary</div>
-    <a href="<?= site_url('manager/schedule') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-      Vet Schedule
-      <?php if (($todayTaskCount ?? 0) > 0): ?><span class="sb-badge"><?= esc($todayTaskCount) ?></span><?php endif ?>
-    </a>
-    <div class="sb-section">Reports</div>
-    <a href="<?= site_url('manager/reports') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-      Reports
-    </a>
-  </nav>
-
+  <?= $this->include('manager/_sidebar') ?>
 <?php elseif ($isVet): ?>
-  <div class="sb-role">Veterinarian</div>
-  <nav class="sb-nav">
-    <div class="sb-section">Main</div>
-    <a href="<?= site_url('dashboard') ?>" class="sb-item active">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-      Dashboard
-    </a>
-    <a href="<?= site_url('vet/tasks') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-      Today's Tasks
-    </a>
-    <div class="sb-section">Visits</div>
-    <a href="<?= site_url('vet/visits/log') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-      Log a Visit
-    </a>
-    <a href="<?= site_url('vet/visits/history') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-      Visit History
-    </a>
-    <div class="sb-section">Animals</div>
-    <a href="<?= site_url('vet/animals') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg>
-      Animal Records
-    </a>
-    <a href="<?= site_url('vet/flags') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
-      Health Flags
-      <?php if (($flagCount ?? 0) > 0): ?><span class="sb-badge"><?= esc($flagCount) ?></span><?php endif ?>
-    </a>
-  </nav>
-
-<?php else: ?><!-- MEMBER -->
-  <div class="sb-profile">
-    <div class="sb-profile-avatar"><?= esc(strtoupper(substr($currentUser['first_name'] ?? 'U', 0, 1) . substr($currentUser['last_name'] ?? '', 0, 1))) ?></div>
-    <div class="sb-profile-name"><?= esc(($currentUser['first_name'] ?? '') . ' ' . ($currentUser['last_name'] ?? '')) ?></div>
-    <div class="sb-profile-meta"><?= esc($goatCount ?? 0) ?> goat<?= ($goatCount ?? 0) !== 1 ? 's' : '' ?> in portfolio</div>
-  </div>
-  <nav class="sb-nav">
-    <div class="sb-section">My Portfolio</div>
-    <a href="<?= site_url('dashboard') ?>" class="sb-item active">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-      Dashboard
-    </a>
-    <a href="<?= site_url('member/goats') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg>
-      My Goats
-    </a>
-    <div class="sb-section">Finances</div>
-    <a href="<?= site_url('member/statements') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M3 11h18"/></svg>
-      Statements
-    </a>
-    <a href="<?= site_url('member/wallet/topup') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-      Top Up Wallet
-    </a>
-    <div class="sb-section">Account</div>
-    <a href="<?= site_url('member/account') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-      My Account
-    </a>
-    <a href="<?= site_url('member/support') ?>" class="sb-item">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-      Support
-    </a>
-  </nav>
+  <?= $this->include('vet/_sidebar') ?>
+<?php else: ?>
+  <?= $this->include('member/_sidebar') ?>
 <?php endif ?>
 
 <?= $this->endSection() ?>
@@ -250,6 +120,11 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
   </div>
 </div>
 
+<div class="card chart-card">
+  <div class="card-head"><h3>📈 Applications — last 6 months</h3></div>
+  <?= view('partials/bar_chart', ['labels' => $appLabels ?? [], 'values' => $appValues ?? []]) ?>
+</div>
+
 <?php elseif ($isManager): ?>
 <!-- ─────────── MANAGER CONTENT ─────────── -->
 <div class="welcome-banner">
@@ -311,6 +186,11 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
     </div>
     <?php endif ?>
   </div>
+</div>
+
+<div class="card chart-card">
+  <div class="card-head"><h3>🚩 Health flags — last 6 months</h3></div>
+  <?= view('partials/bar_chart', ['labels' => $flagLabels ?? [], 'values' => $flagValues ?? []]) ?>
 </div>
 
 <?php elseif ($isVet): ?>
@@ -388,6 +268,11 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
   </div>
 </div>
 
+<div class="card chart-card">
+  <div class="card-head"><h3>📋 Visits logged — last 6 weeks</h3></div>
+  <?= view('partials/bar_chart', ['labels' => $visitLabels ?? [], 'values' => $visitValues ?? []]) ?>
+</div>
+
 <?php else: ?>
 <!-- ─────────── MEMBER CONTENT ─────────── -->
 <div class="welcome-banner">
@@ -458,6 +343,11 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
   </table>
 </div>
 <?php endif ?>
+
+<div class="card chart-card">
+  <div class="card-head"><h3>⚖️ Average goat weight — last 6 months</h3></div>
+  <?= view('partials/bar_chart', ['labels' => $weightLabels ?? [], 'values' => $weightValues ?? []]) ?>
+</div>
 
 <?php if (!empty($notifications)): ?>
 <div class="card">

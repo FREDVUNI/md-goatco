@@ -9,8 +9,18 @@ class FlagController extends BaseController
     public function __construct() { $this->visits = new VetVisitModel(); }
     public function index(): string
     {
-        $flags = $this->visits->getMyActiveFlags($this->currentUserId());
-        return $this->dashboardView('vet/flags', ['pageTitle'=>'My Health Flags','flags'=>$flags,'flagCount'=>count($flags)]);
+        $vetId     = $this->currentUserId();
+        $flagCount = count($this->visits->getMyActiveFlags($vetId));
+        $search    = $this->searchTerm();
+        [$flags, $pager] = $this->paginateBuilder($this->visits->getMyActiveFlagsQuery($vetId, $search));
+
+        return $this->dashboardView('vet/flags', [
+            'pageTitle' => 'My Health Flags',
+            'flags'     => $flags,
+            'pager'     => $pager,
+            'search'    => $search,
+            'flagCount' => $flagCount,
+        ]);
     }
     public function resolve(int $id)
     {

@@ -46,4 +46,34 @@ class GoatModel extends Model
     }
 
     public function getByMember(int $memberId): array { return $this->where('member_id',$memberId)->where('status','active')->findAll(); }
+
+    public function getFullHerdQuery(?string $search = null): \CodeIgniter\Database\BaseBuilder
+    {
+        $builder = \Config\Database::connect()->table('goats g')
+            ->select('g.*, u.first_name, u.last_name, u.id as member_id,
+                      (SELECT weight_kg FROM weight_logs WHERE goat_id=g.id ORDER BY logged_at DESC LIMIT 1) as latest_weight,
+                      (SELECT COUNT(*) FROM vet_visits WHERE goat_id=g.id AND is_flagged=1 AND flag_resolved_at IS NULL) as is_flagged')
+            ->join('users u','u.id = g.member_id','left')
+            ->where('g.status','active')
+            ->orderBy('g.tag_number','ASC');
+        if ($search) {
+            $builder->groupStart()->like('g.tag_number',$search)->orLike('g.name',$search)->orLike('g.breed',$search)->groupEnd();
+        }
+        return $builder;
+    }
+
+    public function getWithLatestWeightQuery(int $memberId, ?string $search = null): \CodeIgniter\Database\BaseBuilder
+    {
+        $builder = \Config\Database::connect()->table('goats g')
+            ->select('g.*,
+                      (SELECT weight_kg FROM weight_logs WHERE goat_id=g.id ORDER BY logged_at DESC LIMIT 1) as latest_weight,
+                      (SELECT logged_at FROM weight_logs WHERE goat_id=g.id ORDER BY logged_at DESC LIMIT 1) as weight_date,
+                      (SELECT COUNT(*) FROM vet_visits WHERE goat_id=g.id AND is_flagged=1 AND flag_resolved_at IS NULL) as is_flagged')
+            ->where('g.member_id',$memberId)->where('g.status','active')
+            ->orderBy('g.tag_number','ASC');
+        if ($search) {
+            $builder->groupStart()->like('g.tag_number',$search)->orLike('g.name',$search)->groupEnd();
+        }
+        return $builder;
+    }
 }

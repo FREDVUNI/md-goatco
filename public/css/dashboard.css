@@ -121,9 +121,33 @@ tr:hover td{background:#F8FAFF}
 .flash-info{background:#EDF2FB;color:var(--blue);border:1px solid #BFDBFE}
 /* EMPTY STATE */
 .empty-state{text-align:center;padding:48px 24px;color:var(--slate-light);font-size:0.88rem}
+.empty-page{text-align:center;padding:80px 24px;color:var(--slate-light)}
+.empty-page .empty-icon{font-size:3rem;margin-bottom:12px}
+.empty-page h2{color:var(--ink);font-size:1.1rem;margin-bottom:6px}
+.empty-page p{font-size:0.88rem;margin-bottom:20px}
 .link-strong{color:var(--blue);font-weight:600;text-decoration:none}
 .link-strong:hover{text-decoration:underline}
 .back-link{display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;color:var(--blue);font-weight:600;text-decoration:none;margin-bottom:20px}
+/* TABLE TOOLBAR / SEARCH */
+.table-toolbar{display:flex;align-items:center;gap:10px;padding:14px 20px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.search-input{flex:1;min-width:180px;padding:8px 12px;border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-body);font-size:0.82rem;color:var(--ink)}
+.search-input:focus{outline:none;border-color:var(--blue)}
+/* PAGER */
+.pager{display:flex;align-items:center;gap:4px;flex-wrap:wrap;padding:14px 20px;border-top:1px solid var(--border)}
+.pager-link{padding:6px 11px;border-radius:7px;font-size:0.78rem;font-weight:600;color:var(--slate);text-decoration:none;border:1px solid transparent}
+.pager-link:hover{border-color:var(--border);color:var(--blue)}
+.pager-current{background:var(--blue);color:#fff}
+.pager-current:hover{color:#fff}
+.pager-disabled{color:var(--slate-light);opacity:.5;cursor:default}
+.pager-total{margin-left:auto;font-size:0.72rem;color:var(--slate-light);font-family:var(--font-mono)}
+/* CHARTS (bar/line, dependency-free) */
+.chart-card .card-head{border-bottom:1px solid var(--border)}
+.bar-chart{display:flex;flex-direction:column;gap:10px;padding:18px 20px}
+.bar-chart-row{display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:10px}
+.bar-chart-label{font-size:0.74rem;color:var(--slate-light);font-family:var(--font-mono)}
+.bar-chart-track{background:var(--bg);border-radius:6px;height:14px;overflow:hidden}
+.bar-chart-fill{height:100%;background:var(--blue);border-radius:6px;transition:width .3s ease}
+.bar-chart-value{font-size:0.76rem;font-weight:700;color:var(--ink);min-width:34px;text-align:right}
 /* MOBILE */
 .sb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:190}
 @media(max-width:900px){
