@@ -45,7 +45,13 @@ class AuthController extends BaseController
 
     public function redirectToLogin() { return redirect()->to('/auth/login'); }
 
-    public function register(): string { return view('auth/register', ['pageTitle' => 'Apply for Goat Banking']); }
+    public function register(): string
+    {
+        return view('auth/register', [
+            'pageTitle' => 'Apply for Goat Banking',
+            'errors'    => session('errors'),
+        ]);
+    }
 
     public function doRegister()
     {
