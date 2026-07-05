@@ -141,7 +141,8 @@
         <div class="file-preview" id="preview-nid_back"></div>
       </div>
       <div class="field">
-        <label>Passport-size photo of yourself *</label>
+        <label>Passport-size photo of yourself (optional)</label>
+        <p class="step-note" style="margin:-4px 0 10px">Not required if you've already uploaded both sides of your National ID above.</p>
         <label class="file-upload-label" for="headshot">
           <div class="file-upload-inner">
             <span class="file-icon">📷</span>
@@ -149,7 +150,7 @@
             <span class="file-hint">JPG or PNG · max 5 MB</span>
           </div>
         </label>
-        <input type="file" id="headshot" name="headshot" accept="image/*" class="file-input" required>
+        <input type="file" id="headshot" name="headshot" accept="image/*" class="file-input">
         <div class="file-preview" id="preview-headshot"></div>
       </div>
 
@@ -284,53 +285,4 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('scripts') ?>
-<script>
-  let currentStep = 1;
-  const totalSteps = 4;
-
-  function goToStep(n) {
-    // Hide all steps
-    document.querySelectorAll('.reg-step').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.step-item').forEach(s => s.classList.remove('active', 'done'));
-
-    // Show target step
-    document.getElementById('step-' + n).classList.add('active');
-
-    // Update step nav
-    for (let i = 1; i <= totalSteps; i++) {
-      const nav = document.getElementById('step-nav-' + i);
-      if (i < n) nav.classList.add('done');
-      else if (i === n) nav.classList.add('active');
-    }
-
-    currentStep = n;
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  }
-
-  // File preview
-  document.querySelectorAll('.file-input').forEach(input => {
-    input.addEventListener('change', function() {
-      const preview = document.getElementById('preview-' + this.id);
-      if (!preview) return;
-      const file = this.files[0];
-      if (!file) return;
-
-      if (file.type.startsWith('image/')) {
-        const reader = new FileReader();
-        reader.onload = e => {
-          preview.innerHTML = `<img src="${e.target.result}" class="file-thumb" alt="Preview"> <span class="file-name">${file.name}</span>`;
-        };
-        reader.readAsDataURL(file);
-      } else {
-        preview.innerHTML = `<span class="file-name">📄 ${file.name}</span>`;
-      }
-
-      // Update label text
-      this.previousElementSibling.querySelector('div strong').textContent = '✓ File selected';
-    });
-  });
-</script>
 <?= $this->endSection() ?>

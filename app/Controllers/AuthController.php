@@ -99,7 +99,7 @@ class AuthController extends BaseController
                     $mailer->sendNewApplicationAlert($admin, array_merge($app, ['email'=>$user['email']]));
                 }
             } catch (\Throwable $e) { log_message('error', 'Email failed: '.$e->getMessage()); }
-            return redirect()->to('/auth/status')->with('success', 'Application submitted! We will review within 2–3 working days.');
+            return redirect()->to('/auth/status')->with('success', 'Application submitted! We\'ve sent a confirmation email to your inbox. Your application is now pending review — we\'ll get you approved as soon as possible.');
         } catch (\Throwable $e) {
             $db->transRollback();
             return redirect()->back()->withInput()->with('error', 'Registration failed: '.$e->getMessage());

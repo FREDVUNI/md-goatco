@@ -4,13 +4,13 @@ namespace App\Controllers;
 
 class PublicController extends BaseController
 {
-    public function index(): string   { return view('public/home',        ['pageTitle'=>'MD Goatco Farm Limited — Ethics · Service · Genetics']); }
-    public function about(): string   { return view('public/home',        ['pageTitle'=>'About — MD Goatco Farm Limited']); }
-    public function services(): string{ return view('public/home',        ['pageTitle'=>'Services — MD Goatco Farm Limited']); }
-    public function goatBanking(): string { return view('public/home',    ['pageTitle'=>'Goat Banking — MD Goatco Farm Limited']); }
-    public function contact(): string { return view('public/home',        ['pageTitle'=>'Contact — MD Goatco Farm Limited']); }
-    public function privacy(): string { return view('public/privacy',     ['pageTitle'=>'Privacy Policy — MD Goatco Farm Limited']); }
-    public function terms(): string   { return view('public/terms',       ['pageTitle'=>'Terms & Conditions — MD Goatco Farm Limited']); }
+    public function index(): string   { return view('public/home',        ['pageTitle'=>'MD Goatco Farm Limited — Ethics · Service · Genetics','currentUser'=>$this->currentUser()]); }
+    public function about(): string   { return view('public/home',        ['pageTitle'=>'About — MD Goatco Farm Limited','currentUser'=>$this->currentUser()]); }
+    public function services(): string{ return view('public/home',        ['pageTitle'=>'Services — MD Goatco Farm Limited','currentUser'=>$this->currentUser()]); }
+    public function goatBanking(): string { return view('public/home',    ['pageTitle'=>'Goat Banking — MD Goatco Farm Limited','currentUser'=>$this->currentUser()]); }
+    public function contact(): string { return view('public/home',        ['pageTitle'=>'Contact — MD Goatco Farm Limited','currentUser'=>$this->currentUser()]); }
+    public function privacy(): string { return view('public/privacy',     ['pageTitle'=>'Privacy Policy — MD Goatco Farm Limited','currentUser'=>$this->currentUser()]); }
+    public function terms(): string   { return view('public/terms',       ['pageTitle'=>'Terms & Conditions — MD Goatco Farm Limited','currentUser'=>$this->currentUser()]); }
     public function notFound(): string{ return view('errors/404',         ['pageTitle'=>'Page Not Found']); }
 
     public function sendContact()

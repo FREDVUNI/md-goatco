@@ -19,8 +19,16 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="<?= site_url('auth/login') ?>" class="btn btn-outline btn-sm">Log in</a>
-      <a href="<?= site_url('auth/register') ?>" class="btn btn-primary btn-sm">Join Goat Banking</a>
+      <?php if ($currentUser ?? null): ?>
+        <a href="<?= site_url('dashboard') ?>" class="btn btn-outline btn-sm">Dashboard</a>
+        <a href="<?= site_url('auth/logout') ?>" class="btn btn-primary btn-sm">
+          <i class="fas fa-sign-out-alt"></i>
+          Log out
+        </a>
+      <?php else: ?>
+        <a href="<?= site_url('auth/login') ?>" class="btn btn-outline btn-sm">Log in</a>
+        <a href="<?= site_url('auth/register') ?>" class="btn btn-primary btn-sm">Join Goat Banking</a>
+      <?php endif ?>
     </div>
     <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -34,8 +42,13 @@
     <a href="#goat-banking">Goat Banking</a>
     <a href="#contact">Contact</a>
     <div class="nav-mobile-actions">
-      <a href="<?= site_url('auth/login') ?>" class="btn btn-outline">Log in</a>
-      <a href="<?= site_url('auth/register') ?>" class="btn btn-primary">Join Goat Banking</a>
+      <?php if ($currentUser ?? null): ?>
+        <a href="<?= site_url('dashboard') ?>" class="btn btn-outline">Dashboard</a>
+        <a href="<?= site_url('auth/logout') ?>" class="btn btn-primary">Log out</a>
+      <?php else: ?>
+        <a href="<?= site_url('auth/login') ?>" class="btn btn-outline">Log in</a>
+        <a href="<?= site_url('auth/register') ?>" class="btn btn-primary">Join Goat Banking</a>
+      <?php endif ?>
     </div>
   </div>
 </header>
