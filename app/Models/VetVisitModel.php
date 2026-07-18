@@ -11,7 +11,7 @@ class VetVisitModel extends Model
     protected $useTimestamps = true;
     protected $allowedFields = [
         'goat_id','vet_id','visit_date','visit_type','clinical_notes',
-        'treatment','outcome','weight_recorded','is_flagged','flag_reason',
+        'temperature','weight_kg','medication','outcome','is_flagged','flag_reason',
         'followup_date','flag_resolved_at',
     ];
 

@@ -30,16 +30,16 @@ class VisitController extends BaseController
             'visit_date'      => $this->request->getPost('visit_date'),
             'visit_type'      => $this->request->getPost('visit_type'),
             'clinical_notes'  => $this->request->getPost('clinical_notes'),
-            'treatment'       => $this->request->getPost('treatment'),
-            'outcome'         => $this->request->getPost('outcome') ?? 'unknown',
-            'weight_recorded' => $this->request->getPost('weight_recorded') ?: null,
+            'medication'      => $this->request->getPost('treatment'),
+            'outcome'         => $this->request->getPost('outcome') ?: null,
+            'weight_kg'       => $this->request->getPost('weight_recorded') ?: null,
             'is_flagged'      => $isFlagged ? 1 : 0,
             'flag_reason'     => $isFlagged ? $this->request->getPost('flag_reason') : null,
             'followup_date'   => $this->request->getPost('followup_date') ?: null,
         ]);
         if ($this->request->getPost('weight_recorded')) {
             (new WeightLogModel())->insert([
-                'goat_id'=>$this->request->getPost('goat_id'),'weight'=>$this->request->getPost('weight_recorded'),
+                'goat_id'=>$this->request->getPost('goat_id'),'weight_kg'=>$this->request->getPost('weight_recorded'),
                 'logged_at'=>date('Y-m-d H:i:s'),'logged_by'=>$this->currentUserId(),
             ]);
         }
