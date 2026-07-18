@@ -17,7 +17,7 @@ class AnimalController extends BaseController
             'search'    => $search,
         ]);
     }
-    public function show(int $id): string
+    public function show(int $id)
     {
         $goat = (new GoatModel())->find($id);
         if (! $goat) return redirect()->to('/vet/animals')->with('error','Animal not found.');

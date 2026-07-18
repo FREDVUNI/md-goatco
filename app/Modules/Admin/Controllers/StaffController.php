@@ -54,7 +54,7 @@ class StaffController extends BaseController
         return redirect()->to('/admin/staff')->with('success','Staff account created. Welcome email sent to '.$this->request->getPost('email').'.');
     }
 
-    public function edit(int $id): string
+    public function edit(int $id)
     {
         $user = $this->users->find($id);
         if (! $user) return redirect()->to('/admin/staff')->with('error','User not found.');

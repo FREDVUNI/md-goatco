@@ -135,7 +135,7 @@ class AuthController extends BaseController
         return redirect()->to('/auth/forgot-password')->with('success', 'If an account exists for that email, a reset link has been sent.');
     }
 
-    public function resetPassword(string $token): string
+    public function resetPassword(string $token)
     {
         if (! $this->users->findByResetToken($token)) {
             return redirect()->to('/auth/forgot-password')->with('error', 'This link is invalid or has expired.');

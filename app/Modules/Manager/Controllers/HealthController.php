@@ -28,7 +28,7 @@ class HealthController extends BaseController
         return $this->downloadCsv($rows, 'health_flags_' . date('Y-m-d') . '.csv');
     }
 
-    public function show(int $id): string { return redirect()->to('/manager/health'); }
+    public function show(int $id) { return redirect()->to('/manager/health'); }
     public function resolve(int $id)
     {
         $this->visits->update($id, ['flag_resolved_at'=>date('Y-m-d H:i:s')]);

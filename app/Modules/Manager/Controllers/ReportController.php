@@ -54,9 +54,9 @@ class ReportController extends BaseController
             'memberValues'  => $memberValues,
         ]);
     }
-    public function herd(): string   { return redirect()->to('/manager/reports'); }
-    public function health(): string { return redirect()->to('/manager/reports'); }
-    public function members(): string{ return redirect()->to('/manager/reports'); }
+    public function herd()   { return redirect()->to('/manager/reports'); }
+    public function health() { return redirect()->to('/manager/reports'); }
+    public function members(){ return redirect()->to('/manager/reports'); }
     public function export(string $type)
     {
         $db   = \Config\Database::connect();

@@ -60,7 +60,7 @@ class HerdController extends BaseController
         return redirect()->to('/admin/herd')->with('success', 'Animal added to herd.');
     }
 
-    public function edit(int $id): string
+    public function edit(int $id)
     {
         $goat = $this->goats->find($id);
         if (! $goat) return redirect()->to('/admin/herd')->with('error', 'Animal not found.');

@@ -43,7 +43,7 @@ class MemberController extends BaseController
         return $this->downloadCsv($rows, 'members_' . date('Y-m-d') . '.csv');
     }
 
-    public function show(int $id): string
+    public function show(int $id)
     {
         $user = $this->users->find($id);
         if (! $user || $user['role'] !== 'member') return redirect()->to('/admin/members')->with('error','Member not found.');

@@ -81,5 +81,5 @@ class VisitController extends BaseController
         return $this->downloadCsv($rows, 'visit_history_' . date('Y-m-d') . '.csv');
     }
 
-    public function show(int $id): string { return redirect()->to('/vet/visits/history'); }
+    public function show(int $id) { return redirect()->to('/vet/visits/history'); }
 }

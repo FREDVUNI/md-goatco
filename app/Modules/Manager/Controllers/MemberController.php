@@ -26,5 +26,5 @@ class MemberController extends BaseController
             'search'    => $search,
         ]);
     }
-    public function show(int $id): string { return redirect()->to('/manager/members'); }
+    public function show(int $id) { return redirect()->to('/manager/members'); }
 }

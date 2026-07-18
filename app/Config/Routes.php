@@ -37,6 +37,13 @@ $routes->get('dashboard', 'DashboardController::index', [
     'filter' => 'role:super_admin,manager,vet,member',
 ]);
 
+// SHARED ACCOUNT PAGE — admin/manager/vet (member has its own at member/account)
+$routes->group('account', ['filter' => 'role:super_admin,manager,vet'], function ($routes) {
+    $routes->get('/',        'AccountController::index');
+    $routes->post('update',  'AccountController::update');
+    $routes->post('password','AccountController::changePassword');
+});
+
 // ADMIN
 $routes->group('admin', ['filter' => 'role:super_admin', 'namespace' => 'App\Modules\Admin\Controllers'], function ($routes) {
     $routes->get('/',                                  'DashboardController::index');

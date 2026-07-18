@@ -39,7 +39,7 @@ class ApplicationController extends BaseController
         return $this->downloadCsv($rows, 'applications_' . date('Y-m-d') . '.csv');
     }
 
-    public function show(int $id): string
+    public function show(int $id)
     {
         $app = $this->applications->find($id);
         if (! $app) return redirect()->to('/admin/applications')->with('error','Application not found.');
