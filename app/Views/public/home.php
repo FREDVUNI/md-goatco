@@ -375,6 +375,10 @@
           </div>
         </div>
         <div class="field">
+          <label for="phone">Phone number *</label>
+          <input type="tel" id="phone" name="phone" value="<?= esc(old('phone')) ?>" placeholder="+256 700 000 000" required>
+        </div>
+        <div class="field">
           <label for="subject">Subject *</label>
           <select id="subject" name="subject" required>
             <option value="">Select…</option>

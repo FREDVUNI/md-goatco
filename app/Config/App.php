@@ -6,8 +6,8 @@ use CodeIgniter\Config\BaseConfig;
 class App extends BaseConfig
 {
     // ── Change this to your domain before going live ──────────────────────
-    public string $baseURL = 'http://localhost:8080/';
-    public array  $allowedHostnames = [];
+    public string $baseURL = 'http://localhost:8091/';
+    public array  $allowedHostnames = ['localhost', '127.0.0.1'];
 
     public string $indexPage     = '';
     public string $uriProtocol   = 'REQUEST_URI';

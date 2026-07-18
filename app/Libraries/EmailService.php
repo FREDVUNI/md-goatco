@@ -60,8 +60,16 @@ class EmailService
     {
         return $this->send($manager['email'], '🚨 Health flag: '.$goat['name'].' ('.$goat['tag_number'].')', 'emails/admin/health_flag', ['manager'=>$manager,'goat'=>$goat,'reason'=>$reason,'flagUrl'=>site_url('manager/health')]);
     }
+    public function sendContactMessage(string $to, array $contact): bool
+    {
+        return $this->send($to, 'New contact form message — '.($contact['subject']??'General enquiry'), 'emails/admin/contact_message', ['contact'=>$contact], [], $contact['email'] ?? null);
+    }
+    public function sendContactAutoReply(array $contact): bool
+    {
+        return $this->send($contact['email'], 'We received your message — MD Goatco Farm', 'emails/public/contact_autoreply', ['contact'=>$contact]);
+    }
 
-    public function send(string $to, string $subject, string $view, array $data=[], array $cc=[]): bool
+    public function send(string $to, string $subject, string $view, array $data=[], array $cc=[], ?string $replyTo=null): bool
     {
         try {
             helper(['email']);
@@ -74,6 +82,7 @@ class EmailService
             $this->email->setMessage($html);
             $this->email->setMailType('html');
             if (! empty($cc)) $this->email->setCC($cc);
+            if (! empty($replyTo)) $this->email->setReplyTo($replyTo);
             $result = $this->email->send(false);
             if (! $result) log_message('error', 'Email failed "'.$subject.'" to '.$to);
             return $result;

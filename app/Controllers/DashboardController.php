@@ -9,6 +9,7 @@ use App\Models\MemberApplicationModel;
 use App\Models\TransactionModel;
 use App\Models\NotificationModel;
 use App\Models\VetVisitModel;
+use App\Models\ContactMessageModel;
 use Config\Database;
 
 class DashboardController extends BaseController
@@ -124,6 +125,7 @@ class DashboardController extends BaseController
             'todayTaskCount' => count($todayTasks),
             'flagLabels'     => $flagLabels,
             'flagValues'     => $flagValues,
+            'contactNewCount'=> (new ContactMessageModel())->countNew(),
         ];
     }
 

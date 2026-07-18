@@ -101,6 +101,8 @@ $routes->group('manager', ['filter' => 'role:manager,super_admin', 'namespace' =
     $routes->get('reports/health',             'ReportController::health');
     $routes->get('reports/members',            'ReportController::members');
     $routes->get('reports/export/(:alpha)',    'ReportController::export/$1');
+    $routes->get('contact',                    'ContactController::index');
+    $routes->post('contact/(:num)/respond',    'ContactController::respond/$1');
 });
 
 // VET
