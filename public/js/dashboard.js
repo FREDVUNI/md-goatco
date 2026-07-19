@@ -47,6 +47,29 @@
     }
   });
 
+  // ── User menu dropdown (topbar) ───────────────────────────────────
+  const userMenu        = document.getElementById('userMenu');
+  const userMenuTrigger  = document.getElementById('userMenuTrigger');
+
+  function closeUserMenu(){
+    userMenu?.classList.remove('open');
+    userMenuTrigger?.setAttribute('aria-expanded', 'false');
+  }
+
+  userMenuTrigger?.addEventListener('click', function(e){
+    e.stopPropagation();
+    const isOpen = userMenu.classList.toggle('open');
+    userMenuTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+
+  document.addEventListener('click', function(e){
+    if (userMenu && !userMenu.contains(e.target)) closeUserMenu();
+  });
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closeUserMenu();
+  });
+
   // ── Responsive tables ─────────────────────────────────────────────
   // Wrap every table in a horizontally-scrollable container so wide
   // tables become swipeable on mobile instead of squishing illegibly.
