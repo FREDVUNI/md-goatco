@@ -1195,6 +1195,28 @@ footer {
 @media (max-width: 700px) {
   .table-scroll table {
     min-width: 520px;
+    /* .data-table's overflow:hidden (for rounded corners) makes the table
+       its own scroll container, which breaks position:sticky below — the
+       cell would stick relative to the table instead of .table-scroll. */
+    overflow: visible;
+  }
+  /* Freeze the first column so the row's identity stays visible while the
+     rest of the row scrolls underneath it. */
+  .table-scroll td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 2px 0 6px rgba(26, 34, 56, 0.08);
+  }
+  .table-scroll tr:nth-child(even) td:first-child {
+    background: var(--off);
+  }
+  .table-scroll th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2;
+    background: var(--blue-deep);
   }
 }
 

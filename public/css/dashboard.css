@@ -932,6 +932,23 @@ tr:hover td {
   .table-scroll table {
     min-width: 640px;
   }
+  /* Freeze the first column so the row's identity (name/tag/etc.) stays
+     visible while the rest of the row scrolls underneath it. */
+  .table-scroll th:first-child,
+  .table-scroll td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 2px 0 6px rgba(26, 34, 56, 0.08);
+  }
+  .table-scroll thead th:first-child {
+    z-index: 2;
+    background: #f8faff;
+  }
+  .table-scroll tr:hover td:first-child {
+    background: #f8faff;
+  }
 }
 /* MOBILE */
 .sb-overlay {
