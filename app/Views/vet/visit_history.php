@@ -12,6 +12,7 @@
   <div class="table-toolbar">
     <form method="get" style="flex:1;display:flex">
       <input type="text" name="q" class="search-input" placeholder="Search tag, animal, or type…" value="<?= esc($search ?? '') ?>">
+      <button type="submit" class="btn btn-outline btn-sm">Search</button>
     </form>
     <a href="<?= site_url('vet/visits/history/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm">📥 Download CSV</a>
   </div>

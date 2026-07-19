@@ -15,6 +15,7 @@
   <div class="table-toolbar">
     <form method="get" style="flex:1;display:flex">
       <input type="text" name="q" class="search-input" placeholder="Search by name, email, phone, or subject…" value="<?= esc($search ?? '') ?>">
+      <button type="submit" class="btn btn-outline btn-sm">Search</button>
     </form>
   </div>
 
