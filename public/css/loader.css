@@ -1,0 +1,50 @@
+/* Global loading indicator — top progress bar + button spinners.
+   Self-contained (hardcoded brand colors) so it works identically
+   regardless of which layout/page includes it. */
+
+#global-loader-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, #2b5ba8, #059669);
+  z-index: 99999;
+  opacity: 1;
+  box-shadow: 0 0 8px rgba(43, 91, 168, 0.6);
+  transition: width 6s cubic-bezier(0.1, 0.7, 0.3, 1), opacity 0.3s ease 0.15s;
+  pointer-events: none;
+}
+#global-loader-bar.active { width: 85%; }
+#global-loader-bar.done   { width: 100%; transition: width 0.2s ease, opacity 0.3s ease 0.2s; }
+#global-loader-bar:not(.active):not(.done) { opacity: 0; transition: opacity 0.2s ease; }
+
+/* Button loading state — spinner replaces the label, button stays the same size */
+.btn.is-loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+  opacity: 0.85;
+}
+.btn.is-loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  margin: -8px 0 0 -8px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: btn-loader-spin 0.6s linear infinite;
+}
+/* Light/outline/ghost buttons need a dark spinner instead of white */
+.btn-outline.is-loading::after,
+.btn-ghost.is-loading::after {
+  border-color: rgba(43, 91, 168, 0.25);
+  border-top-color: #2b5ba8;
+}
+@keyframes btn-loader-spin {
+  to { transform: rotate(360deg); }
+}

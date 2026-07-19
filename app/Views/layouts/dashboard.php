@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="<?= base_url('css/dashboard.css') ?>">
+<link rel="stylesheet" href="<?= base_url('css/loader.css') ?>">
 <?= $this->renderSection('head') ?>
 </head>
 <body class="dash-body">
@@ -78,6 +79,7 @@
 <!-- Overlay for mobile -->
 <div class="sb-overlay" id="sbOverlay"></div>
 
+<script src="<?= base_url('js/loader.js') ?>"></script>
 <script src="<?= base_url('js/dashboard.js') ?>"></script>
 <?= $this->renderSection('scripts') ?>
 </body>

@@ -211,16 +211,7 @@ function initPasswordConfirm() {
   });
 }
 
-// ── FORM SUBMISSION STATE ─────────────────────────────────────────────
-document.querySelectorAll("form").forEach((form) => {
-  form.addEventListener("submit", function () {
-    const submitBtn = this.querySelector("[type=submit]");
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Submitting…";
-    }
-  });
-});
+// Form submission loading/disabled state is handled globally by loader.js.
 
 // ── UTILITY ──────────────────────────────────────────────────────────
 function escHtml(str) {

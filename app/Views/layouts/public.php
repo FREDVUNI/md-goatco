@@ -12,6 +12,7 @@
     <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
     <link rel="shortcut icon" href="<?= base_url('img/logo.png') ?>" type="image/x-icon">
     <link rel="stylesheet" href="<?= base_url('css/public.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('css/loader.css') ?>">
     <?= $this->renderSection('head') ?>
 </head>
 
@@ -30,6 +31,7 @@
 
     <?= $this->renderSection('content') ?>
 
+    <script src="<?= base_url('js/loader.js') ?>"></script>
     <script src="<?= base_url('js/public.js') ?>"></script>
     <?= $this->renderSection('scripts') ?>
 </body>
