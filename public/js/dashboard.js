@@ -70,6 +70,23 @@
     if (e.key === 'Escape') closeUserMenu();
   });
 
+  // ── Real-time table search (debounced auto-submit) ────────────────
+  // No explicit "Search" button — the GET form submits automatically a
+  // moment after the user stops typing. Enter still submits immediately
+  // (native browser behavior, independent of this).
+  const SEARCH_DEBOUNCE_MS = 500;
+  document.querySelectorAll('.search-input').forEach(function(input){
+    let timer = null;
+    input.addEventListener('input', function(){
+      clearTimeout(timer);
+      timer = setTimeout(function(){
+        const form = input.closest('form');
+        if (!form) return;
+        form.requestSubmit ? form.requestSubmit() : form.submit();
+      }, SEARCH_DEBOUNCE_MS);
+    });
+  });
+
   // ── Responsive tables ─────────────────────────────────────────────
   // Wrap every table in a horizontally-scrollable container so wide
   // tables become swipeable on mobile instead of squishing illegibly.
