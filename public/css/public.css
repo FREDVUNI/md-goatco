@@ -1038,6 +1038,12 @@ footer {
   padding: 56px 0 80px;
   align-items: start;
 }
+.doc-layout > * {
+  /* Grid items don't shrink below their content's natural width by default
+     (even with a 1fr track), which caused page-level horizontal overflow
+     on narrow screens once the layout collapses to a single column below. */
+  min-width: 0;
+}
 .doc-toc {
   position: sticky;
   top: 80px;
@@ -1179,6 +1185,17 @@ footer {
 }
 .data-table tr:nth-child(even) td {
   background: var(--off);
+}
+/* Auto-wrapped by public.js so wide tables scroll horizontally on mobile
+   instead of squishing illegibly. */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 700px) {
+  .table-scroll table {
+    min-width: 520px;
+  }
 }
 
 /* ── RESPONSIVE ──────────────────────────────────────────────────── */

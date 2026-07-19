@@ -46,4 +46,17 @@
       link.classList.add('active');
     }
   });
+
+  // ── Responsive tables ─────────────────────────────────────────────
+  // Wrap every table in a horizontally-scrollable container so wide
+  // tables become swipeable on mobile instead of squishing illegibly.
+  // Done here (once, globally) rather than per-view so every listing
+  // page gets this automatically, including any added later.
+  document.querySelectorAll('table').forEach(function(table){
+    if (table.parentElement && table.parentElement.classList.contains('table-scroll')) return;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'table-scroll';
+    table.parentNode.insertBefore(wrapper, table);
+    wrapper.appendChild(table);
+  });
 })();

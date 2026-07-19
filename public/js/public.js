@@ -134,6 +134,18 @@ document.querySelectorAll(".flash").forEach((flash) => {
   });
 })();
 
+// ── RESPONSIVE TABLES ──────────────────────────────────────────────────
+// Wrap every table in a horizontally-scrollable container so wide tables
+// (e.g. the privacy policy data tables) become swipeable on mobile instead
+// of squishing illegibly.
+document.querySelectorAll("table").forEach((table) => {
+  if (table.parentElement && table.parentElement.classList.contains("table-scroll")) return;
+  const wrapper = document.createElement("div");
+  wrapper.className = "table-scroll";
+  table.parentNode.insertBefore(wrapper, table);
+  wrapper.appendChild(table);
+});
+
 // ── HERO STATS COUNTER ANIMATION ─────────────────────────────────────
 (function () {
   const stats = document.querySelectorAll(".hero-stat strong");
