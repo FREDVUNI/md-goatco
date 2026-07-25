@@ -92,6 +92,7 @@ $routes->group('admin', ['filter' => 'role:super_admin', 'namespace' => 'App\Mod
     $routes->post('payments/import',                   'PaymentController::importTransactions');
     $routes->get('settings',                           'SettingsController::index');
     $routes->post('settings',                          'SettingsController::update');
+    $routes->post('settings/logo',                     'SettingsController::updateLogo');
 });
 
 // MANAGER

@@ -9,6 +9,22 @@
 
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
 
+  <!-- Farm logo -->
+  <div class="card" style="grid-column:1/-1">
+    <div class="card-head"><h3>Farm Logo</h3></div>
+    <div style="padding:20px;display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+      <img src="<?= base_url('img/logo.png') ?>?v=<?= @filemtime(FCPATH.'img/logo.png') ?>" alt="Current logo" style="width:84px;height:84px;object-fit:contain;border:1px solid var(--border);border-radius:12px;padding:8px;background:#fff">
+      <?= form_open_multipart('admin/settings/logo', ['style' => 'flex:1;min-width:260px;display:flex;align-items:center;gap:12px;flex-wrap:wrap']) ?>
+        <?= csrf_field() ?>
+        <div style="flex:1;min-width:220px">
+          <input type="file" name="logo" accept="image/png" required>
+          <p class="field-hint">PNG only, max 2 MB. Replaces the logo shown across the whole site.</p>
+        </div>
+        <button type="submit" class="btn btn-primary btn-sm" data-confirm="Replace the farm logo everywhere it appears?">Upload new logo</button>
+      <?= form_close() ?>
+    </div>
+  </div>
+
   <!-- Farm details -->
   <div class="card" style="grid-column:1/-1">
     <div class="card-head"><h3>Farm Details</h3></div>
