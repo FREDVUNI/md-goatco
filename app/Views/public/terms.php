@@ -56,9 +56,9 @@
     <h1>Terms &amp; Conditions</h1>
     <p>The agreement between you and MD Goatco Farm Limited governing your use of our website and Goat Banking program.</p>
     <div class="page-meta">
-      <span>📅 Effective: 1 June 2026</span>
-      <span>🔄 Last updated: 1 June 2026</span>
-      <span>📍 Governed by: Laws of Uganda</span>
+      <span><i class="far fa-calendar-alt"></i> Effective: 1 June 2026</span>
+      <span><i class="fas fa-sync-alt"></i> Last updated: 1 June 2026</span>
+      <span><i class="fas fa-map-marker-alt"></i> Governed by: Laws of Uganda</span>
     </div>
   </div>
 </div>
@@ -119,7 +119,7 @@
     <h2 id="t5">5. Application and onboarding</h2>
     <p>Complete the online application form in full, including all required personal and identification details. The Company will review your application and contact you within <strong>2–3 working days</strong>. Upon approval, you will receive an onboarding schedule detailing the number of goats, payment terms and expected returns.</p>
     <div class="warn-box">
-      <p>⚠️ <strong>Providing false information</strong> at any stage — including false ID documents — will result in immediate termination of your application or membership and may be reported to relevant authorities.</p>
+      <p><i class="fas fa-exclamation-triangle"></i> <strong>Providing false information</strong> at any stage — including false ID documents — will result in immediate termination of your application or membership and may be reported to relevant authorities.</p>
     </div>
 
     <h2 id="t6">6. Member obligations</h2>
@@ -137,7 +137,7 @@
     <h2 id="t8">8. Returns and financial terms</h2>
     <p>The specific financial terms — including payment amounts and return calculations — are set out in your individual onboarding schedule.</p>
     <div class="warn-box">
-      <p>⚠️ <strong>Goat Banking involves financial risk.</strong> Returns are not guaranteed. The value of livestock can go down as well as up. Do not participate with funds you cannot afford to lose.</p>
+      <p><i class="fas fa-exclamation-triangle"></i> <strong>Goat Banking involves financial risk.</strong> Returns are not guaranteed. The value of livestock can go down as well as up. Do not participate with funds you cannot afford to lose.</p>
     </div>
 
     <h2 id="t9">9. Dashboard and platform use</h2>
@@ -164,8 +164,8 @@
       <p>
         <strong>MD Goatco Farm Limited</strong><br>
         Mukono–Kayunga Road, Mukono, Uganda<br>
-        📧 <a href="mailto:legal@mdgoatco.farm">legal@mdgoatco.farm</a><br>
-        📞 +256 700 000 000
+        <i class="fas fa-envelope"></i> <a href="mailto:legal@mdgoatco.farm">legal@mdgoatco.farm</a><br>
+        <i class="fas fa-phone"></i> +256 700 000 000
       </p>
     </div>
   </div>

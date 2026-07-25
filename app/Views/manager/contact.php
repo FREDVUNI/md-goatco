@@ -9,7 +9,7 @@
 
 <div class="card">
   <div class="card-head">
-    <h3>📨 Contact Messages</h3>
+    <h3><i class="fas fa-envelope-open-text"></i> Contact Messages</h3>
     <span style="font-size:0.84rem;color:var(--slate-light)"><?= esc($contactNewCount ?? 0) ?> new</span>
   </div>
   <div class="table-toolbar">
@@ -47,8 +47,8 @@
         </td>
         <td>
           <div style="display:flex;gap:6px;flex-wrap:wrap">
-            <a href="mailto:<?= esc($m['email']) ?>?subject=<?= rawurlencode('Re: '.$m['subject']) ?>" class="btn btn-outline btn-sm" title="Reply by email">✉️ Email</a>
-            <a href="https://wa.me/<?= esc(preg_replace('/\D/','',$m['phone'])) ?>" target="_blank" rel="noopener" class="btn btn-outline btn-sm" title="Reply on WhatsApp">💬 WhatsApp</a>
+            <a href="mailto:<?= esc($m['email']) ?>?subject=<?= rawurlencode('Re: '.$m['subject']) ?>" class="btn btn-outline btn-sm" title="Reply by email"><i class="fas fa-envelope"></i> Email</a>
+            <a href="https://wa.me/<?= esc(preg_replace('/\D/','',$m['phone'])) ?>" target="_blank" rel="noopener" class="btn btn-outline btn-sm" title="Reply on WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             <?php if ($m['status'] !== 'responded'): ?>
             <?= form_open('manager/contact/'.$m['id'].'/respond',['style'=>'display:inline']) ?><?= csrf_field() ?>
             <button type="submit" class="btn btn-green btn-sm" data-confirm="Mark this message as responded?">✓ Mark responded</button>

@@ -80,7 +80,7 @@
 
   <!-- Danger zone -->
   <div class="card">
-    <div class="card-head"><h3 style="color:var(--red)">⚠ Danger Zone</h3></div>
+    <div class="card-head"><h3 style="color:var(--red)"><i class="fas fa-exclamation-triangle"></i> Danger Zone</h3></div>
     <div style="padding:20px;display:grid;gap:14px">
       <div>
         <p style="font-size:0.88rem;color:var(--slate);margin-bottom:10px">
@@ -94,7 +94,7 @@
           <strong>Export all data</strong><br>
           Download a full CSV export of members, goats and transactions.
         </p>
-        <a href="<?= site_url('manager/reports/export/all') ?>" class="btn btn-ghost btn-sm">📥 Export all data</a>
+        <a href="<?= site_url('manager/reports/export/all') ?>" class="btn btn-ghost btn-sm"><i class="fas fa-download"></i> Export all data</a>
       </div>
     </div>
   </div>

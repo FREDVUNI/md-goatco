@@ -120,7 +120,7 @@
         <label>Upload front of National ID *</label>
         <label class="file-upload-label" for="nid_front">
           <div class="file-upload-inner">
-            <span class="file-icon">📎</span>
+            <span class="file-icon"><i class="fas fa-paperclip"></i></span>
             <div><strong>Click to upload</strong> — front side of your National ID</div>
             <span class="file-hint">JPG, PNG or PDF · max 5 MB</span>
           </div>
@@ -132,7 +132,7 @@
         <label>Upload back of National ID *</label>
         <label class="file-upload-label" for="nid_back">
           <div class="file-upload-inner">
-            <span class="file-icon">📎</span>
+            <span class="file-icon"><i class="fas fa-paperclip"></i></span>
             <div><strong>Click to upload</strong> — back side of your National ID</div>
             <span class="file-hint">JPG, PNG or PDF · max 5 MB</span>
           </div>
@@ -145,7 +145,7 @@
         <p class="step-note" style="margin:-4px 0 10px">Not required if you've already uploaded both sides of your National ID above.</p>
         <label class="file-upload-label" for="headshot">
           <div class="file-upload-inner">
-            <span class="file-icon">📷</span>
+            <span class="file-icon"><i class="fas fa-camera"></i></span>
             <div><strong>Click to upload</strong> — a clear, recent headshot</div>
             <span class="file-hint">JPG or PNG · max 5 MB</span>
           </div>
@@ -203,7 +203,7 @@
         <label>Upload next of kin's National ID (front) *</label>
         <label class="file-upload-label" for="nok_nid_front">
           <div class="file-upload-inner">
-            <span class="file-icon">📎</span>
+            <span class="file-icon"><i class="fas fa-paperclip"></i></span>
             <div><strong>Click to upload</strong> — front of next of kin's National ID</div>
             <span class="file-hint">JPG, PNG or PDF · max 5 MB</span>
           </div>
@@ -215,7 +215,7 @@
         <label>Upload next of kin's National ID (back) *</label>
         <label class="file-upload-label" for="nok_nid_back">
           <div class="file-upload-inner">
-            <span class="file-icon">📎</span>
+            <span class="file-icon"><i class="fas fa-paperclip"></i></span>
             <div><strong>Click to upload</strong> — back of next of kin's National ID</div>
             <span class="file-hint">JPG, PNG or PDF · max 5 MB</span>
           </div>

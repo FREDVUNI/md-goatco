@@ -9,7 +9,7 @@
 
 <?php if (empty($flags) && empty($search)): ?>
 <div class="empty-page">
-  <div class="empty-icon">✅</div>
+  <div class="empty-icon"><i class="fas fa-check-circle" style="color:var(--green)"></i></div>
   <h2>No active health flags</h2>
   <p>All flagged animals have been resolved or there are no current concerns.</p>
   <a href="<?= site_url('manager/dashboard') ?>" class="btn btn-outline">Back to dashboard</a>
@@ -17,14 +17,14 @@
 <?php else: ?>
 <div class="card">
   <div class="card-head">
-    <h3>🚨 Active Health Flags</h3>
+    <h3><i class="fas fa-exclamation-triangle"></i> Active Health Flags</h3>
     <span style="font-size:0.84rem;color:var(--slate-light)"><?= esc($pager->getTotal() ?? count($flags)) ?> open</span>
   </div>
   <div class="table-toolbar">
     <form method="get" style="flex:1;display:flex">
       <input type="text" name="q" class="search-input" placeholder="Search by tag, animal, or reason…" value="<?= esc($search ?? '') ?>">
     </form>
-    <a href="<?= site_url('manager/health/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-ghost btn-sm">📥 Export Excel</a>
+    <a href="<?= site_url('manager/health/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-ghost btn-sm"><i class="fas fa-download"></i> Export Excel</a>
   </div>
   <?php if (empty($flags)): ?>
     <div class="empty-state">No health flags match your search.</div>

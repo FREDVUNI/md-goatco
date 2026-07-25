@@ -60,9 +60,9 @@
     <h1>Privacy Policy</h1>
     <p>How MD Goatco Farm Limited collects, uses, and protects your personal information.</p>
     <div class="page-meta">
-      <span>📅 Effective: 1 June 2026</span>
-      <span>🔄 Last updated: 1 June 2026</span>
-      <span>📍 Jurisdiction: Uganda</span>
+      <span><i class="far fa-calendar-alt"></i> Effective: 1 June 2026</span>
+      <span><i class="fas fa-sync-alt"></i> Last updated: 1 June 2026</span>
+      <span><i class="fas fa-map-marker-alt"></i> Jurisdiction: Uganda</span>
     </div>
   </div>
 </div>
@@ -245,8 +245,8 @@
       <p>
         <strong>MD Goatco Farm Limited — Data Controller</strong><br>
         Mukono–Kayunga Road, Mukono, Uganda<br>
-        📧 <a href="mailto:privacy@mdgoatco.farm">privacy@mdgoatco.farm</a><br>
-        📞 +256 700 000 000
+        <i class="fas fa-envelope"></i> <a href="mailto:privacy@mdgoatco.farm">privacy@mdgoatco.farm</a><br>
+        <i class="fas fa-phone"></i> +256 700 000 000
       </p>
     </div>
   </div>

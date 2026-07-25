@@ -5,7 +5,7 @@
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
 <div class="card">
-  <div class="card-head"><h3>🐐 My Goats</h3><span style="font-size:0.84rem;color:var(--slate-light)"><?= esc($goatCount??0) ?> animal<?= ($goatCount??0)!==1?'s':'' ?></span></div>
+  <div class="card-head"><h3><i class="fas fa-paw"></i> My Goats</h3><span style="font-size:0.84rem;color:var(--slate-light)"><?= esc($goatCount??0) ?> animal<?= ($goatCount??0)!==1?'s':'' ?></span></div>
   <?php if ($goatCount > 0): ?>
   <div class="table-toolbar">
     <form method="get" style="flex:1;display:flex">

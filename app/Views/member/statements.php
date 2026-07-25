@@ -12,7 +12,7 @@
 <div class="card">
   <div class="card-head">
     <h3>Transaction History</h3>
-    <a href="<?= site_url('member/statements/download') ?>" class="btn btn-outline btn-sm">📥 Download statement (PDF)</a>
+    <a href="<?= site_url('member/statements/download') ?>" class="btn btn-outline btn-sm"><i class="fas fa-download"></i> Download statement (PDF)</a>
   </div>
   <div class="table-toolbar">
     <form method="get" style="flex:1;display:flex">

@@ -14,7 +14,7 @@
   <!-- ID CARD -->
   <div class="goat-id-card">
     <div class="gic-photo">
-      <span style="font-size:4rem">🐐</span>
+      <i class="fas fa-paw" style="font-size:4rem"></i>
     </div>
     <div class="gic-body">
       <div class="gic-tag"><?= esc($goat['tag_number']) ?></div>
@@ -31,7 +31,7 @@
       <?php if (empty($goat['is_flagged'])): ?>
       <div class="gic-status gic-healthy">● Healthy · Cleared by vet</div>
       <?php else: ?>
-      <div class="gic-status gic-flagged">⚠ Health flag active — monitoring</div>
+      <div class="gic-status gic-flagged"><i class="fas fa-exclamation-triangle"></i> Health flag active — monitoring</div>
       <?php endif ?>
     </div>
   </div>
@@ -42,7 +42,7 @@
     <!-- WEIGHT GROWTH CHART -->
     <?php if (!empty($growthChart)): ?>
     <div class="card">
-      <div class="card-head"><h3>📈 Weight Growth</h3></div>
+      <div class="card-head"><h3><i class="fas fa-chart-line"></i> Weight Growth</h3></div>
       <div class="growth-bars">
         <?php
           $maxWeight = max(array_column($growthChart, 'max_weight'));
@@ -63,7 +63,7 @@
 
     <!-- HEALTH HISTORY -->
     <div class="card">
-      <div class="card-head"><h3>🩺 Health History</h3></div>
+      <div class="card-head"><h3><i class="fas fa-stethoscope"></i> Health History</h3></div>
       <?php if (empty($healthHistory)): ?>
       <div class="empty-state">No vet visits recorded yet</div>
       <?php else: ?>
@@ -92,7 +92,7 @@
     <!-- WEIGHT LOG TABLE -->
     <?php if (!empty($weightHistory)): ?>
     <div class="card">
-      <div class="card-head"><h3>⚖️ Weight Log</h3></div>
+      <div class="card-head"><h3><i class="fas fa-balance-scale"></i> Weight Log</h3></div>
       <table>
         <thead><tr><th>Date</th><th>Weight</th><th>Change</th></tr></thead>
         <tbody>

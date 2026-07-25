@@ -46,7 +46,7 @@
     <div class="field" style="padding:14px;background:var(--bg);border-radius:10px">
       <label style="display:flex;align-items:center;gap:10px;cursor:pointer">
         <input type="checkbox" name="is_flagged" value="1" id="flagCheck" style="width:auto">
-        🚨 Flag this animal — raise a health concern
+        <i class="fas fa-exclamation-triangle"></i> Flag this animal — raise a health concern
       </label>
       <div id="flagDetails" style="display:none;margin-top:12px">
         <textarea name="flag_reason" rows="2" placeholder="Describe the health concern…"></textarea>

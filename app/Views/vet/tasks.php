@@ -10,7 +10,7 @@
 <!-- TODAY'S TASKS -->
 <div class="card">
   <div class="card-head">
-    <h3>📋 Today's Tasks — <?= esc($today) ?></h3>
+    <h3><i class="fas fa-clipboard-list"></i> Today's Tasks — <?= esc($today) ?></h3>
     <span style="font-size:0.84rem;color:var(--slate-light)">
       <?= count(array_filter($tasks, fn($t) => $t['status'] === 'completed')) ?> / <?= count($tasks) ?> completed
     </span>
@@ -23,7 +23,7 @@
 
   <?php if (empty($tasks)): ?>
   <div class="empty-state">
-    No tasks scheduled for today 🎉
+    No tasks scheduled for today <i class="fas fa-check-circle" style="color:var(--green)"></i>
     <br><br>
     <a href="<?= site_url('vet/visits/log') ?>" class="btn btn-primary btn-sm">+ Log a visit</a>
   </div>
@@ -44,9 +44,9 @@
         <div class="task-desc"><?= esc($task['description']) ?></div>
         <?php endif ?>
         <?php if ($task['animals_desc']): ?>
-        <div class="task-meta">🐐 <?= esc($task['animals_desc']) ?></div>
+        <div class="task-meta"><i class="fas fa-paw"></i> <?= esc($task['animals_desc']) ?></div>
         <?php endif ?>
-        <div class="task-time">🕐 <?= date('g:i A', strtotime($task['scheduled_at'])) ?></div>
+        <div class="task-time"><i class="far fa-clock"></i> <?= date('g:i A', strtotime($task['scheduled_at'])) ?></div>
       </div>
       <div class="task-actions">
         <?php if ($task['status'] !== 'completed'): ?>
@@ -69,7 +69,7 @@
 <!-- UPCOMING (next 7 days) -->
 <?php if (!empty($upcoming)): ?>
 <div class="card">
-  <div class="card-head"><h3>📅 Upcoming — Next 7 days</h3></div>
+  <div class="card-head"><h3><i class="far fa-calendar-alt"></i> Upcoming — Next 7 days</h3></div>
   <table>
     <thead><tr><th>Task</th><th>Animals</th><th>Date &amp; Time</th><th>Status</th></tr></thead>
     <tbody>

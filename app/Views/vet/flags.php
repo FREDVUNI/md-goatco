@@ -5,14 +5,14 @@
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
 <div class="card">
-  <div class="card-head"><h3>🚨 My Active Health Flags</h3><span style="font-size:0.84rem;color:var(--slate-light)"><?= esc($pager->getTotal() ?? count($flags??[])) ?> open</span></div>
+  <div class="card-head"><h3><i class="fas fa-exclamation-triangle"></i> My Active Health Flags</h3><span style="font-size:0.84rem;color:var(--slate-light)"><?= esc($pager->getTotal() ?? count($flags??[])) ?> open</span></div>
   <div class="table-toolbar">
     <form method="get" style="flex:1;display:flex">
       <input type="text" name="q" class="search-input" placeholder="Search tag, animal, or reason…" value="<?= esc($search ?? '') ?>">
     </form>
   </div>
   <?php if (empty($flags)): ?>
-    <div class="empty-state">No active flags — great work! ✅</div>
+    <div class="empty-state">No active flags — great work! <i class="fas fa-check-circle" style="color:var(--green)"></i></div>
   <?php else: ?>
   <table>
     <thead><tr><th>Tag</th><th>Animal</th><th>Concern</th><th>Flagged on</th><th>Follow-up</th><th>Actions</th></tr></thead>

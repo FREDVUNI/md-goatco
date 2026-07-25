@@ -338,7 +338,7 @@
           </div>
         </div>
         <div class="contact-card">
-          <div class="contact-icon">📞</div>
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
           <div>
             <div class="contact-label">Phone / WhatsApp</div>
             <a href="tel:+256700000000" class="contact-value">+256 700 000 000</a>

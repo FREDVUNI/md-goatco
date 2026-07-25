@@ -44,19 +44,19 @@
     <h4 style="margin-top:20px;">Documents</h4>
     <div class="doc-chips">
       <?php if (!empty($application['nid_front_path'])): ?>
-      <a href="<?= site_url('admin/documents/' . $application['id'] . '/nid_front') ?>" target="_blank" class="doc-chip">📄 NID Front</a>
+      <a href="<?= site_url('admin/documents/' . $application['id'] . '/nid_front') ?>" target="_blank" class="doc-chip"><i class="fas fa-file-alt"></i> NID Front</a>
       <?php endif ?>
       <?php if (!empty($application['nid_back_path'])): ?>
-      <a href="<?= site_url('admin/documents/' . $application['id'] . '/nid_back') ?>" target="_blank" class="doc-chip">📄 NID Back</a>
+      <a href="<?= site_url('admin/documents/' . $application['id'] . '/nid_back') ?>" target="_blank" class="doc-chip"><i class="fas fa-file-alt"></i> NID Back</a>
       <?php endif ?>
       <?php if (!empty($application['photo_path'])): ?>
-      <a href="<?= site_url('admin/documents/' . $application['id'] . '/photo') ?>" target="_blank" class="doc-chip">🖼 Headshot</a>
+      <a href="<?= site_url('admin/documents/' . $application['id'] . '/photo') ?>" target="_blank" class="doc-chip"><i class="fas fa-image"></i> Headshot</a>
       <?php endif ?>
       <?php if (!empty($application['nok_nid_front_path'])): ?>
-      <a href="<?= site_url('admin/documents/' . $application['id'] . '/nok_nid_front') ?>" target="_blank" class="doc-chip">📄 NOK NID Front</a>
+      <a href="<?= site_url('admin/documents/' . $application['id'] . '/nok_nid_front') ?>" target="_blank" class="doc-chip"><i class="fas fa-file-alt"></i> NOK NID Front</a>
       <?php endif ?>
       <?php if (!empty($application['nok_nid_back_path'])): ?>
-      <a href="<?= site_url('admin/documents/' . $application['id'] . '/nok_nid_back') ?>" target="_blank" class="doc-chip">📄 NOK NID Back</a>
+      <a href="<?= site_url('admin/documents/' . $application['id'] . '/nok_nid_back') ?>" target="_blank" class="doc-chip"><i class="fas fa-file-alt"></i> NOK NID Back</a>
       <?php endif ?>
       <?php if (empty($application['nid_front_path']) && empty($application['photo_path'])): ?>
       <span style="color:var(--slate-light, #718096); font-size:13px;">No documents uploaded.</span>
@@ -104,7 +104,7 @@
       </div>
       <button type="submit" class="btn btn-ghost btn-sm" style="color:var(--red);border-color:var(--red)"
               data-confirm="Reject this application? The applicant will be notified.">
-        ✕ Reject application
+        <i class="fas fa-times"></i> Reject application
       </button>
     <?= form_close() ?>
 

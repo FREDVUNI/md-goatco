@@ -10,10 +10,10 @@
     <form method="get" style="flex:1;display:flex">
       <input type="text" name="q" class="search-input" placeholder="Search by name or phone…" value="<?= esc($search ?? '') ?>">
     </form>
-    <a href="<?= site_url('admin/applications/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm">📥 Download Excel</a>
+    <a href="<?= site_url('admin/applications/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm"><i class="fas fa-download"></i> Download Excel</a>
   </div>
   <?php if (empty($pending)): ?>
-    <div class="empty-state">No pending applications 🎉</div>
+    <div class="empty-state">No pending applications <i class="fas fa-check-circle" style="color:var(--green)"></i></div>
   <?php else: ?>
   <table>
     <thead><tr><th>Applicant</th><th>Email</th><th>Goats</th><th>Submitted</th><th>Actions</th></tr></thead>

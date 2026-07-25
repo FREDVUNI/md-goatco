@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,500&family=Poppins:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="<?= base_url('img/logo.png') ?>" type="image/x-icon">
+    <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('css/auth.css') ?>">
     <link rel="stylesheet" href="<?= base_url('css/loader.css') ?>">
 </head>

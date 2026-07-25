@@ -1,6 +1,6 @@
 <?php /* Expects: $importAction (route), $importHint (string, column list) */ ?>
 <details class="import-widget">
-  <summary class="btn btn-outline btn-sm">📤 Import</summary>
+  <summary class="btn btn-outline btn-sm"><i class="fas fa-upload"></i> Import</summary>
   <div class="import-panel">
     <?= form_open_multipart($importAction, ['class' => 'import-form']) ?>
     <?= csrf_field() ?>

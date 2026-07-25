@@ -17,10 +17,10 @@
   <div class="card">
     <div class="card-head"><h3>Contact us directly</h3></div>
     <div style="padding:20px;display:grid;gap:14px;font-size:0.86rem">
-      <div><strong>📞 Phone / WhatsApp</strong><br><a href="tel:+256700000000" style="color:var(--blue)">+256 700 000 000</a></div>
-      <div><strong>✉️ Email</strong><br><a href="mailto:hello@mdgoatco.farm" style="color:var(--blue)">hello@mdgoatco.farm</a></div>
-      <div><strong>🕐 Office hours</strong><br>Mon–Fri 8AM–5PM · Sat 8AM–12PM</div>
-      <div><strong>📍 Farm address</strong><br>Mukono–Kayunga Road, Mukono, Uganda</div>
+      <div><strong><i class="fas fa-phone"></i> Phone / WhatsApp</strong><br><a href="tel:+256700000000" style="color:var(--blue)">+256 700 000 000</a></div>
+      <div><strong><i class="fas fa-envelope"></i> Email</strong><br><a href="mailto:hello@mdgoatco.farm" style="color:var(--blue)">hello@mdgoatco.farm</a></div>
+      <div><strong><i class="far fa-clock"></i> Office hours</strong><br>Mon–Fri 8AM–5PM · Sat 8AM–12PM</div>
+      <div><strong><i class="fas fa-map-marker-alt"></i> Farm address</strong><br>Mukono–Kayunga Road, Mukono, Uganda</div>
     </div>
   </div>
 </div>

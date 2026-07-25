@@ -7,6 +7,7 @@
 <link rel="shortcut icon" href="<?= base_url('img/logo.png') ?>" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="<?= base_url('css/dashboard.css') ?>">
 <link rel="stylesheet" href="<?= base_url('css/loader.css') ?>">
 <?= $this->renderSection('head') ?>

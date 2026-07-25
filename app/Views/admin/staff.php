@@ -10,7 +10,7 @@
     <form method="get" style="flex:1;display:flex">
       <input type="text" name="q" class="search-input" placeholder="Search by name or email…" value="<?= esc($search ?? '') ?>">
     </form>
-    <a href="<?= site_url('admin/staff/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm">📥 Download Excel</a>
+    <a href="<?= site_url('admin/staff/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm"><i class="fas fa-download"></i> Download Excel</a>
     <?= view('partials/import_widget', ['importAction' => 'admin/staff/import', 'importHint' => 'email, first_name, last_name, phone, role (manager/vet/super_admin)']) ?>
   </div>
   <?php if (empty($staff)): ?>

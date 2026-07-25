@@ -121,7 +121,7 @@
                 <div><strong>Not approved.</strong> Contact <a href="mailto:hello@mdgoatco.farm">hello@mdgoatco.farm</a></div>
               </div>
             <?php elseif ($status === 'info_requested'): ?>
-              <div class="status-banner status-pending"><span>📋</span>
+              <div class="status-banner status-pending"><span><i class="fas fa-clipboard-list"></i></span>
                 <div><strong>More info needed:</strong> <?= esc($application['info_request_note'] ?? '') ?></div>
               </div>
             <?php elseif ($status === 'not_found'): ?>

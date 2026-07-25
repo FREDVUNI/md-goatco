@@ -39,7 +39,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 <!-- ─────────── ADMIN CONTENT ─────────── -->
 <div class="welcome-banner">
   <div>
-    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! 👋</h2>
+    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper" style="color:var(--green)"></i></h2>
     <p>Here's your farm overview for <?= date('l, j F Y') ?></p>
     <div class="wb-stats">
       <div class="wb-stat"><strong><?= esc($totalMembers ?? 0) ?></strong><span>Members</span></div>
@@ -84,7 +84,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
       <a href="<?= site_url('admin/applications') ?>" class="btn btn-outline btn-sm">View all</a>
     </div>
     <?php if (empty($recentPending)): ?>
-      <div class="empty-state">No pending applications 🎉</div>
+      <div class="empty-state">No pending applications <i class="fas fa-check-circle" style="color:var(--green)"></i></div>
     <?php else: ?>
     <table>
       <thead><tr><th>Applicant</th><th>Submitted</th><th>Action</th></tr></thead>
@@ -108,7 +108,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 
   <div class="card">
     <div class="card-head">
-      <h3>👥 Staff Overview</h3>
+      <h3><i class="fas fa-users"></i> Staff Overview</h3>
       <a href="<?= site_url('admin/staff') ?>" class="btn btn-outline btn-sm">Manage</a>
     </div>
     <div class="staff-overview">
@@ -121,7 +121,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 </div>
 
 <div class="card chart-card">
-  <div class="card-head"><h3>📈 Applications — last 6 months</h3></div>
+  <div class="card-head"><h3><i class="fas fa-chart-line"></i> Applications — last 6 months</h3></div>
   <?= view('partials/bar_chart', ['labels' => $appLabels ?? [], 'values' => $appValues ?? []]) ?>
 </div>
 
@@ -129,7 +129,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 <!-- ─────────── MANAGER CONTENT ─────────── -->
 <div class="welcome-banner">
   <div>
-    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! 👋</h2>
+    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper" style="color:var(--green)"></i></h2>
     <p>Farm overview — <?= date('l, j F Y') ?></p>
     <div class="wb-stats">
       <div class="wb-stat"><strong><?= esc($herdStats['total'] ?? 0) ?></strong><span>Goats</span></div>
@@ -149,9 +149,9 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 
 <div class="grid-2">
   <div class="card">
-    <div class="card-head"><h3>🚩 Active Health Flags</h3><a href="<?= site_url('manager/health') ?>" class="btn btn-outline btn-sm">View all</a></div>
+    <div class="card-head"><h3><i class="fas fa-flag"></i> Active Health Flags</h3><a href="<?= site_url('manager/health') ?>" class="btn btn-outline btn-sm">View all</a></div>
     <?php if (empty($activeFlags)): ?>
-      <div class="empty-state">No active health flags — all clear! ✅</div>
+      <div class="empty-state">No active health flags — all clear! <i class="fas fa-check-circle" style="color:var(--green)"></i></div>
     <?php else: ?>
     <table>
       <thead><tr><th>Tag</th><th>Issue</th><th>Flagged</th></tr></thead>
@@ -169,7 +169,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
   </div>
 
   <div class="card">
-    <div class="card-head"><h3>📅 Today's Vet Schedule</h3><a href="<?= site_url('manager/schedule') ?>" class="btn btn-outline btn-sm">Full schedule</a></div>
+    <div class="card-head"><h3><i class="far fa-calendar-alt"></i> Today's Vet Schedule</h3><a href="<?= site_url('manager/schedule') ?>" class="btn btn-outline btn-sm">Full schedule</a></div>
     <?php if (empty($todayTasks)): ?>
       <div class="empty-state">No vet visits scheduled for today</div>
     <?php else: ?>
@@ -189,7 +189,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 </div>
 
 <div class="card chart-card">
-  <div class="card-head"><h3>🚩 Health flags — last 6 months</h3></div>
+  <div class="card-head"><h3><i class="fas fa-flag"></i> Health flags — last 6 months</h3></div>
   <?= view('partials/bar_chart', ['labels' => $flagLabels ?? [], 'values' => $flagValues ?? []]) ?>
 </div>
 
@@ -197,7 +197,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 <!-- ─────────── VET CONTENT ─────────── -->
 <div class="welcome-banner">
   <div>
-    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! 👋</h2>
+    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper" style="color:var(--green)"></i></h2>
     <p>Your veterinary dashboard — <?= date('l, j F Y') ?></p>
     <div class="wb-stats">
       <div class="wb-stat"><strong><?= esc($flagCount ?? 0) ?></strong><span>Active flags</span></div>
@@ -227,9 +227,9 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 
 <div class="grid-2">
   <div class="card">
-    <div class="card-head"><h3>🚩 My Active Flags</h3><a href="<?= site_url('vet/flags') ?>" class="btn btn-outline btn-sm">All flags</a></div>
+    <div class="card-head"><h3><i class="fas fa-flag"></i> My Active Flags</h3><a href="<?= site_url('vet/flags') ?>" class="btn btn-outline btn-sm">All flags</a></div>
     <?php if (empty($myFlags)): ?>
-      <div class="empty-state">No active flags — great work! ✅</div>
+      <div class="empty-state">No active flags — great work! <i class="fas fa-check-circle" style="color:var(--green)"></i></div>
     <?php else: ?>
     <table>
       <thead><tr><th>Tag</th><th>Issue</th><th>Flagged</th><th></th></tr></thead>
@@ -248,7 +248,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
   </div>
 
   <div class="card">
-    <div class="card-head"><h3>📋 Recent Visits</h3><a href="<?= site_url('vet/visits/history') ?>" class="btn btn-outline btn-sm">Full history</a></div>
+    <div class="card-head"><h3><i class="fas fa-clipboard-list"></i> Recent Visits</h3><a href="<?= site_url('vet/visits/history') ?>" class="btn btn-outline btn-sm">Full history</a></div>
     <?php if (empty($recentVisits)): ?>
       <div class="empty-state">No visits logged yet. <a href="<?= site_url('vet/visits/log') ?>">Log your first →</a></div>
     <?php else: ?>
@@ -269,7 +269,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 </div>
 
 <div class="card chart-card">
-  <div class="card-head"><h3>📋 Visits logged — last 6 weeks</h3></div>
+  <div class="card-head"><h3><i class="fas fa-clipboard-list"></i> Visits logged — last 6 weeks</h3></div>
   <?= view('partials/bar_chart', ['labels' => $visitLabels ?? [], 'values' => $visitValues ?? []]) ?>
 </div>
 
@@ -277,7 +277,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 <!-- ─────────── MEMBER CONTENT ─────────── -->
 <div class="welcome-banner">
   <div>
-    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! 👋</h2>
+    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper" style="color:var(--green)"></i></h2>
     <p>
       <?php if (($healthyCount ?? 0) === ($goatCount ?? 0) && ($goatCount ?? 0) > 0): ?>
         All <?= esc($goatCount) ?> of your goats are healthy.
@@ -317,7 +317,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 <?php if (!empty($goats)): ?>
 <div class="card">
   <div class="card-head">
-    <h3>🐐 Your Goats</h3>
+    <h3><i class="fas fa-paw"></i> Your Goats</h3>
     <a href="<?= site_url('member/goats') ?>" class="btn btn-outline btn-sm">View all →</a>
   </div>
   <table>
@@ -345,13 +345,13 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 <?php endif ?>
 
 <div class="card chart-card">
-  <div class="card-head"><h3>⚖️ Average goat weight — last 6 months</h3></div>
+  <div class="card-head"><h3><i class="fas fa-balance-scale"></i> Average goat weight — last 6 months</h3></div>
   <?= view('partials/bar_chart', ['labels' => $weightLabels ?? [], 'values' => $weightValues ?? []]) ?>
 </div>
 
 <?php if (!empty($notifications)): ?>
 <div class="card">
-  <div class="card-head"><h3>🔔 Recent Activity</h3></div>
+  <div class="card-head"><h3><i class="fas fa-bell"></i> Recent Activity</h3></div>
   <div class="timeline">
     <?php foreach (array_slice($notifications, 0, 5) as $notif): ?>
     <div class="tl-item">

@@ -105,7 +105,7 @@ document.querySelectorAll(".file-input").forEach((input) => {
     // Size check (5 MB)
     if (file.size > 5 * 1024 * 1024) {
       preview.innerHTML =
-        '<span class="file-name" style="color:var(--red)">⚠ File too large (max 5 MB)</span>';
+        '<span class="file-name" style="color:var(--red)"><i class="fas fa-exclamation-triangle"></i> File too large (max 5 MB)</span>';
       this.value = "";
       return;
     }
@@ -121,7 +121,7 @@ document.querySelectorAll(".file-input").forEach((input) => {
       reader.readAsDataURL(file);
     } else {
       // PDF
-      preview.innerHTML = `<span class="file-name">📄 ${escHtml(file.name)}</span>`;
+      preview.innerHTML = `<span class="file-name"><i class="fas fa-file-alt"></i> ${escHtml(file.name)}</span>`;
     }
 
     // Update label button text

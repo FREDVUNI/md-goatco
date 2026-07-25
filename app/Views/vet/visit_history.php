@@ -13,7 +13,7 @@
     <form method="get" style="flex:1;display:flex">
       <input type="text" name="q" class="search-input" placeholder="Search tag, animal, or type…" value="<?= esc($search ?? '') ?>">
     </form>
-    <a href="<?= site_url('vet/visits/history/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm">📥 Download Excel</a>
+    <a href="<?= site_url('vet/visits/history/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm"><i class="fas fa-download"></i> Download Excel</a>
     <?= view('partials/import_widget', ['importAction' => 'vet/visits/history/import', 'importHint' => 'goat_tag, visit_date, visit_type, clinical_notes, temperature, weight_kg, medication, outcome (healthy/monitoring/treated/critical), is_flagged (yes/no), flag_reason, followup_date']) ?>
   </div>
   <?php if (empty($visits)): ?>
@@ -29,7 +29,7 @@
         <td><?= esc(visitTypeLabel($v['visit_type']??'routine')) ?></td>
         <td><?= date('j M Y', strtotime($v['visit_date'])) ?></td>
         <td><span class="badge <?= ($v['outcome']??'')==='healthy'?'badge-active':'badge-pending' ?>"><?= esc(ucfirst($v['outcome']??'—')) ?></span></td>
-        <td><?= ($v['is_flagged']??0) ? '<span class="badge badge-flagged">🚨 Yes</span>' : '—' ?></td>
+        <td><?= ($v['is_flagged']??0) ? '<span class="badge badge-flagged"><i class="fas fa-exclamation-triangle"></i> Yes</span>' : '—' ?></td>
         <td style="max-width:200px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><?= esc(substr($v['clinical_notes']??'—',0,60)) ?></td>
       </tr>
       <?php endforeach ?>

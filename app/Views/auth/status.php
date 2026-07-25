@@ -75,7 +75,7 @@
 
         <?php elseif ($status === 'info_requested'): ?>
           <div class="status-banner status-pending">
-            <span class="status-icon">📋</span>
+            <span class="status-icon"><i class="fas fa-clipboard-list"></i></span>
             <div>
               <strong>Additional information requested</strong><br>
               Our team has requested more information from you:
