@@ -403,7 +403,9 @@ body.dash-body {
   color: var(--red);
 }
 @media (max-width: 900px) {
-  .user-menu-name { display: none; }
+  .user-menu-name {
+    display: none;
+  }
 }
 .dash-content {
   padding: 28px;
