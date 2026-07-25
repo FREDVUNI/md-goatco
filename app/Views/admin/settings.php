@@ -7,7 +7,7 @@
 
 <?= $this->section('content') ?>
 
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:900px">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:22px">
 
   <!-- Farm details -->
   <div class="card" style="grid-column:1/-1">

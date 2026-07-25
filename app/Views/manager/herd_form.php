@@ -5,7 +5,7 @@
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
 <a href="<?= site_url('manager/herd') ?>" class="back-link">← Back to herd</a>
-<div class="card" style="max-width:580px">
+<div class="card">
   <div class="card-head"><h3><?= isset($goat) ? 'Edit — '.esc($goat['name']) : 'Add Animal' ?></h3></div>
   <?php if (!empty($errors??[])): ?><div class="form-errors"><?php foreach($errors as $e): ?><p><?= esc($e)?></p><?php endforeach ?></div><?php endif ?>
   <?= form_open(isset($goat) ? 'manager/herd/'.$goat['id'].'/edit' : 'manager/herd/create', ['class'=>'dash-form']) ?>

@@ -4,7 +4,7 @@
 <?= $this->include('vet/_sidebar') ?>
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
-<div class="card" style="max-width:680px">
+<div class="card">
   <div class="card-head"><h3>Log a Vet Visit</h3></div>
   <?php if (!empty($errors??[])): ?><div class="form-errors"><?php foreach($errors as $e): ?><p><?= esc($e) ?></p><?php endforeach ?></div><?php endif ?>
   <?= form_open('vet/visits/log', ['class'=>'dash-form']) ?>

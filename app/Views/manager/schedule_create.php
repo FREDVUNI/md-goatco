@@ -9,7 +9,7 @@
 
 <a href="<?= site_url('manager/schedule') ?>" class="back-link">← Back to schedule</a>
 
-<div class="card" style="max-width:640px">
+<div class="card">
   <div class="card-head"><h3>Add Scheduled Task</h3></div>
 
   <?php if (!empty($errors ?? [])): ?>

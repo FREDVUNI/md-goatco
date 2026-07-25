@@ -7,7 +7,7 @@
 <div class="stat-grid stat-grid-3" style="margin-bottom:22px">
   <div class="stat-card stat-blue"><div class="stat-label">Current balance</div><div class="stat-val">UGX <?= number_format($balance??0) ?></div></div>
 </div>
-<div class="card" style="max-width:460px">
+<div class="card">
   <div class="card-head"><h3>Top Up Wallet</h3></div>
   <?= form_open('member/wallet/topup', ['class'=>'dash-form']) ?>
     <?= csrf_field() ?>

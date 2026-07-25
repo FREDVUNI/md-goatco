@@ -5,7 +5,7 @@
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
 <a href="<?= site_url('admin/staff') ?>" class="back-link">← Back to staff</a>
-<div class="card" style="max-width:560px">
+<div class="card">
   <div class="card-head"><h3><?= isset($staff) ? 'Edit Staff Account' : 'Create Staff Account' ?></h3></div>
   <?php if (!empty($errors??[])): ?><div class="form-errors"><?php foreach($errors as $e): ?><p><?= esc($e) ?></p><?php endforeach ?></div><?php endif ?>
   <?= form_open(isset($staff) ? 'admin/staff/'.$staff['id'].'/edit' : 'admin/staff/create', ['class'=>'dash-form']) ?>

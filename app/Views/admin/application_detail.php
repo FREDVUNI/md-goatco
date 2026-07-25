@@ -9,7 +9,7 @@
 
 <a href="<?= site_url('admin/applications') ?>" class="back-link">← Back to applications</a>
 
-<div class="account-grid">
+<div class="grid-2">
 
   <!-- Applicant details -->
   <div class="profile-card">
@@ -69,53 +69,63 @@
 <?php if ($application['status'] === 'pending' || $application['status'] === 'info_requested'): ?>
 <div class="card" style="margin-top:24px;">
   <div class="card-head"><h3>Review Decision</h3></div>
-  <div style="padding:20px; display:flex; flex-direction:column; gap:24px;">
 
-    <?php if (!empty($application['info_request_note'])): ?>
-    <div style="background:var(--amber-pale, #FFFBEB); border:1px solid #FDE68A; border-radius:8px; padding:14px 16px; font-size:13px; color:#92400E;">
-      <strong>Previously requested:</strong> <?= esc($application['info_request_note']) ?>
-      <div class="audit-trail" style="margin-top:8px; color:#92400E; opacity:0.8;">
-        <i class="fas fa-clock"></i>
-        <?php if (!empty($reviewer)): ?>
-          Requested by <strong><?= esc($reviewer['first_name'].' '.$reviewer['last_name']) ?></strong>
-        <?php else: ?>
-          Requested
-        <?php endif ?>
-        <?= !empty($application['reviewed_at']) ? '· '.date('j M Y, g:i A', strtotime($application['reviewed_at'])) : '' ?>
-      </div>
+  <?php if (!empty($application['info_request_note'])): ?>
+  <div style="margin:16px 20px 0; background:var(--amber-pale, #FFFBEB); border:1px solid #FDE68A; border-radius:8px; padding:14px 16px; font-size:13px; color:#92400E;">
+    <strong>Previously requested:</strong> <?= esc($application['info_request_note']) ?>
+    <div class="audit-trail" style="margin-top:8px; color:#92400E; opacity:0.8;">
+      <i class="fas fa-clock"></i>
+      <?php if (!empty($reviewer)): ?>
+        Requested by <strong><?= esc($reviewer['first_name'].' '.$reviewer['last_name']) ?></strong>
+      <?php else: ?>
+        Requested
+      <?php endif ?>
+      <?= !empty($application['reviewed_at']) ? '· '.date('j M Y, g:i A', strtotime($application['reviewed_at'])) : '' ?>
     </div>
-    <?php endif ?>
+  </div>
+  <?php endif ?>
+
+  <div class="review-decision-body">
 
     <!-- Approve -->
-    <?= form_open('admin/applications/' . $application['id'] . '/approve') ?>
-      <?= csrf_field() ?>
-      <button type="submit" class="btn btn-primary" data-confirm="Approve this application and activate the member's account?">
-        ✓ Approve application
-      </button>
-    <?= form_close() ?>
+    <div class="review-action">
+      <div class="review-action-label">Approve</div>
+      <?= form_open('admin/applications/' . $application['id'] . '/approve') ?>
+        <?= csrf_field() ?>
+        <button type="submit" class="btn btn-primary" data-confirm="Approve this application and activate the member's account?">
+          <i class="fas fa-check-circle"></i> Approve application
+        </button>
+      <?= form_close() ?>
+    </div>
 
     <!-- Request more info -->
-    <?= form_open('admin/applications/' . $application['id'] . '/request-info', ['class' => 'dash-form', 'style' => 'margin:0;']) ?>
-      <?= csrf_field() ?>
-      <div class="field">
-        <label for="note">Request more information *</label>
-        <textarea id="note" name="note" placeholder="What do you need from the applicant?" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-outline btn-sm">Send request</button>
-    <?= form_close() ?>
+    <div class="review-action">
+      <div class="review-action-label">Request more information</div>
+      <?= form_open('admin/applications/' . $application['id'] . '/request-info', ['class' => 'dash-form', 'style' => 'margin:0;']) ?>
+        <?= csrf_field() ?>
+        <div class="field">
+          <label for="note">What do you need from the applicant? *</label>
+          <textarea id="note" name="note" placeholder="e.g. a clearer photo of your National ID" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline btn-sm">Send request</button>
+      <?= form_close() ?>
+    </div>
 
     <!-- Reject -->
-    <?= form_open('admin/applications/' . $application['id'] . '/reject', ['class' => 'dash-form', 'style' => 'margin:0;']) ?>
-      <?= csrf_field() ?>
-      <div class="field">
-        <label for="reason">Reject this application *</label>
-        <textarea id="reason" name="reason" placeholder="Reason — shared with the applicant" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-ghost btn-sm" style="color:var(--red);border-color:var(--red)"
-              data-confirm="Reject this application? The applicant will be notified.">
-        <i class="fas fa-times"></i> Reject application
-      </button>
-    <?= form_close() ?>
+    <div class="review-action">
+      <div class="review-action-label">Reject</div>
+      <?= form_open('admin/applications/' . $application['id'] . '/reject', ['class' => 'dash-form', 'style' => 'margin:0;']) ?>
+        <?= csrf_field() ?>
+        <div class="field">
+          <label for="reason">Reason — shared with the applicant *</label>
+          <textarea id="reason" name="reason" placeholder="Why is this application being rejected?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-ghost btn-sm" style="color:var(--red);border-color:var(--red)"
+                data-confirm="Reject this application? The applicant will be notified.">
+          <i class="fas fa-times"></i> Reject application
+        </button>
+      <?= form_close() ?>
+    </div>
 
   </div>
 </div>
