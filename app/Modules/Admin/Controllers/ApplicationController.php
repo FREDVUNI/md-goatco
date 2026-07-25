@@ -36,7 +36,7 @@ class ApplicationController extends BaseController
     public function export()
     {
         $rows = $this->applications->getPendingQuery($this->searchTerm())->get()->getResultArray();
-        return $this->downloadCsv($rows, 'applications_' . date('Y-m-d') . '.csv');
+        return $this->downloadXlsx($rows, 'applications_' . date('Y-m-d') . '.xlsx', 'Membership Applications');
     }
 
     public function show(int $id)

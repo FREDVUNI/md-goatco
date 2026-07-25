@@ -13,7 +13,8 @@
     <form method="get" style="flex:1;display:flex">
       <input type="text" name="q" class="search-input" placeholder="Search tag, animal, or type…" value="<?= esc($search ?? '') ?>">
     </form>
-    <a href="<?= site_url('vet/visits/history/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm">📥 Download CSV</a>
+    <a href="<?= site_url('vet/visits/history/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm">📥 Download Excel</a>
+    <?= view('partials/import_widget', ['importAction' => 'vet/visits/history/import', 'importHint' => 'goat_tag, visit_date, visit_type, clinical_notes, temperature, weight_kg, medication, outcome (healthy/monitoring/treated/critical), is_flagged (yes/no), flag_reason, followup_date']) ?>
   </div>
   <?php if (empty($visits)): ?>
     <div class="empty-state">No visits logged yet. <a href="<?= site_url('vet/visits/log') ?>">Log your first →</a></div>

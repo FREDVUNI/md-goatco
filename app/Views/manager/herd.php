@@ -34,7 +34,8 @@
     <form method="get" style="flex:1;display:flex">
       <input type="text" name="q" class="search-input" placeholder="Search tag, name, breed…" value="<?= esc($search ?? '') ?>">
     </form>
-    <a href="<?= site_url('manager/herd/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm">📥 Download CSV</a>
+    <a href="<?= site_url('manager/herd/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm">📥 Download Excel</a>
+    <?= view('partials/import_widget', ['importAction' => 'manager/herd/import', 'importHint' => 'tag_number, name, breed, sex (male/female), dob (YYYY-MM-DD), pen_id, member_email, notes']) ?>
   </div>
 
   <?php if (empty($herd)): ?>

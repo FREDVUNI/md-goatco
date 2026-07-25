@@ -10,7 +10,8 @@
     <form method="get" style="flex:1;display:flex">
       <input type="text" name="q" class="search-input" placeholder="Search by member or reference…" value="<?= esc($search ?? '') ?>">
     </form>
-    <a href="<?= site_url('admin/payments/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm">📥 Download CSV</a>
+    <a href="<?= site_url('admin/payments/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm">📥 Download Excel</a>
+    <?= view('partials/import_widget', ['importAction' => 'admin/payments/import', 'importHint' => 'member_email, type (credit/debit), amount, description, reference — credits/debits the member wallet ledger']) ?>
   </div>
   <?php if (empty($payments)): ?>
     <div class="empty-state">No payments recorded yet</div>

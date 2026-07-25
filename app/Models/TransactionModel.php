@@ -9,6 +9,7 @@ class TransactionModel extends Model
     protected $primaryKey    = 'id';
     protected $returnType    = 'array';
     protected $useTimestamps = true;
+    protected $updatedField  = ''; // transactions table has no updated_at column — it's an append-only ledger
     protected $allowedFields = ['member_id','type','amount','description','reference','balance_after','created_by'];
 
     public function getByMember(int $memberId): array { return $this->where('member_id',$memberId)->orderBy('created_at','DESC')->findAll(); }

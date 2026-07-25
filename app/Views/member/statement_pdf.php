@@ -18,11 +18,26 @@
   .credit { color: #059669; font-weight: bold; }
   .debit { color: #DC2626; font-weight: bold; }
   .footer { margin-top: 24px; font-size: 9px; color: #718096; }
+  .brand-head { width: 100%; margin-bottom: 12px; border-collapse: collapse; }
+  .brand-head td { vertical-align: middle; }
+  .brand-head img { height: 46px; }
 </style>
 </head>
 <body>
-  <h1>MD Goatco Farm — Wallet Statement</h1>
-  <div class="sub">Generated <?= esc($generatedAt ?? date('j M Y, g:i A')) ?></div>
+  <table class="brand-head">
+    <tr>
+      <td style="width:60px">
+        <?php $logoPath = FCPATH . 'img/logo.png'; ?>
+        <?php if (is_file($logoPath)): ?>
+        <img src="data:image/png;base64,<?= base64_encode(file_get_contents($logoPath)) ?>" alt="MD Goatco Farm">
+        <?php endif ?>
+      </td>
+      <td>
+        <h1>MD Goatco Farm — Wallet Statement</h1>
+        <div class="sub">Generated <?= esc($generatedAt ?? date('j M Y, g:i A')) ?></div>
+      </td>
+    </tr>
+  </table>
 
   <table class="meta">
     <tr><td class="label">Member</td><td><?= esc(($user['first_name'] ?? '') . ' ' . ($user['last_name'] ?? '')) ?></td></tr>

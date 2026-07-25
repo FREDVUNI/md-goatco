@@ -27,12 +27,46 @@ class StaffController extends BaseController
     public function export()
     {
         $rows = $this->users->getStaffQuery($this->searchTerm())->get()->getResultArray();
-        return $this->downloadCsv($rows, 'staff_' . date('Y-m-d') . '.csv');
+        return $this->downloadXlsx($rows, 'staff_' . date('Y-m-d') . '.xlsx', 'Staff Accounts');
     }
 
     public function create(): string
     {
         return $this->dashboardView('admin/staff_create', ['pageTitle'=>'Create Staff Account']);
+    }
+
+    public function import()
+    {
+        [$rows, $error] = $this->parseUploadedSpreadsheet('file');
+        if ($error) return redirect()->back()->with('error', $error);
+
+        $emailService = new EmailService();
+        [$created, $errors] = $this->processImportRows($rows, function (array $row) use ($emailService) {
+            $email = strtolower(trim($row['email'] ?? ''));
+            if ($email === '' || ! filter_var($email, FILTER_VALIDATE_EMAIL)) return "invalid email: '$email'";
+            if ($this->users->where('email', $email)->first()) return "email already exists: $email";
+            $first = trim($row['first_name'] ?? '');
+            $last  = trim($row['last_name'] ?? '');
+            if ($first === '' || $last === '') return 'first_name and last_name are required';
+            $role = strtolower(trim($row['role'] ?? ''));
+            if (! in_array($role, ['manager', 'vet', 'super_admin'], true)) return "role must be manager, vet, or super_admin, got '$role'";
+
+            $tempPw = ucfirst(strtolower($first)) . '@' . date('Y') . '!';
+            $userId = $this->users->insert([
+                'email'      => $email,
+                'password'   => $tempPw,
+                'role'       => $role,
+                'status'     => 'active',
+                'first_name' => $first,
+                'last_name'  => $last,
+                'phone'      => ($row['phone'] ?? '') ?: null,
+            ]);
+            try {
+                $emailService->sendStaffWelcome($this->users->find($userId), $tempPw);
+            } catch (\Throwable $e) {}
+            return true;
+        });
+        return $this->importRedirect('/admin/staff', $created, $errors);
     }
 
     public function store()

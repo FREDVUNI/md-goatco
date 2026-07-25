@@ -24,7 +24,7 @@
     <form method="get" style="flex:1;display:flex">
       <input type="text" name="q" class="search-input" placeholder="Search by tag, animal, or reason…" value="<?= esc($search ?? '') ?>">
     </form>
-    <a href="<?= site_url('manager/health/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-ghost btn-sm">📥 Export</a>
+    <a href="<?= site_url('manager/health/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-ghost btn-sm">📥 Export Excel</a>
   </div>
   <?php if (empty($flags)): ?>
     <div class="empty-state">No health flags match your search.</div>

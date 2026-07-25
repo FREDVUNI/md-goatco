@@ -57,11 +57,13 @@ $routes->group('admin', ['filter' => 'role:super_admin', 'namespace' => 'App\Mod
     $routes->get('documents/(:num)/(:segment)',        'DocumentController::serve/$1/$2');
     $routes->get('members',                            'MemberController::index');
     $routes->get('members/export',                     'MemberController::export');
+    $routes->post('members/import',                    'MemberController::import');
     $routes->get('members/(:num)',                     'MemberController::show/$1');
     $routes->post('members/(:num)/deactivate',         'MemberController::deactivate/$1');
     $routes->post('members/(:num)/reactivate',         'MemberController::reactivate/$1');
     $routes->get('staff',                              'StaffController::index');
     $routes->get('staff/export',                       'StaffController::export');
+    $routes->post('staff/import',                      'StaffController::import');
     $routes->get('staff/create',                       'StaffController::create');
     $routes->post('staff/create',                      'StaffController::store');
     $routes->get('staff/(:num)/edit',                  'StaffController::edit/$1');
@@ -70,6 +72,7 @@ $routes->group('admin', ['filter' => 'role:super_admin', 'namespace' => 'App\Mod
     $routes->post('staff/(:num)/reset-password',       'StaffController::resetPassword/$1');
     $routes->get('herd',                               'HerdController::index');
     $routes->get('herd/export',                        'HerdController::export');
+    $routes->post('herd/import',                       'HerdController::import');
     $routes->get('herd/(:num)',                        'HerdController::show/$1');
     $routes->get('herd/create',                        'HerdController::create');
     $routes->post('herd/create',                       'HerdController::store');
@@ -77,6 +80,7 @@ $routes->group('admin', ['filter' => 'role:super_admin', 'namespace' => 'App\Mod
     $routes->post('herd/(:num)/edit',                  'HerdController::update/$1');
     $routes->get('payments',                           'PaymentController::index');
     $routes->get('payments/export',                    'PaymentController::export');
+    $routes->post('payments/import',                   'PaymentController::importTransactions');
     $routes->get('settings',                           'SettingsController::index');
     $routes->post('settings',                          'SettingsController::update');
 });
@@ -87,6 +91,7 @@ $routes->group('manager', ['filter' => 'role:manager,super_admin', 'namespace' =
     $routes->get('dashboard',                  'DashboardController::index');
     $routes->get('herd',                       'HerdController::index');
     $routes->get('herd/export',                'HerdController::export');
+    $routes->post('herd/import',               'HerdController::import');
     $routes->get('herd/(:num)',                'HerdController::show/$1');
     $routes->get('herd/create',                'HerdController::create');
     $routes->post('herd/create',               'HerdController::store');
@@ -122,6 +127,7 @@ $routes->group('vet', ['filter' => 'role:vet,manager,super_admin', 'namespace' =
     $routes->post('visits/log',                'VisitController::store');
     $routes->get('visits/history',             'VisitController::history');
     $routes->get('visits/history/export',      'VisitController::export');
+    $routes->post('visits/history/import',     'VisitController::import');
     $routes->get('visits/(:num)',              'VisitController::show/$1');
     $routes->get('animals',                    'AnimalController::index');
     $routes->get('animals/lookup',             'AnimalController::lookup');

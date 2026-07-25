@@ -78,7 +78,52 @@ class VisitController extends BaseController
     public function export()
     {
         $rows = $this->visits->getByVetQuery($this->currentUserId(), $this->searchTerm())->get()->getResultArray();
-        return $this->downloadCsv($rows, 'visit_history_' . date('Y-m-d') . '.csv');
+        return $this->downloadXlsx($rows, 'visit_history_' . date('Y-m-d') . '.xlsx', 'Visit History');
+    }
+
+    public function import()
+    {
+        [$rows, $error] = $this->parseUploadedSpreadsheet('file');
+        if ($error) return redirect()->back()->with('error', $error);
+
+        $goats  = new GoatModel();
+        $vetId  = $this->currentUserId();
+        [$created, $errors] = $this->processImportRows($rows, function (array $row) use ($goats, $vetId) {
+            $tag = strtoupper(trim($row['goat_tag'] ?? ''));
+            if ($tag === '') return 'goat_tag is required';
+            $goat = $goats->where('tag_number', $tag)->first();
+            if (! $goat) return "goat_tag not found: $tag";
+
+            $visitDate = trim($row['visit_date'] ?? '');
+            if ($visitDate === '' || strtotime($visitDate) === false) return "visit_date is required and must be a valid date, got '$visitDate'";
+            $visitType = trim($row['visit_type'] ?? '');
+            if ($visitType === '') return 'visit_type is required';
+            $notes = trim($row['clinical_notes'] ?? '');
+            if ($notes === '') return 'clinical_notes is required';
+
+            $outcome = strtolower(trim($row['outcome'] ?? ''));
+            if ($outcome !== '' && ! in_array($outcome, ['healthy', 'monitoring', 'treated', 'critical'], true)) {
+                return "outcome must be healthy, monitoring, treated, or critical, got '$outcome'";
+            }
+            $isFlagged = in_array(strtolower(trim($row['is_flagged'] ?? '')), ['1', 'yes', 'true'], true);
+
+            $this->visits->insert([
+                'goat_id'        => $goat['id'],
+                'vet_id'         => $vetId,
+                'visit_date'     => date('Y-m-d H:i:s', strtotime($visitDate)),
+                'visit_type'     => $visitType,
+                'clinical_notes' => $notes,
+                'temperature'    => ($row['temperature'] ?? '') ?: null,
+                'weight_kg'      => ($row['weight_kg'] ?? '') ?: null,
+                'medication'     => ($row['medication'] ?? '') ?: null,
+                'outcome'        => $outcome ?: null,
+                'is_flagged'     => $isFlagged ? 1 : 0,
+                'flag_reason'    => $isFlagged ? (($row['flag_reason'] ?? '') ?: null) : null,
+                'followup_date'  => ($row['followup_date'] ?? '') ?: null,
+            ]);
+            return true;
+        });
+        return $this->importRedirect('/vet/visits/history', $created, $errors);
     }
 
     public function show(int $id) { return redirect()->to('/vet/visits/history'); }

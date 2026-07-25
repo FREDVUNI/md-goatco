@@ -10,7 +10,8 @@
     <form method="get" style="flex:1;display:flex">
       <input type="text" name="q" class="search-input" placeholder="Search by name or email…" value="<?= esc($search ?? '') ?>">
     </form>
-    <a href="<?= site_url('admin/staff/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm">📥 Download CSV</a>
+    <a href="<?= site_url('admin/staff/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-outline btn-sm">📥 Download Excel</a>
+    <?= view('partials/import_widget', ['importAction' => 'admin/staff/import', 'importHint' => 'email, first_name, last_name, phone, role (manager/vet/super_admin)']) ?>
   </div>
   <?php if (empty($staff)): ?>
   <div class="empty-state">No staff accounts yet. <a href="<?= site_url('admin/staff/create') ?>">Create the first →</a></div>

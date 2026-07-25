@@ -59,7 +59,7 @@
       </div>
       <div class="report-actions">
         <a href="<?= site_url('manager/reports/herd') ?>" class="btn btn-outline btn-sm">View</a>
-        <a href="<?= site_url('manager/reports/export/herd') ?>" class="btn btn-ghost btn-sm">📥 CSV</a>
+        <a href="<?= site_url('manager/reports/export/herd') ?>" class="btn btn-ghost btn-sm">📥 Excel</a>
       </div>
     </div>
 
@@ -70,7 +70,7 @@
       </div>
       <div class="report-actions">
         <a href="<?= site_url('manager/reports/health') ?>" class="btn btn-outline btn-sm">View</a>
-        <a href="<?= site_url('manager/reports/export/health') ?>" class="btn btn-ghost btn-sm">📥 CSV</a>
+        <a href="<?= site_url('manager/reports/export/health') ?>" class="btn btn-ghost btn-sm">📥 Excel</a>
       </div>
     </div>
 
@@ -81,14 +81,14 @@
       </div>
       <div class="report-actions">
         <a href="<?= site_url('manager/reports/members') ?>" class="btn btn-outline btn-sm">View</a>
-        <a href="<?= site_url('manager/reports/export/members') ?>" class="btn btn-ghost btn-sm">📥 CSV</a>
+        <a href="<?= site_url('manager/reports/export/members') ?>" class="btn btn-ghost btn-sm">📥 Excel</a>
       </div>
     </div>
 
     <div class="report-row" style="border-bottom:none">
       <div class="report-info">
         <div class="report-title">Full Data Export</div>
-        <div class="report-desc">Combined CSV export — herd, members and health data in one file</div>
+        <div class="report-desc">Combined Excel export — herd, members and health data in one file</div>
       </div>
       <div class="report-actions">
         <a href="<?= site_url('manager/reports/export/all') ?>" class="btn btn-primary btn-sm">📥 Export all</a>

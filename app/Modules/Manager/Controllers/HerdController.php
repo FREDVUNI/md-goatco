@@ -25,7 +25,43 @@ class HerdController extends BaseController
     public function export()
     {
         $rows = $this->goats->getFullHerdQuery($this->searchTerm())->get()->getResultArray();
-        return $this->downloadCsv($rows, 'herd_' . date('Y-m-d') . '.csv');
+        return $this->downloadXlsx($rows, 'herd_' . date('Y-m-d') . '.xlsx', 'Herd Registry');
+    }
+
+    public function import()
+    {
+        [$rows, $error] = $this->parseUploadedSpreadsheet('file');
+        if ($error) return redirect()->back()->with('error', $error);
+
+        $users = new UserModel();
+        [$created, $errors] = $this->processImportRows($rows, function (array $row) use ($users) {
+            $tag = strtoupper(trim($row['tag_number'] ?? ''));
+            if ($tag === '') return 'tag_number is required';
+            if ($this->goats->where('tag_number', $tag)->first()) return "tag_number '$tag' already exists";
+            $name = trim($row['name'] ?? '');
+            if ($name === '') return 'name is required';
+            $sex = strtolower(trim($row['sex'] ?? ''));
+            if ($sex !== '' && ! in_array($sex, ['male', 'female'], true)) return "sex must be male or female, got '$sex'";
+            $memberId = null;
+            if (! empty($row['member_email'])) {
+                $member = $users->where('email', trim($row['member_email']))->first();
+                if (! $member) return "member_email not found: {$row['member_email']}";
+                $memberId = $member['id'];
+            }
+            $this->goats->insert([
+                'tag_number' => $tag,
+                'name'       => $name,
+                'breed'      => ($row['breed'] ?? '') ?: null,
+                'sex'        => $sex ?: null,
+                'dob'        => ($row['dob'] ?? '') ?: null,
+                'pen_id'     => ($row['pen_id'] ?? '') ?: null,
+                'member_id'  => $memberId,
+                'status'     => 'active',
+                'notes'      => $row['notes'] ?? null,
+            ]);
+            return true;
+        });
+        return $this->importRedirect('/manager/herd', $created, $errors);
     }
 
     public function show(int $id) { return redirect()->to('/manager/herd'); }

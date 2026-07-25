@@ -977,6 +977,38 @@ tr:hover td {
 .pager-current:hover {
   color: #fff;
 }
+/* IMPORT WIDGET */
+.import-widget { position: relative; }
+.import-widget > summary { list-style: none; cursor: pointer; }
+.import-widget > summary::-webkit-details-marker { display: none; }
+.import-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  z-index: 20;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  padding: 14px;
+  width: 300px;
+}
+.import-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.import-form input[type="file"] {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.76rem;
+}
+.import-hint {
+  margin: 10px 0 0;
+  font-size: 0.72rem;
+  color: var(--slate-light);
+  line-height: 1.4;
+}
 .pager-disabled {
   color: var(--slate-light);
   opacity: 0.5;

@@ -25,7 +25,7 @@ class HealthController extends BaseController
     public function export()
     {
         $rows = $this->visits->getActiveFlagsQuery($this->searchTerm())->get()->getResultArray();
-        return $this->downloadCsv($rows, 'health_flags_' . date('Y-m-d') . '.csv');
+        return $this->downloadXlsx($rows, 'health_flags_' . date('Y-m-d') . '.xlsx', 'Health Flags');
     }
 
     public function show(int $id) { return redirect()->to('/manager/health'); }

@@ -40,7 +40,39 @@ class MemberController extends BaseController
     public function export()
     {
         $rows = $this->membersQuery($this->searchTerm())->get()->getResultArray();
-        return $this->downloadCsv($rows, 'members_' . date('Y-m-d') . '.csv');
+        return $this->downloadXlsx($rows, 'members_' . date('Y-m-d') . '.xlsx', 'Goat Banking Members');
+    }
+
+    public function import()
+    {
+        [$rows, $error] = $this->parseUploadedSpreadsheet('file');
+        if ($error) return redirect()->back()->with('error', $error);
+
+        $emailService = new \App\Libraries\EmailService();
+        [$created, $errors] = $this->processImportRows($rows, function (array $row) use ($emailService) {
+            $email = strtolower(trim($row['email'] ?? ''));
+            if ($email === '' || ! filter_var($email, FILTER_VALIDATE_EMAIL)) return "invalid email: '$email'";
+            if ($this->users->where('email', $email)->first()) return "email already exists: $email";
+            $first = trim($row['first_name'] ?? '');
+            $last  = trim($row['last_name'] ?? '');
+            if ($first === '' || $last === '') return 'first_name and last_name are required';
+
+            $tempPw = ucfirst(strtolower($first)) . '@' . date('Y') . '!';
+            $userId = $this->users->insert([
+                'email'      => $email,
+                'password'   => $tempPw,
+                'role'       => 'member',
+                'status'     => 'active',
+                'first_name' => $first,
+                'last_name'  => $last,
+                'phone'      => ($row['phone'] ?? '') ?: null,
+            ]);
+            try {
+                $emailService->sendStaffWelcome($this->users->find($userId), $tempPw);
+            } catch (\Throwable $e) {}
+            return true;
+        });
+        return $this->importRedirect('/admin/members', $created, $errors);
     }
 
     public function show(int $id)

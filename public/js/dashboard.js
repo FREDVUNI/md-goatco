@@ -70,6 +70,13 @@
     if (e.key === 'Escape') closeUserMenu();
   });
 
+  // ── Import widget: close when clicking outside ────────────────────
+  document.addEventListener('click', function(e){
+    document.querySelectorAll('details.import-widget[open]').forEach(function(d){
+      if (!d.contains(e.target)) d.removeAttribute('open');
+    });
+  });
+
   // ── Real-time table search (debounced auto-submit) ────────────────
   // No explicit "Search" button — the GET form submits automatically a
   // moment after the user stops typing. Enter still submits immediately

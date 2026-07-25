@@ -66,6 +66,7 @@ class ReportController extends BaseController
             'health'  => (new \App\Models\VetVisitModel())->getActiveFlagsQuery()->get()->getResultArray(),
             default   => [],
         };
-        return $this->downloadCsv($data, 'mdgoatco_'.$type.'_'.date('Y-m-d').'.csv');
+        $title = match($type) { 'herd' => 'Herd Report', 'members' => 'Members Report', 'health' => 'Health Report', default => 'Report' };
+        return $this->downloadXlsx($data, 'mdgoatco_'.$type.'_'.date('Y-m-d').'.xlsx', $title);
     }
 }
