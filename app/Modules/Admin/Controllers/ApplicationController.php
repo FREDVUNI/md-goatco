@@ -66,7 +66,7 @@ class ApplicationController extends BaseController
     public function reject(int $id)
     {
         $app    = $this->applications->find($id);
-        $reason = $this->request->getPost('rejection_reason') ?? '';
+        $reason = $this->request->getPost('reason') ?? '';
         if (! $app) return redirect()->to('/admin/applications')->with('error','Not found.');
         $this->applications->update($id, ['status'=>'rejected','rejection_reason'=>$reason,'reviewed_by'=>$this->currentUserId(),'reviewed_at'=>date('Y-m-d H:i:s')]);
         $this->users->update($app['user_id'], ['status'=>'rejected']);
@@ -80,7 +80,7 @@ class ApplicationController extends BaseController
     public function requestInfo(int $id)
     {
         $app  = $this->applications->find($id);
-        $note = $this->request->getPost('info_request_note') ?? '';
+        $note = $this->request->getPost('note') ?? '';
         if (! $app) return redirect()->to('/admin/applications')->with('error','Not found.');
         $this->applications->update($id, ['status'=>'info_requested','info_request_note'=>$note]);
         try {

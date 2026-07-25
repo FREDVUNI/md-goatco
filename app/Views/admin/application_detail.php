@@ -89,8 +89,8 @@
     <?= form_open('admin/applications/' . $application['id'] . '/request-info', ['class' => 'dash-form', 'style' => 'margin:0;']) ?>
       <?= csrf_field() ?>
       <div class="field">
-        <label for="note">Request more information</label>
-        <textarea id="note" name="note" placeholder="What do you need from the applicant?"></textarea>
+        <label for="note">Request more information *</label>
+        <textarea id="note" name="note" placeholder="What do you need from the applicant?" required></textarea>
       </div>
       <button type="submit" class="btn btn-outline btn-sm">Send request</button>
     <?= form_close() ?>
@@ -99,8 +99,8 @@
     <?= form_open('admin/applications/' . $application['id'] . '/reject', ['class' => 'dash-form', 'style' => 'margin:0;']) ?>
       <?= csrf_field() ?>
       <div class="field">
-        <label for="reason">Reject this application</label>
-        <textarea id="reason" name="reason" placeholder="Reason (optional — shared with the applicant)"></textarea>
+        <label for="reason">Reject this application *</label>
+        <textarea id="reason" name="reason" placeholder="Reason — shared with the applicant" required></textarea>
       </div>
       <button type="submit" class="btn btn-ghost btn-sm" style="color:var(--red);border-color:var(--red)"
               data-confirm="Reject this application? The applicant will be notified.">
