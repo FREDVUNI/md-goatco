@@ -376,7 +376,8 @@
         </div>
         <div class="field">
           <label for="phone">Phone number *</label>
-          <input type="tel" id="phone" name="phone" value="<?= esc(old('phone')) ?>" placeholder="+256 700 000 000" required>
+          <input type="tel" id="phone" name="phone" value="<?= esc(old('phone')) ?>" placeholder="+256 700 000 000" required
+            pattern="[0-9+\-\s()]{7,20}" data-pattern-message="Enter a valid phone number.">
         </div>
         <div class="field">
           <label for="subject">Subject *</label>

@@ -12,6 +12,7 @@
     <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('css/auth.css') ?>">
     <link rel="stylesheet" href="<?= base_url('css/loader.css') ?>">
+<link rel="stylesheet" href="<?= base_url('css/validate.css') ?>">
 </head>
 
 <body>
@@ -28,7 +29,8 @@
 
     <?= $this->renderSection('content') ?>
 
-    <script src="<?= base_url('js/loader.js') ?>"></script>
+    <script src="<?= base_url('js/validate.js') ?>"></script>
+<script src="<?= base_url('js/loader.js') ?>"></script>
     <script src="<?= base_url('js/auth.js') ?>"></script>
     <?= $this->renderSection('scripts') ?>
 </body>

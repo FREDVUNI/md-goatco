@@ -26,5 +26,14 @@ class MemberController extends BaseController
             'search'    => $search,
         ]);
     }
-    public function show(int $id) { return redirect()->to('/manager/members'); }
+    public function show(int $id)
+    {
+        $user = (new UserModel())->find($id);
+        if (! $user || $user['role'] !== 'member') return redirect()->to('/manager/members')->with('error', 'Member not found.');
+        return $this->dashboardView('manager/member_detail', [
+            'pageTitle' => $user['first_name'].' '.$user['last_name'],
+            'member'    => $user,
+            'goats'     => (new GoatModel())->getByMember($id),
+        ]);
+    }
 }

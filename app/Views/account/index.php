@@ -36,7 +36,7 @@ $isVet     = $role === 'vet';
         <div class="field"><label>Last name</label><input type="text" name="last_name" value="<?= esc(old('last_name', $user['last_name'] ?? '')) ?>" required></div>
       </div>
       <div class="field"><label>Email</label><input type="email" value="<?= esc($user['email'] ?? '') ?>" disabled style="opacity:.6;cursor:not-allowed"></div>
-      <div class="field"><label>Phone</label><input type="tel" name="phone" value="<?= esc(old('phone', $user['phone'] ?? '')) ?>" placeholder="+256 700 000 000"></div>
+      <div class="field"><label>Phone</label><input type="tel" name="phone" value="<?= esc(old('phone', $user['phone'] ?? '')) ?>" placeholder="+256 700 000 000" pattern="[0-9+\-\s()]{7,20}" data-pattern-message="Enter a valid phone number."></div>
       <div class="field"><label>Role</label><input type="text" value="<?= esc(roleLabel($user['role'] ?? '')) ?>" disabled style="opacity:.6;cursor:not-allowed"></div>
       <div class="form-actions"><button type="submit" class="btn btn-primary">Save changes</button></div>
     <?= form_close() ?>
@@ -47,7 +47,7 @@ $isVet     = $role === 'vet';
       <?= csrf_field() ?>
       <div class="field"><label>Current password *</label><input type="password" name="current_password" required></div>
       <div class="field"><label>New password *</label><input type="password" name="password" id="password" minlength="8" required></div>
-      <div class="field"><label>Confirm new password *</label><input type="password" name="password_confirm" id="password_confirm" required></div>
+      <div class="field"><label>Confirm new password *</label><input type="password" name="password_confirm" id="password_confirm" required data-match="password" data-match-message="Passwords do not match."></div>
       <div class="form-actions"><button type="submit" class="btn btn-primary">Update password</button></div>
     <?= form_close() ?>
   </div>

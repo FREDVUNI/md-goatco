@@ -37,7 +37,8 @@
       <label for="password_confirm">Confirm new password</label>
       <input type="password" id="password_confirm" name="password_confirm"
         placeholder="Repeat your new password"
-        required autocomplete="new-password">
+        required autocomplete="new-password"
+        data-match="password" data-match-message="Passwords do not match.">
     </div>
 
     <div id="pw-strength-bar" style="height:3px;border-radius:2px;margin:-4px 0 14px;transition:width .3s,background .3s;width:0"></div>
@@ -61,7 +62,6 @@
   const pw = document.getElementById('password');
   const bar = document.getElementById('pw-strength-bar');
   const label = document.getElementById('pw-strength-label');
-  const conf = document.getElementById('password_confirm');
 
   pw?.addEventListener('input', () => {
     const v = pw.value;
@@ -101,10 +101,6 @@
     bar.style.background = lvl.color;
     label.textContent = lvl.text;
     label.style.color = lvl.color;
-  });
-
-  conf?.addEventListener('input', () => {
-    conf.style.borderColor = conf.value && conf.value !== pw.value ? 'var(--red)' : '';
   });
 </script>
 <?= $this->endSection() ?>

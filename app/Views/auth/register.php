@@ -88,7 +88,8 @@
       <div class="field">
         <label for="phone">Phone number *</label>
         <input type="tel" id="phone" name="phone"
-          value="<?= esc(old('phone')) ?>" placeholder="+256 700 000 000" required>
+          value="<?= esc(old('phone')) ?>" placeholder="+256 700 000 000" required
+          pattern="[0-9+\-\s()]{7,20}" data-pattern-message="Enter a valid phone number.">
       </div>
       <div class="field">
         <label for="address">Physical / home address *</label>
@@ -183,7 +184,8 @@
         <div class="field">
           <label for="nok_phone">Phone number *</label>
           <input type="tel" id="nok_phone" name="nok_phone"
-            value="<?= esc(old('nok_phone')) ?>" placeholder="+256 700 000 000" required>
+            value="<?= esc(old('nok_phone')) ?>" placeholder="+256 700 000 000" required
+            pattern="[0-9+\-\s()]{7,20}" data-pattern-message="Enter a valid phone number.">
         </div>
         <div class="field">
           <label for="nok_address">Address</label>
@@ -236,12 +238,13 @@
       <div class="field">
         <label for="password">Create a password *</label>
         <input type="password" id="password" name="password"
-          placeholder="Minimum 8 characters" required>
+          placeholder="Minimum 8 characters" required minlength="8">
       </div>
       <div class="field">
         <label for="password_confirm">Confirm password *</label>
         <input type="password" id="password_confirm" name="password_confirm"
-          placeholder="Repeat your password" required>
+          placeholder="Repeat your password" required
+          data-match="password" data-match-message="Passwords do not match.">
       </div>
 
       <div class="section-divider">Banking preferences</div>

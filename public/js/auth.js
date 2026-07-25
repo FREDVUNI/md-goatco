@@ -9,13 +9,7 @@
 let currentStep = 1;
 const TOTAL_STEPS = 4;
 
-function goToStep(n) {
-  if (n < 1 || n > TOTAL_STEPS) return;
-
-  // Validate current step before advancing
-  if (n > currentStep && !validateStep(currentStep)) return;
-
-  // Hide all step panes
+function showStepPane(n) {
   document
     .querySelectorAll(".reg-step")
     .forEach((s) => s.classList.remove("active"));
@@ -23,12 +17,10 @@ function goToStep(n) {
     .querySelectorAll(".step-item")
     .forEach((s) => s.classList.remove("active", "done"));
 
-  // Show the target pane
   const target = document.getElementById("step-" + n);
   if (!target) return;
   target.classList.add("active");
 
-  // Update step nav states
   for (let i = 1; i <= TOTAL_STEPS; i++) {
     const nav = document.getElementById("step-nav-" + i);
     if (!nav) continue;
@@ -37,60 +29,46 @@ function goToStep(n) {
   }
 
   currentStep = n;
+}
+
+function goToStep(n) {
+  if (n < 1 || n > TOTAL_STEPS) return;
+
+  // Validate current step before advancing
+  if (n > currentStep && !validateStep(currentStep)) return;
+
+  showStepPane(n);
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 /**
- * Basic client-side validation for each step.
- * Server-side validation is the authoritative check — this is UX only.
+ * Runs the shared MDValidate engine (see validate.js) over just this step's
+ * fields, so per-field inline errors render exactly as they do everywhere
+ * else in the app. Server-side validation remains the authoritative check.
  */
 function validateStep(step) {
   const pane = document.getElementById("step-" + step);
   if (!pane) return true;
 
-  const required = pane.querySelectorAll("[required]");
-  let valid = true;
-
-  required.forEach((field) => {
-    field.classList.remove("field-error");
-    if (!field.value.trim()) {
-      field.classList.add("field-error");
-      field.style.borderColor = "var(--red)";
-      valid = false;
-    } else {
-      field.style.borderColor = "";
-    }
-  });
+  const fields = pane.querySelectorAll("input, select, textarea");
+  const valid = window.MDValidate ? window.MDValidate.validateFields(fields) : true;
 
   if (!valid) {
-    const firstError = pane.querySelector(".field-error");
-    firstError?.scrollIntoView({ behavior: "smooth", block: "center" });
-    showStepError(
-      step,
-      "Please fill in all required fields before continuing.",
-    );
-  } else {
-    clearStepError(step);
+    pane.querySelector(".has-error")?.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
   return valid;
 }
 
-function showStepError(step, msg) {
-  let errBox = document.getElementById("step-error-" + step);
-  if (!errBox) {
-    errBox = document.createElement("div");
-    errBox.id = "step-error-" + step;
-    errBox.className = "form-errors";
-    const pane = document.getElementById("step-" + step);
-    pane.querySelector("h3").after(errBox);
-  }
-  errBox.innerHTML = `<p>${msg}</p>`;
-}
-
-function clearStepError(step) {
-  document.getElementById("step-error-" + step)?.remove();
-}
+// If the final submit fails because a field on an earlier, currently-hidden
+// step is invalid, jump to that step so the inline error is actually visible
+// instead of silently blocking submission with no feedback.
+document.getElementById("regForm")?.addEventListener("validate:invalid", (e) => {
+  const pane = e.detail.field.closest(".reg-step");
+  if (!pane) return;
+  const stepNum = parseInt(pane.id.replace("step-", ""), 10);
+  if (stepNum && stepNum !== currentStep) showStepPane(stepNum);
+});
 
 // ── FILE UPLOAD PREVIEWS ──────────────────────────────────────────────
 document.querySelectorAll(".file-input").forEach((input) => {
@@ -196,22 +174,9 @@ function initPasswordStrength() {
   });
 }
 
-// ── PASSWORD CONFIRM MATCH ────────────────────────────────────────────
-function initPasswordConfirm() {
-  const confirm = document.getElementById("password_confirm");
-  const pass = document.getElementById("password");
-  if (!confirm || !pass) return;
-
-  confirm.addEventListener("input", () => {
-    if (confirm.value && confirm.value !== pass.value) {
-      confirm.style.borderColor = "var(--red)";
-    } else {
-      confirm.style.borderColor = "";
-    }
-  });
-}
-
-// Form submission loading/disabled state is handled globally by loader.js.
+// Password confirm match is handled generically by validate.js's data-match
+// attribute. Form submission loading/disabled state is handled globally by
+// loader.js.
 
 // ── UTILITY ──────────────────────────────────────────────────────────
 function escHtml(str) {
@@ -223,5 +188,4 @@ function escHtml(str) {
 // ── INIT ─────────────────────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
   initPasswordStrength();
-  initPasswordConfirm();
 });

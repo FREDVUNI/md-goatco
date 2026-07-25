@@ -13,6 +13,7 @@
     <link rel="shortcut icon" href="<?= base_url('img/logo.png') ?>" type="image/x-icon">
     <link rel="stylesheet" href="<?= base_url('css/public.css') ?>">
     <link rel="stylesheet" href="<?= base_url('css/loader.css') ?>">
+<link rel="stylesheet" href="<?= base_url('css/validate.css') ?>">
     <?= $this->renderSection('head') ?>
 </head>
 
@@ -31,7 +32,8 @@
 
     <?= $this->renderSection('content') ?>
 
-    <script src="<?= base_url('js/loader.js') ?>"></script>
+    <script src="<?= base_url('js/validate.js') ?>"></script>
+<script src="<?= base_url('js/loader.js') ?>"></script>
     <script src="<?= base_url('js/public.js') ?>"></script>
     <?= $this->renderSection('scripts') ?>
 </body>

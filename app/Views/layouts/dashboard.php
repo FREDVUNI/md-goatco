@@ -10,6 +10,7 @@
 <link href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" rel="stylesheet">
 <link rel="stylesheet" href="<?= base_url('css/dashboard.css') ?>">
 <link rel="stylesheet" href="<?= base_url('css/loader.css') ?>">
+<link rel="stylesheet" href="<?= base_url('css/validate.css') ?>">
 <?= $this->renderSection('head') ?>
 </head>
 <body class="dash-body">
@@ -110,6 +111,7 @@
 <!-- Overlay for mobile -->
 <div class="sb-overlay" id="sbOverlay"></div>
 
+<script src="<?= base_url('js/validate.js') ?>"></script>
 <script src="<?= base_url('js/loader.js') ?>"></script>
 <script src="<?= base_url('js/dashboard.js') ?>"></script>
 <?= $this->renderSection('scripts') ?>
