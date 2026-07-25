@@ -15,7 +15,7 @@
       <div class="field"><label>Last name *</label><input type="text" name="last_name" value="<?= esc(old('last_name', $staff['last_name']??'')) ?>" required></div>
     </div>
     <div class="field"><label>Email address *</label><input type="email" name="email" value="<?= esc(old('email', $staff['email']??'')) ?>" required <?= isset($staff)?'readonly':'' ?>></div>
-    <div class="field"><label>Phone</label><input type="tel" name="phone" value="<?= esc(old('phone', $staff['phone']??'')) ?>" placeholder="+256 700 000 000" pattern="[0-9+\-\s()]{7,20}" data-pattern-message="Enter a valid phone number."></div>
+    <div class="field"><label>Phone</label><input type="tel" name="phone" value="<?= esc(old('phone', $staff['phone']??'')) ?>" placeholder="+256 700 000 000" pattern="[0-9+ ]{7,20}" data-pattern-message="Enter a valid phone number."></div>
     <div class="field">
       <label>Role *</label>
       <select name="role" required>

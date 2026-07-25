@@ -51,12 +51,43 @@
     </button>
     <div class="topbar-title"><?= esc($pageTitle ?? 'Dashboard') ?></div>
     <div class="topbar-actions">
-      <?php if (($unreadCount??0) > 0): ?>
-      <div class="notif-bell">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
-        <span class="notif-dot"><?= esc($unreadCount) ?></span>
+      <div class="notif-bell" id="notifBell">
+        <button class="notif-bell-trigger" id="notifBellTrigger" aria-haspopup="true" aria-expanded="false" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          <?php if (($unreadCount??0) > 0): ?>
+          <span class="notif-dot"><?= esc($unreadCount > 9 ? '9+' : $unreadCount) ?></span>
+          <?php endif ?>
+        </button>
+        <div class="notif-dropdown" id="notifDropdown">
+          <div class="notif-dropdown-head">
+            <strong>Notifications</strong>
+            <?php if (($unreadCount??0) > 0): ?>
+            <?= form_open('notifications/read-all', ['style' => 'display:inline']) ?><?= csrf_field() ?>
+              <button type="submit" class="notif-mark-all">Mark all read</button>
+            <?= form_close() ?>
+            <?php endif ?>
+          </div>
+          <div class="notif-list">
+            <?php if (empty($notifications)): ?>
+            <div class="notif-empty">
+              <i class="far fa-bell"></i>
+              <p>You're all caught up.</p>
+            </div>
+            <?php else: ?>
+            <?php foreach ($notifications as $notif): ?>
+            <a href="<?= site_url('notifications/' . $notif['id'] . '/read') ?>" class="notif-item <?= empty($notif['is_read']) ? 'notif-unread' : '' ?>">
+              <div class="notif-item-dot tl-<?= esc($notif['type']) ?>"></div>
+              <div class="notif-item-body">
+                <strong><?= esc($notif['title']) ?></strong>
+                <span><?= esc($notif['body']) ?></span>
+                <small><?= time_ago($notif['created_at']) ?></small>
+              </div>
+            </a>
+            <?php endforeach ?>
+            <?php endif ?>
+          </div>
+        </div>
       </div>
-      <?php endif ?>
 
       <?php $accountUrl = ($currentUser['role']??'') === 'member' ? 'member/account' : 'account'; ?>
       <div class="user-menu" id="userMenu">

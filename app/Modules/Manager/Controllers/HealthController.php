@@ -34,4 +34,11 @@ class HealthController extends BaseController
         $this->visits->update($id, ['flag_resolved_at'=>date('Y-m-d H:i:s')]);
         return redirect()->to('/manager/health')->with('success','Flag marked as resolved.');
     }
+
+    public function bulkResolve()
+    {
+        $ids = $this->bulkIds();
+        foreach ($ids as $id) $this->visits->update($id, ['flag_resolved_at'=>date('Y-m-d H:i:s')]);
+        return redirect()->to('/manager/health')->with('success', count($ids).' flag'.(count($ids)===1?'':'s').' marked as resolved.');
+    }
 }

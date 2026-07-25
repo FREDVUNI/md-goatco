@@ -14,13 +14,25 @@
     <?= view('partials/import_widget', ['importAction' => 'admin/staff/import', 'importHint' => 'email, first_name, last_name, phone, role (manager/vet/super_admin)']) ?>
   </div>
   <?php if (empty($staff)): ?>
-  <div class="empty-state">No staff accounts yet. <a href="<?= site_url('admin/staff/create') ?>">Create the first →</a></div>
+  <?= view('partials/empty_state', [
+    'icon'    => 'fas fa-user-tie',
+    'title'   => empty($search) ? 'No staff accounts yet' : 'No staff match your search',
+    'message' => empty($search) ? 'Create manager, vet, or admin accounts to give your team access.' : 'Try a different name or email.',
+    'ctaUrl'  => empty($search) ? 'admin/staff/create' : null,
+    'ctaText' => 'Create the first account',
+  ]) ?>
   <?php else: ?>
-  <table>
-    <thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Last login</th><th>Actions</th></tr></thead>
+  <?= form_open('admin/staff/bulk-deactivate', ['id' => 'staffBulkForm']) ?><?= csrf_field() ?><?= form_close() ?>
+  <div class="bulk-bar">
+    <span class="bulk-count">0 selected</span>
+    <button type="submit" form="staffBulkForm" class="btn btn-outline btn-sm" style="color:var(--red);border-color:var(--red)" data-bulk-submit data-confirm="Deactivate all selected staff accounts?">Deactivate selected</button>
+  </div>
+  <table class="bulk-table">
+    <thead><tr><th><input type="checkbox" class="bulk-select-all" aria-label="Select all"></th><th>Name</th><th>Email</th><th>Role</th><th>Status</th><th>Last login</th><th>Actions</th></tr></thead>
     <tbody>
       <?php foreach ($staff as $s): ?>
       <tr>
+        <td><input type="checkbox" name="ids[]" value="<?= $s['id'] ?>" form="staffBulkForm" class="bulk-checkbox" aria-label="Select <?= esc($s['first_name']) ?>"></td>
         <td><div class="avatar-cell"><div class="avatar"><?= strtoupper(substr($s['first_name'],0,1).substr($s['last_name'],0,1)) ?></div><?= esc($s['first_name'].' '.$s['last_name']) ?></div></td>
         <td><?= esc($s['email']) ?></td>
         <td><span class="badge badge-pending"><?= esc(roleLabel($s['role'])) ?></span></td>
@@ -30,6 +42,9 @@
           <div style="display:flex;gap:6px">
             <a href="<?= site_url('admin/staff/'.$s['id'].'/edit') ?>" class="btn btn-ghost btn-sm">Edit</a>
             <?= form_open('admin/staff/'.$s['id'].'/reset-password',['style'=>'display:inline']) ?><?= csrf_field() ?><button class="btn btn-ghost btn-sm" data-confirm="Reset password for <?= esc($s['first_name']) ?>?">Reset PW</button><?= form_close() ?>
+            <?php if ($s['status'] === 'active'): ?>
+            <?= form_open('admin/staff/'.$s['id'].'/deactivate',['style'=>'display:inline']) ?><?= csrf_field() ?><button class="btn btn-ghost btn-sm" style="color:var(--red);border-color:var(--red)" data-confirm="Deactivate <?= esc($s['first_name']) ?>'s account?">Deactivate</button><?= form_close() ?>
+            <?php endif ?>
           </div>
         </td>
       </tr>

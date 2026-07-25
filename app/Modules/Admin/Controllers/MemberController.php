@@ -99,4 +99,18 @@ class MemberController extends BaseController
         $this->users->activate($id);
         return redirect()->to('/admin/members')->with('success', ($user['first_name']??'Member').'\'s account reactivated.');
     }
+
+    public function bulkDeactivate()
+    {
+        $ids = $this->bulkIds();
+        foreach ($ids as $id) $this->users->deactivate($id);
+        return redirect()->to('/admin/members')->with('success', count($ids).' member'.(count($ids)===1?'':'s').' deactivated.');
+    }
+
+    public function bulkReactivate()
+    {
+        $ids = $this->bulkIds();
+        foreach ($ids as $id) $this->users->activate($id);
+        return redirect()->to('/admin/members')->with('success', count($ids).' member'.(count($ids)===1?'':'s').' reactivated.');
+    }
 }

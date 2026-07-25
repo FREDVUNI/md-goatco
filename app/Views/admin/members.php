@@ -20,11 +20,23 @@
   </div>
 
   <?php if (empty($members)): ?>
-  <div class="empty-state">No members yet — applications will appear here once approved.</div>
+  <?= view('partials/empty_state', [
+    'icon'    => 'fas fa-users',
+    'title'   => empty($search) ? 'No members yet' : 'No members match your search',
+    'message' => empty($search) ? 'Approved applications will appear here as Goat Banking members.' : 'Try a different name, email, or phone number.',
+  ]) ?>
   <?php else: ?>
-  <table>
+  <?php /* Detached form: its inputs/buttons live elsewhere in the table via form="membersBulkForm" to avoid nesting inside the per-row action forms below. */ ?>
+  <?= form_open('admin/members/bulk-deactivate', ['id' => 'membersBulkForm']) ?><?= csrf_field() ?><?= form_close() ?>
+  <div class="bulk-bar" data-bulk-scope>
+    <span class="bulk-count">0 selected</span>
+    <button type="submit" form="membersBulkForm" formaction="<?= site_url('admin/members/bulk-reactivate') ?>" class="btn btn-outline btn-sm" data-bulk-submit data-confirm="Reactivate all selected members?">Reactivate selected</button>
+    <button type="submit" form="membersBulkForm" formaction="<?= site_url('admin/members/bulk-deactivate') ?>" class="btn btn-outline btn-sm" style="color:var(--red);border-color:var(--red)" data-bulk-submit data-confirm="Deactivate all selected members?">Deactivate selected</button>
+  </div>
+  <table class="bulk-table" data-bulk-scope>
     <thead>
       <tr>
+        <th><input type="checkbox" class="bulk-select-all" aria-label="Select all"></th>
         <th>Name</th><th>Email</th><th>Phone</th><th>Goats</th>
         <th>Joined</th><th>Last login</th><th>Status</th><th>Actions</th>
       </tr>
@@ -32,6 +44,7 @@
     <tbody>
       <?php foreach ($members as $m): ?>
       <tr>
+        <td><input type="checkbox" name="ids[]" value="<?= $m['id'] ?>" form="membersBulkForm" class="bulk-checkbox" aria-label="Select <?= esc($m['first_name']) ?>"></td>
         <td>
           <div class="avatar-cell">
             <div class="avatar"><?= esc(initials($m['first_name'] ?? '', $m['last_name'] ?? '')) ?></div>

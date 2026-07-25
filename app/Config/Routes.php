@@ -37,6 +37,12 @@ $routes->get('dashboard', 'DashboardController::index', [
     'filter' => 'role:super_admin,manager,vet,member',
 ]);
 
+// NOTIFICATIONS — shared across every role
+$routes->group('notifications', ['filter' => 'role:super_admin,manager,vet,member'], function ($routes) {
+    $routes->get('(:num)/read',  'NotificationController::markRead/$1');
+    $routes->post('read-all',    'NotificationController::markAllRead');
+});
+
 // SHARED ACCOUNT PAGE — admin/manager/vet (member has its own at member/account)
 $routes->group('account', ['filter' => 'role:super_admin,manager,vet'], function ($routes) {
     $routes->get('/',        'AccountController::index');
@@ -61,6 +67,8 @@ $routes->group('admin', ['filter' => 'role:super_admin', 'namespace' => 'App\Mod
     $routes->get('members/(:num)',                     'MemberController::show/$1');
     $routes->post('members/(:num)/deactivate',         'MemberController::deactivate/$1');
     $routes->post('members/(:num)/reactivate',         'MemberController::reactivate/$1');
+    $routes->post('members/bulk-deactivate',           'MemberController::bulkDeactivate');
+    $routes->post('members/bulk-reactivate',           'MemberController::bulkReactivate');
     $routes->get('staff',                              'StaffController::index');
     $routes->get('staff/export',                       'StaffController::export');
     $routes->post('staff/import',                      'StaffController::import');
@@ -69,6 +77,7 @@ $routes->group('admin', ['filter' => 'role:super_admin', 'namespace' => 'App\Mod
     $routes->get('staff/(:num)/edit',                  'StaffController::edit/$1');
     $routes->post('staff/(:num)/edit',                 'StaffController::update/$1');
     $routes->post('staff/(:num)/deactivate',           'StaffController::deactivate/$1');
+    $routes->post('staff/bulk-deactivate',             'StaffController::bulkDeactivate');
     $routes->post('staff/(:num)/reset-password',       'StaffController::resetPassword/$1');
     $routes->get('herd',                               'HerdController::index');
     $routes->get('herd/export',                        'HerdController::export');
@@ -101,6 +110,7 @@ $routes->group('manager', ['filter' => 'role:manager,super_admin', 'namespace' =
     $routes->get('health/export',              'HealthController::export');
     $routes->get('health/(:num)',              'HealthController::show/$1');
     $routes->post('health/(:num)/resolve',     'HealthController::resolve/$1');
+    $routes->post('health/bulk-resolve',       'HealthController::bulkResolve');
     $routes->get('members',                    'MemberController::index');
     $routes->get('members/(:num)',             'MemberController::show/$1');
     $routes->get('schedule',                   'ScheduleController::index');

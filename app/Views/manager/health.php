@@ -27,11 +27,21 @@
     <a href="<?= site_url('manager/health/export') . (!empty($search) ? '?q='.urlencode($search) : '') ?>" class="btn btn-ghost btn-sm"><i class="fas fa-download"></i> Export Excel</a>
   </div>
   <?php if (empty($flags)): ?>
-    <div class="empty-state">No health flags match your search.</div>
+    <?= view('partials/empty_state', [
+      'icon'    => 'fas fa-search',
+      'title'   => 'No flags match your search',
+      'message' => 'Try a different tag, animal name, or reason.',
+    ]) ?>
   <?php else: ?>
-  <table>
+  <?= form_open('manager/health/bulk-resolve', ['id' => 'healthBulkForm']) ?><?= csrf_field() ?><?= form_close() ?>
+  <div class="bulk-bar">
+    <span class="bulk-count">0 selected</span>
+    <button type="submit" form="healthBulkForm" class="btn btn-green btn-sm" data-bulk-submit data-confirm="Mark all selected flags as resolved?">Resolve selected</button>
+  </div>
+  <table class="bulk-table">
     <thead>
       <tr>
+        <th><input type="checkbox" class="bulk-select-all" aria-label="Select all"></th>
         <th>Tag</th><th>Animal</th><th>Member owner</th>
         <th>Issue</th><th>Flagged by</th><th>Date flagged</th>
         <th>Follow-up</th><th>Actions</th>
@@ -40,6 +50,7 @@
     <tbody>
       <?php foreach ($flags as $flag): ?>
       <tr>
+        <td><input type="checkbox" name="ids[]" value="<?= $flag['id'] ?>" form="healthBulkForm" class="bulk-checkbox" aria-label="Select flag for <?= esc($flag['tag_number']) ?>"></td>
         <td><span class="tag"><?= esc($flag['tag_number']) ?></span></td>
         <td style="font-weight:600;color:var(--ink)"><?= esc($flag['goat_name']) ?></td>
         <td>

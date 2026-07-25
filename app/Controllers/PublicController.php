@@ -50,6 +50,11 @@ class PublicController extends BaseController
             log_message('error', 'Contact form email failed: '.$e->getMessage());
         }
 
+        $notifs = new \App\Models\NotificationModel();
+        foreach (array_merge((new UserModel())->getByRole('super_admin'), (new UserModel())->getByRole('manager')) as $staff) {
+            $notifs->notifyUser((int) $staff['id'], 'New contact message', $contact['name'].': '.$contact['subject'], 'info', 'manager/contact');
+        }
+
         log_message('info', 'Contact form from: '.$contact['email']);
         return redirect()->to('/contact')->with('success', 'Thank you! We will get back to you within 1–2 working days.');
     }

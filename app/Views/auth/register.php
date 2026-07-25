@@ -89,7 +89,7 @@
         <label for="phone">Phone number *</label>
         <input type="tel" id="phone" name="phone"
           value="<?= esc(old('phone')) ?>" placeholder="+256 700 000 000" required
-          pattern="[0-9+\-\s()]{7,20}" data-pattern-message="Enter a valid phone number.">
+          pattern="[0-9+ ]{7,20}" data-pattern-message="Enter a valid phone number.">
       </div>
       <div class="field">
         <label for="address">Physical / home address *</label>
@@ -185,7 +185,7 @@
           <label for="nok_phone">Phone number *</label>
           <input type="tel" id="nok_phone" name="nok_phone"
             value="<?= esc(old('nok_phone')) ?>" placeholder="+256 700 000 000" required
-            pattern="[0-9+\-\s()]{7,20}" data-pattern-message="Enter a valid phone number.">
+            pattern="[0-9+ ]{7,20}" data-pattern-message="Enter a valid phone number.">
         </div>
         <div class="field">
           <label for="nok_address">Address</label>

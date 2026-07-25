@@ -20,7 +20,13 @@
     </form>
   </div>
   <?php if (empty($transactions)): ?>
-    <div class="empty-state">No transactions yet. <a href="<?= site_url('member/wallet/topup') ?>">Make your first payment →</a></div>
+    <?= view('partials/empty_state', [
+      'icon'    => 'fas fa-credit-card',
+      'title'   => empty($search) ? 'No transactions yet' : 'No transactions match your search',
+      'message' => empty($search) ? 'Wallet credits and payments will show up here once you make your first top-up.' : 'Try a different description or reference.',
+      'ctaUrl'  => empty($search) ? 'member/wallet/topup' : null,
+      'ctaText' => 'Make your first payment',
+    ]) ?>
   <?php else: ?>
   <table>
     <thead><tr><th>Date</th><th>Description</th><th>Reference</th><th>Type</th><th>Amount (UGX)</th><th>Balance</th></tr></thead>

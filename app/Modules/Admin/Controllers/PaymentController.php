@@ -48,10 +48,11 @@ class PaymentController extends BaseController
         [$rows, $error] = $this->parseUploadedSpreadsheet('file');
         if ($error) return redirect()->back()->with('error', $error);
 
-        $users = new UserModel();
-        $txns  = new TransactionModel();
+        $users  = new UserModel();
+        $txns   = new TransactionModel();
+        $notifs = new \App\Models\NotificationModel();
         $adminId = $this->currentUserId();
-        [$created, $errors] = $this->processImportRows($rows, function (array $row) use ($users, $txns, $adminId) {
+        [$created, $errors] = $this->processImportRows($rows, function (array $row) use ($users, $txns, $notifs, $adminId) {
             $email = strtolower(trim($row['member_email'] ?? ''));
             if ($email === '') return 'member_email is required';
             $member = $users->where('email', $email)->where('role', 'member')->first();
@@ -80,6 +81,13 @@ class PaymentController extends BaseController
                 'balance_after' => $newBalance,
                 'created_by'    => $adminId,
             ]);
+            $notifs->notifyUser(
+                (int) $member['id'],
+                $type === 'credit' ? 'Wallet credited' : 'Wallet debited',
+                $description.' — UGX '.number_format($amount),
+                $type === 'credit' ? 'success' : 'warning',
+                'member/statements'
+            );
             return true;
         });
         return $this->importRedirect('/admin/payments', $created, $errors);

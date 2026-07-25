@@ -39,7 +39,13 @@
   </div>
 
   <?php if (empty($herd)): ?>
-  <div class="empty-state">No animals in the herd yet.</div>
+  <?= view('partials/empty_state', [
+    'icon'    => 'fas fa-paw',
+    'title'   => empty($search) ? 'No animals in the herd yet' : 'No animals match your search',
+    'message' => empty($search) ? 'Add your first animal to start tracking its health and weight.' : 'Try a different tag, name, or breed.',
+    'ctaUrl'  => empty($search) ? 'manager/herd/create' : null,
+    'ctaText' => 'Add the first animal',
+  ]) ?>
   <?php else: ?>
   <table>
     <thead>

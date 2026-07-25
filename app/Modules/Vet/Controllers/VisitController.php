@@ -56,6 +56,12 @@ class VisitController extends BaseController
                         $mailer->sendHealthFlagAlert($mgr, $goat, $reason);
                     }
                 } catch (\Throwable $e) {}
+
+                $notifs = new \App\Models\NotificationModel();
+                if ($member) {
+                    $notifs->notifyUser((int) $member['id'], 'Health flag raised', $goat['name'].' ('.$goat['tag_number'].') — '.$reason, 'warning', 'member/goats/'.$goat['id']);
+                }
+                $notifs->notifyRole('manager', 'Health flag raised', $goat['name'].' ('.$goat['tag_number'].') — '.$reason, 'warning', 'manager/health');
             }
         }
         return redirect()->to('/vet/visits/history')->with('success','Visit logged successfully.');

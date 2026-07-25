@@ -74,6 +74,15 @@
     <?php if (!empty($application['info_request_note'])): ?>
     <div style="background:var(--amber-pale, #FFFBEB); border:1px solid #FDE68A; border-radius:8px; padding:14px 16px; font-size:13px; color:#92400E;">
       <strong>Previously requested:</strong> <?= esc($application['info_request_note']) ?>
+      <div class="audit-trail" style="margin-top:8px; color:#92400E; opacity:0.8;">
+        <i class="fas fa-clock"></i>
+        <?php if (!empty($reviewer)): ?>
+          Requested by <strong><?= esc($reviewer['first_name'].' '.$reviewer['last_name']) ?></strong>
+        <?php else: ?>
+          Requested
+        <?php endif ?>
+        <?= !empty($application['reviewed_at']) ? '· '.date('j M Y, g:i A', strtotime($application['reviewed_at'])) : '' ?>
+      </div>
     </div>
     <?php endif ?>
 
@@ -116,12 +125,27 @@
   <div style="padding:0 20px 20px; font-size:14px; color:var(--slate);">
     <?= !empty($application['rejection_reason']) ? nl2br(esc($application['rejection_reason'])) : 'No reason given.' ?>
   </div>
+  <div class="audit-trail" style="padding:0 20px 20px;">
+    <i class="fas fa-clock"></i>
+    <?php if (!empty($reviewer)): ?>
+      Rejected by <strong><?= esc($reviewer['first_name'].' '.$reviewer['last_name']) ?></strong>
+    <?php else: ?>
+      Rejected
+    <?php endif ?>
+    <?= !empty($application['reviewed_at']) ? '· '.date('j M Y, g:i A', strtotime($application['reviewed_at'])) : '' ?>
+  </div>
 </div>
 <?php else: ?>
 <div class="card" style="margin-top:24px;">
   <div class="card-head"><h3>Approved</h3></div>
-  <div style="padding:0 20px 20px; font-size:14px; color:var(--slate);">
-    Reviewed <?= !empty($application['reviewed_at']) ? date('j M Y, g:i A', strtotime($application['reviewed_at'])) : '' ?>.
+  <div class="audit-trail" style="padding:16px 20px 20px;">
+    <i class="fas fa-check-circle" style="color:var(--green)"></i>
+    <?php if (!empty($reviewer)): ?>
+      Approved by <strong><?= esc($reviewer['first_name'].' '.$reviewer['last_name']) ?></strong>
+    <?php else: ?>
+      Approved
+    <?php endif ?>
+    <?= !empty($application['reviewed_at']) ? '· '.date('j M Y, g:i A', strtotime($application['reviewed_at'])) : '' ?>
   </div>
 </div>
 <?php endif ?>

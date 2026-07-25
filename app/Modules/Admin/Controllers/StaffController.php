@@ -110,6 +110,13 @@ class StaffController extends BaseController
         return redirect()->to('/admin/staff')->with('success','Staff account deactivated.');
     }
 
+    public function bulkDeactivate()
+    {
+        $ids = $this->bulkIds();
+        foreach ($ids as $id) $this->users->deactivate($id);
+        return redirect()->to('/admin/staff')->with('success', count($ids).' staff account'.(count($ids)===1?'':'s').' deactivated.');
+    }
+
     public function resetPassword(int $id)
     {
         $user  = $this->users->find($id);

@@ -14,7 +14,11 @@
     <?= view('partials/import_widget', ['importAction' => 'admin/payments/import', 'importHint' => 'member_email, type (credit/debit), amount, description, reference — credits/debits the member wallet ledger']) ?>
   </div>
   <?php if (empty($payments)): ?>
-    <div class="empty-state">No payments recorded yet</div>
+    <?= view('partials/empty_state', [
+      'icon'    => 'fas fa-credit-card',
+      'title'   => empty($search) ? 'No payments recorded yet' : 'No payments match your search',
+      'message' => empty($search) ? 'Payments made through the gateway will show up here automatically.' : 'Try a different member name or reference.',
+    ]) ?>
   <?php else: ?>
   <table>
     <thead><tr><th>Member</th><th>Reference</th><th>Amount (UGX)</th><th>Status</th><th>Method</th><th>Date</th></tr></thead>

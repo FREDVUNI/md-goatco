@@ -106,7 +106,7 @@
     msg.className = "field-error-msg";
     msg.id = "err-" + fieldKey(field);
     var icon = document.createElement("i");
-    icon.className = "fas fa-circle-exclamation";
+    icon.className = "fas fa-exclamation-circle";
     var span = document.createElement("span");
     span.textContent = message;
     msg.appendChild(icon);
@@ -157,7 +157,17 @@
       }
     }
 
-    if (typeof field.checkValidity === "function" && !field.checkValidity()) {
+    // A malformed `pattern`/regex-based constraint can make checkValidity()
+    // throw instead of just failing (browser engines vary here) — treat
+    // that as "valid" rather than letting one bad field wedge every form
+    // on the page silently.
+    var isValid = true;
+    try {
+      isValid = typeof field.checkValidity !== "function" || field.checkValidity();
+    } catch (err) {
+      isValid = true;
+    }
+    if (! isValid) {
       var v = field.validity;
       var key = VALIDITY_ORDER.find(function (k) { return v[k]; });
       var message = (key && MESSAGES[key]) ? MESSAGES[key](field) : (field.validationMessage || "Enter a valid value.");

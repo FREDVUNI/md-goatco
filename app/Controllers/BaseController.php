@@ -58,6 +58,17 @@ abstract class BaseController extends Controller
         $data['currentUser'] = $this->currentUser();
         $data['role']        = $this->currentUserRole();
         $data['pageTitle']   = $data['pageTitle'] ?? 'Dashboard';
+
+        // Notification bell — available on every dashboard page (not just
+        // the unified /dashboard), so it's a single source of truth instead
+        // of every controller having to remember to pass it.
+        if (! isset($data['notifications']) && ! isset($data['unreadCount'])) {
+            $notifs = new \App\Models\NotificationModel();
+            $userId = $this->currentUserId();
+            $data['notifications'] = $notifs->getForUser($userId, 10);
+            $data['unreadCount']   = $notifs->getUnreadCount($userId);
+        }
+
         return view($view, $data);
     }
 
@@ -93,6 +104,17 @@ abstract class BaseController extends Controller
         $pager->store($group, $page, $perPage, $total);
 
         return [$rows, $pager];
+    }
+
+    /**
+     * Reads the checked `ids[]` from a bulk-action form submission (see the
+     * .bulk-table/.bulk-bar JS in dashboard.js), deduplicated and cast to int.
+     */
+    protected function bulkIds(): array
+    {
+        $ids = $this->request->getPost('ids');
+        if (! is_array($ids)) return [];
+        return array_values(array_unique(array_filter(array_map('intval', $ids))));
     }
 
     protected function downloadCsv(array $rows, string $filename): \CodeIgniter\HTTP\ResponseInterface

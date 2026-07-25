@@ -14,7 +14,11 @@
   </div>
   <?php endif ?>
   <?php if (empty($goats)): ?>
-    <div class="empty-state"><?= $goatCount > 0 ? 'No goats match your search.' : 'No goats assigned yet. Your animals will appear here once assigned by the farm team.' ?></div>
+    <?= view('partials/empty_state', [
+      'icon'    => 'fas fa-paw',
+      'title'   => $goatCount > 0 ? 'No goats match your search' : 'No goats assigned yet',
+      'message' => $goatCount > 0 ? 'Try a different tag, name, or breed.' : 'Your animals will appear here once assigned by the farm team.',
+    ]) ?>
   <?php else: ?>
   <table>
     <thead><tr><th>Tag</th><th>Name</th><th>Breed</th><th>Age</th><th>Weight</th><th>Last check</th><th>Health</th></tr></thead>

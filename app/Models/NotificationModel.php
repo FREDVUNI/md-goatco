@@ -9,6 +9,7 @@ class NotificationModel extends Model
     protected $primaryKey    = 'id';
     protected $returnType    = 'array';
     protected $useTimestamps = true;
+    protected $updatedField  = ''; // notifications table has no updated_at column — it's write-once
     protected $allowedFields = ['user_id','title','body','type','is_read','link'];
 
     public function getForUser(int $userId, int $limit = 10): array
@@ -23,11 +24,25 @@ class NotificationModel extends Model
 
     public function markRead(int $id): void { $this->update($id,['is_read'=>1]); }
 
-    public function notifyAllAdmins(string $title, string $body, string $type = 'info'): void
+    public function markAllRead(int $userId): void
     {
-        $users = (new UserModel())->getByRole('super_admin');
-        foreach ($users as $u) {
-            $this->insert(['user_id'=>$u['id'],'title'=>$title,'body'=>$body,'type'=>$type,'is_read'=>0]);
+        $this->where('user_id',$userId)->where('is_read',0)->set(['is_read'=>1])->update();
+    }
+
+    public function notifyUser(int $userId, string $title, string $body, string $type = 'info', ?string $link = null): void
+    {
+        $this->insert(['user_id'=>$userId,'title'=>$title,'body'=>$body,'type'=>$type,'link'=>$link,'is_read'=>0]);
+    }
+
+    public function notifyRole(string $role, string $title, string $body, string $type = 'info', ?string $link = null): void
+    {
+        foreach ((new UserModel())->getByRole($role) as $u) {
+            $this->notifyUser((int)$u['id'], $title, $body, $type, $link);
         }
+    }
+
+    public function notifyAllAdmins(string $title, string $body, string $type = 'info', ?string $link = null): void
+    {
+        $this->notifyRole('super_admin', $title, $body, $type, $link);
     }
 }

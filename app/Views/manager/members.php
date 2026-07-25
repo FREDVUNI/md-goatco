@@ -18,7 +18,11 @@
   </div>
 
   <?php if (empty($members)): ?>
-  <div class="empty-state">No active members yet</div>
+  <?= view('partials/empty_state', [
+    'icon'    => 'fas fa-users',
+    'title'   => empty($search) ? 'No members yet' : 'No members match your search',
+    'message' => empty($search) ? 'Approved Goat Banking members will appear here.' : 'Try a different name or phone number.',
+  ]) ?>
   <?php else: ?>
   <table>
     <thead>

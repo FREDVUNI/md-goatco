@@ -43,9 +43,16 @@ class ApplicationController extends BaseController
     {
         $app = $this->applications->find($id);
         if (! $app) return redirect()->to('/admin/applications')->with('error','Application not found.');
+
+        $reviewer = null;
+        if (! empty($app['reviewed_by'])) {
+            $reviewer = $this->users->find($app['reviewed_by']);
+        }
+
         return $this->dashboardView('admin/application_detail', [
             'pageTitle'   => $app['first_name'].' '.$app['last_name'].' — Application',
             'application' => $app,
+            'reviewer'    => $reviewer,
             'pendingCount'=> $this->applications->countPending(),
         ]);
     }
@@ -60,6 +67,15 @@ class ApplicationController extends BaseController
             $user = $this->users->find($app['user_id']);
             (new EmailService())->sendApproval($user);
         } catch (\Throwable $e) { log_message('error','Approval email failed: '.$e->getMessage()); }
+        // Reject/request-info aren't notified in-app: those statuses can't log
+        // in to see the bell, so email is the only channel that reaches them.
+        (new \App\Models\NotificationModel())->notifyUser(
+            (int) $app['user_id'],
+            'Application approved',
+            'Welcome to MD Goatco Farm! Your Goat Banking application has been approved.',
+            'success',
+            'member/goats'
+        );
         return redirect()->to('/admin/applications')->with('success',$app['first_name'].' '.$app['last_name'].'\'s application has been approved.');
     }
 
@@ -82,7 +98,7 @@ class ApplicationController extends BaseController
         $app  = $this->applications->find($id);
         $note = $this->request->getPost('note') ?? '';
         if (! $app) return redirect()->to('/admin/applications')->with('error','Not found.');
-        $this->applications->update($id, ['status'=>'info_requested','info_request_note'=>$note]);
+        $this->applications->update($id, ['status'=>'info_requested','info_request_note'=>$note,'reviewed_by'=>$this->currentUserId(),'reviewed_at'=>date('Y-m-d H:i:s')]);
         try {
             $user = $this->users->find($app['user_id']);
             (new EmailService())->sendInfoRequest($user, $note);

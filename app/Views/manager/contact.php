@@ -19,7 +19,11 @@
   </div>
 
   <?php if (empty($messages)): ?>
-    <div class="empty-state">No contact messages yet.</div>
+    <?= view('partials/empty_state', [
+      'icon'    => 'fas fa-envelope-open-text',
+      'title'   => empty($search) ? 'No contact messages yet' : 'No messages match your search',
+      'message' => empty($search) ? 'Messages sent through the website contact form will appear here.' : 'Try a different name, email, or subject.',
+    ]) ?>
   <?php else: ?>
   <table>
     <thead>
