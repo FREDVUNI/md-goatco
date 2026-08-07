@@ -149,10 +149,10 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 </div>
 
 <div class="stat-grid stat-grid-4">
-  <div class="stat-card stat-blue"><div class="stat-label">Total Goats</div><div class="stat-val"><?= esc($herdStats['total'] ?? 0) ?></div><div class="stat-sub"><?= esc($herdStats['in_banking'] ?? 0) ?> in Banking</div></div>
-  <div class="stat-card stat-green"><div class="stat-label">Active Members</div><div class="stat-val"><?= esc($memberCount ?? 0) ?></div><div class="stat-sub">Goat Banking accounts</div></div>
-  <div class="stat-card <?= ($flagCount ?? 0) > 0 ? 'stat-red' : 'stat-green' ?>"><div class="stat-label">Health Flags</div><div class="stat-val"><?= esc($flagCount ?? 0) ?></div><div class="stat-sub">Awaiting resolution</div></div>
-  <div class="stat-card stat-amber"><div class="stat-label">Tasks Today</div><div class="stat-val"><?= esc($todayTaskCount ?? 0) ?></div><div class="stat-sub">Scheduled vet visits</div></div>
+  <a href="<?= site_url('manager/herd') ?>" class="stat-card stat-blue stat-card-link"><div class="stat-label">Total Goats</div><div class="stat-val"><?= esc($herdStats['total'] ?? 0) ?></div><div class="stat-sub"><?= esc($herdStats['in_banking'] ?? 0) ?> in Banking</div></a>
+  <a href="<?= site_url('manager/members') ?>" class="stat-card stat-green stat-card-link"><div class="stat-label">Active Members</div><div class="stat-val"><?= esc($memberCount ?? 0) ?></div><div class="stat-sub">Goat Banking accounts</div></a>
+  <a href="<?= site_url('manager/health') ?>" class="stat-card <?= ($flagCount ?? 0) > 0 ? 'stat-red' : 'stat-green' ?> stat-card-link"><div class="stat-label">Health Flags</div><div class="stat-val"><?= esc($flagCount ?? 0) ?></div><div class="stat-sub">Awaiting resolution</div></a>
+  <a href="<?= site_url('manager/schedule') ?>" class="stat-card stat-amber stat-card-link"><div class="stat-label">Tasks Today</div><div class="stat-val"><?= esc($todayTaskCount ?? 0) ?></div><div class="stat-sub">Scheduled vet visits</div></a>
 </div>
 
 <div class="grid-2">
@@ -215,16 +215,16 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 </div>
 
 <div class="stat-grid stat-grid-3">
-  <div class="stat-card <?= ($flagCount ?? 0) > 0 ? 'stat-red' : 'stat-green' ?>">
+  <a href="<?= site_url('vet/flags') ?>" class="stat-card <?= ($flagCount ?? 0) > 0 ? 'stat-red' : 'stat-green' ?> stat-card-link">
     <div class="stat-label">My Active Flags</div>
     <div class="stat-val"><?= esc($flagCount ?? 0) ?></div>
     <div class="stat-sub">Animals needing attention</div>
-  </div>
-  <div class="stat-card stat-blue">
+  </a>
+  <a href="<?= site_url('vet/visits/history') ?>" class="stat-card stat-blue stat-card-link">
     <div class="stat-label">Recent Visits Logged</div>
     <div class="stat-val"><?= count($recentVisits ?? []) ?></div>
     <div class="stat-sub">Showing below</div>
-  </div>
+  </a>
   <div class="stat-card stat-amber">
     <div class="stat-label">Quick Log</div>
     <div class="stat-val" style="font-size:1rem;margin-top:8px">
@@ -305,21 +305,21 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 </div>
 
 <div class="stat-grid stat-grid-3">
-  <div class="stat-card stat-blue">
+  <a href="<?= site_url('member/goats') ?>" class="stat-card stat-blue stat-card-link">
     <div class="stat-label">Goats in portfolio</div>
     <div class="stat-val"><?= esc($goatCount ?? 0) ?></div>
     <div class="stat-sub">All assigned and tagged</div>
-  </div>
-  <div class="stat-card stat-green">
+  </a>
+  <a href="<?= site_url('member/goats') ?>" class="stat-card stat-green stat-card-link">
     <div class="stat-label">Healthy animals</div>
     <div class="stat-val"><?= esc($healthyCount ?? 0) ?>/<?= esc($goatCount ?? 0) ?></div>
     <div class="stat-sub">Last vet check on record</div>
-  </div>
-  <div class="stat-card stat-amber">
+  </a>
+  <a href="<?= site_url('member/statements') ?>" class="stat-card stat-amber stat-card-link">
     <div class="stat-label">Account balance</div>
     <div class="stat-val">UGX <?= number_format($balance ?? 0) ?></div>
-    <div class="stat-sub"><a href="<?= site_url('member/wallet/topup') ?>" style="color:var(--amber);font-weight:700">Top up →</a></div>
-  </div>
+    <div class="stat-sub">View statements →</div>
+  </a>
 </div>
 
 <?php if (!empty($goats)): ?>
