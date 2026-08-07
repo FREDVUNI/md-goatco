@@ -252,6 +252,25 @@ img {
   max-width: 380px;
   line-height: 1.7;
 }
+.auth-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 22px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #fff;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.auth-home-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+}
 
 /* Stat row on left panel */
 .auth-stat-row {
@@ -387,6 +406,7 @@ img {
   width: 100%;
   max-width: 550px;
   box-shadow: 0 20px 60px -30px rgba(30, 63, 122, 0.18);
+  transition: min-height 0.2s ease;
 }
 
 /* Tabs */

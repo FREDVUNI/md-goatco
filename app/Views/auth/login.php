@@ -18,6 +18,7 @@
         <div class="auth-role-badge">MD Goatco Farm Portal</div>
         <h1>One login.<br><em>Welcome Back!</em><br>One farm.</h1>
         <p>One door for everyone who keeps this farm running — from daily care to full oversight. Your dashboard is waiting on the other side.</p>
+        <a href="<?= site_url('/') ?>" class="auth-home-link"><i class="fas fa-arrow-left"></i> Back to home</a>
       </div>
     </div>
   </div>

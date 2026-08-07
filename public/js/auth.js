@@ -130,6 +130,30 @@ function switchTab(tabName, clickedEl) {
   }
 }
 
+// ── EQUALIZE LOGIN/STATUS CARD HEIGHT ──────────────────────────────────
+// The login and "check status" tabs share one .auth-card; without this the
+// card visibly resizes (jumps) when switching tabs because each pane has
+// different content length. Measure the tallest pane once and pin the
+// card to that height via min-height, so switching feels stable.
+function equalizeAuthCardHeight() {
+  const card = document.querySelector(".auth-card");
+  const panes = document.querySelectorAll(".auth-pane");
+  if (!card || panes.length < 2) return;
+
+  const activePane = Array.from(panes).find((p) => p.style.display !== "none") || panes[0];
+  const nonPaneHeight = card.offsetHeight - activePane.offsetHeight;
+
+  let maxPaneHeight = 0;
+  panes.forEach((pane) => {
+    const prevDisplay = pane.style.display;
+    pane.style.display = "block";
+    maxPaneHeight = Math.max(maxPaneHeight, pane.offsetHeight);
+    pane.style.display = prevDisplay;
+  });
+
+  card.style.minHeight = nonPaneHeight + maxPaneHeight + "px";
+}
+
 // ── PASSWORD STRENGTH INDICATOR ───────────────────────────────────────
 function initPasswordStrength() {
   const passInput = document.getElementById("password");
@@ -194,3 +218,20 @@ function escHtml(str) {
 document.addEventListener("DOMContentLoaded", () => {
   initPasswordStrength();
 });
+
+// Measured after full `load` (+ webfonts, if supported) rather than
+// DOMContentLoaded — measuring too early, before the display font has
+// swapped in, gives a shorter reading than the page's real settled height
+// and pins the card too short.
+function runEqualizeAuthCardHeight() {
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(equalizeAuthCardHeight);
+  } else {
+    equalizeAuthCardHeight();
+  }
+}
+if (document.readyState === "complete") {
+  runEqualizeAuthCardHeight();
+} else {
+  window.addEventListener("load", runEqualizeAuthCardHeight);
+}
