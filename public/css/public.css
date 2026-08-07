@@ -214,8 +214,8 @@ header {
   gap: 12px;
 }
 .logo img {
-  width: 48px;
-  height: 48px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
 }
 .logo-text strong {
@@ -258,10 +258,26 @@ header {
 }
 .nav-toggle {
   display: none;
-  background: none;
-  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background: var(--blue-pale);
+  border: 1px solid transparent;
+  border-radius: 10px;
   cursor: pointer;
   padding: 6px;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+.nav-toggle:hover {
+  background: #fff;
+  border-color: var(--border);
+}
+.nav-toggle:active {
+  transform: scale(0.94);
 }
 .nav-toggle span {
   display: block;
@@ -289,13 +305,13 @@ header {
   display: none;
   width: 100%;
   border-top: 1px solid var(--border);
-  padding: 10px 0 16px;
+  padding: 10px 0 28px;
   order: 3;
 }
 .nav-mobile-menu.open {
   display: block;
 }
-.nav-mobile-menu a {
+.nav-mobile-menu > a {
   display: block;
   padding: 12px 0;
   color: var(--slate);
@@ -303,7 +319,7 @@ header {
   border-bottom: 1px solid var(--border);
   font-size: 0.96rem;
 }
-.nav-mobile-menu a:last-of-type {
+.nav-mobile-menu > a:last-of-type {
   border-bottom: none;
 }
 .nav-mobile-actions {
@@ -311,6 +327,7 @@ header {
   flex-direction: column;
   gap: 10px;
   margin-top: 14px;
+  margin-bottom: 14px;
 }
 
 /* ── HERO ────────────────────────────────────────────────────────── */

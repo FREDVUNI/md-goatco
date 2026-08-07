@@ -39,7 +39,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 <!-- ─────────── ADMIN CONTENT ─────────── -->
 <div class="welcome-banner">
   <div>
-    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper" style="color:var(--green)"></i></h2>
+    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper"></i></h2>
     <p>Here's your farm overview for <?= date('l, j F Y') ?></p>
     <div class="wb-stats">
       <div class="wb-stat"><strong><?= esc($totalMembers ?? 0) ?></strong><span>Members</span></div>
@@ -51,36 +51,36 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 </div>
 
 <div class="stat-grid stat-grid-4">
-  <div class="stat-card stat-blue">
+  <a href="<?= site_url('admin/members') ?>" class="stat-card stat-blue stat-card-link">
     <div class="stat-label">Total Members</div>
     <div class="stat-val"><?= esc($totalMembers ?? 0) ?></div>
     <div class="stat-sub">Active Goat Banking accounts</div>
     <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
-  </div>
-  <div class="stat-card stat-amber">
+  </a>
+  <a href="<?= site_url('admin/applications') ?>" class="stat-card stat-amber stat-card-link">
     <div class="stat-label">Pending Review</div>
     <div class="stat-val"><?= esc($pendingCount ?? 0) ?></div>
     <div class="stat-sub">Applications awaiting</div>
     <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-  </div>
-  <div class="stat-card stat-green">
+  </a>
+  <a href="<?= site_url('admin/herd') ?>" class="stat-card stat-green stat-card-link">
     <div class="stat-label">Total Goats</div>
     <div class="stat-val"><?= esc($goatStats['total'] ?? 0) ?></div>
     <div class="stat-sub"><?= esc($goatStats['in_banking'] ?? 0) ?> in Banking</div>
     <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/></svg></div>
-  </div>
-  <div class="stat-card stat-red">
+  </a>
+  <a href="<?= site_url('vet/flags') ?>" class="stat-card stat-red stat-card-link">
     <div class="stat-label">Health Flags</div>
     <div class="stat-val"><?= esc($goatStats['flagged'] ?? 0) ?></div>
     <div class="stat-sub">Active, unresolved</div>
     <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg></div>
-  </div>
+  </a>
 </div>
 
 <div class="grid-2">
   <div class="card">
     <div class="card-head">
-      <h3>⏳ Pending Applications</h3>
+      <h3><i class="fas fa-hourglass-half"></i> Pending Applications</h3>
       <a href="<?= site_url('admin/applications') ?>" class="btn btn-outline btn-sm">View all</a>
     </div>
     <?php if (empty($recentPending)): ?>
@@ -107,29 +107,37 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
   </div>
 
   <div class="card">
+    <div class="card-head"><h3><i class="fas fa-chart-pie"></i> Application Status (all time)</h3></div>
+    <?= view('partials/pie_chart', ['labels' => $appStatusLabels ?? [], 'values' => $appStatusValues ?? [], 'colors' => $appStatusColors ?? [], 'centerLabel' => 'Applications']) ?>
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card">
     <div class="card-head">
-      <h3><i class="fas fa-users"></i> Staff Overview</h3>
+      <h3><i class="fas fa-users"></i> Staff by Role</h3>
       <a href="<?= site_url('admin/staff') ?>" class="btn btn-outline btn-sm">Manage</a>
     </div>
-    <div class="staff-overview">
-      <div class="staff-role-row"><div class="role-chip role-chip-vet">Veterinarians</div><strong><?= esc($staffCounts['vet'] ?? 0) ?></strong></div>
-      <div class="staff-role-row"><div class="role-chip role-chip-manager">Farm Managers</div><strong><?= esc($staffCounts['manager'] ?? 0) ?></strong></div>
-      <div class="staff-role-row"><div class="role-chip role-chip-admin">Administrators</div><strong><?= esc($staffCounts['super_admin'] ?? 0) ?></strong></div>
-      <a href="<?= site_url('admin/staff/create') ?>" class="btn btn-primary" style="margin-top:16px;width:100%;justify-content:center">+ Create staff account</a>
-    </div>
+    <?= view('partials/pie_chart', ['labels' => $staffRoleLabels ?? [], 'values' => $staffRoleValues ?? [], 'colors' => $staffRoleColors ?? [], 'centerLabel' => 'Staff']) ?>
+    <div style="padding:0 20px 20px"><a href="<?= site_url('admin/staff/create') ?>" class="btn btn-primary" style="width:100%;justify-content:center">+ Create staff account</a></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><h3><i class="fas fa-paw"></i> Herd Health</h3></div>
+    <?= view('partials/pie_chart', ['labels' => $herdHealthLabels ?? [], 'values' => $herdHealthValues ?? [], 'colors' => $herdHealthColors ?? [], 'centerLabel' => 'Goats']) ?>
   </div>
 </div>
 
 <div class="card chart-card">
   <div class="card-head"><h3><i class="fas fa-chart-line"></i> Applications — last 6 months</h3></div>
-  <?= view('partials/bar_chart', ['labels' => $appLabels ?? [], 'values' => $appValues ?? []]) ?>
+  <?= view('partials/bar_chart_vertical', ['labels' => $appLabels ?? [], 'values' => $appValues ?? []]) ?>
 </div>
 
 <?php elseif ($isManager): ?>
 <!-- ─────────── MANAGER CONTENT ─────────── -->
 <div class="welcome-banner">
   <div>
-    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper" style="color:var(--green)"></i></h2>
+    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper"></i></h2>
     <p>Farm overview — <?= date('l, j F Y') ?></p>
     <div class="wb-stats">
       <div class="wb-stat"><strong><?= esc($herdStats['total'] ?? 0) ?></strong><span>Goats</span></div>
@@ -197,7 +205,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 <!-- ─────────── VET CONTENT ─────────── -->
 <div class="welcome-banner">
   <div>
-    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper" style="color:var(--green)"></i></h2>
+    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper"></i></h2>
     <p>Your veterinary dashboard — <?= date('l, j F Y') ?></p>
     <div class="wb-stats">
       <div class="wb-stat"><strong><?= esc($flagCount ?? 0) ?></strong><span>Active flags</span></div>
@@ -277,7 +285,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 <!-- ─────────── MEMBER CONTENT ─────────── -->
 <div class="welcome-banner">
   <div>
-    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper" style="color:var(--green)"></i></h2>
+    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper"></i></h2>
     <p>
       <?php if (($healthyCount ?? 0) === ($goatCount ?? 0) && ($goatCount ?? 0) > 0): ?>
         All <?= esc($goatCount) ?> of your goats are healthy.

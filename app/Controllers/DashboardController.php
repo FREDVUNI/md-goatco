@@ -90,16 +90,34 @@ class DashboardController extends BaseController
         $users        = new UserModel();
         $applications = new MemberApplicationModel();
         $goats        = new GoatModel();
+        $db           = Database::connect();
         [$appLabels, $appValues] = $this->monthlySeries('member_applications', 'created_at');
+
+        $appStatusRows = $db->table('member_applications')->select('status, COUNT(*) as cnt')->groupBy('status')->get()->getResultArray();
+        $appStatusCounts = ['pending' => 0, 'info_requested' => 0, 'approved' => 0, 'rejected' => 0];
+        foreach ($appStatusRows as $r) $appStatusCounts[$r['status']] = (int) $r['cnt'];
+
+        $goatStats = $goats->getStats();
+        $staffCounts = $users->countByRole();
+
         return [
-            'pageTitle'     => 'Dashboard Overview',
-            'totalMembers'  => count($users->getByRole('member')),
-            'pendingCount'  => $applications->countPending(),
-            'goatStats'     => $goats->getStats(),
-            'recentPending' => $applications->getPending(),
-            'staffCounts'   => $users->countByRole(),
-            'appLabels'     => $appLabels,
-            'appValues'     => $appValues,
+            'pageTitle'        => 'Dashboard Overview',
+            'totalMembers'     => count($users->getByRole('member')),
+            'pendingCount'     => $applications->countPending(),
+            'goatStats'        => $goatStats,
+            'recentPending'    => $applications->getPending(),
+            'staffCounts'      => $staffCounts,
+            'appLabels'        => $appLabels,
+            'appValues'        => $appValues,
+            'appStatusLabels'  => ['Pending', 'Info requested', 'Approved', 'Rejected'],
+            'appStatusValues'  => [$appStatusCounts['pending'], $appStatusCounts['info_requested'], $appStatusCounts['approved'], $appStatusCounts['rejected']],
+            'appStatusColors'  => ['#d97706', '#7c3aed', '#059669', '#dc2626'],
+            'staffRoleLabels'  => ['Veterinarians', 'Farm Managers', 'Administrators'],
+            'staffRoleValues'  => [$staffCounts['vet'] ?? 0, $staffCounts['manager'] ?? 0, $staffCounts['super_admin'] ?? 0],
+            'staffRoleColors'  => ['#0891b2', '#2b5ba8', '#d97706'],
+            'herdHealthLabels' => ['Healthy', 'Flagged'],
+            'herdHealthValues' => [max(0, ($goatStats['total'] ?? 0) - ($goatStats['flagged'] ?? 0)), $goatStats['flagged'] ?? 0],
+            'herdHealthColors' => ['#059669', '#dc2626'],
         ];
     }
 

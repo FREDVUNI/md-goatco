@@ -75,11 +75,25 @@ body.dash-body {
 }
 .sb-close {
   display: none;
-  background: none;
-  border: none;
-  font-size: 1.4rem;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  background: var(--bg);
+  border: 1px solid transparent;
+  border-radius: 10px;
   color: var(--slate);
   cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.sb-close:hover {
+  background: #fff;
+  border-color: var(--border);
+  color: var(--red);
+}
+.sb-close:active {
+  transform: scale(0.94);
 }
 .sb-role {
   margin: 16px 16px 8px;
@@ -257,11 +271,25 @@ body.dash-body {
 }
 .topbar-menu-btn {
   display: none;
-  background: none;
-  border: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  background: var(--bg);
+  border: 1px solid transparent;
+  border-radius: 10px;
   cursor: pointer;
   color: var(--slate);
-  padding: 4px;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.topbar-menu-btn:hover {
+  background: #fff;
+  border-color: var(--border);
+  color: var(--blue);
+}
+.topbar-menu-btn:active {
+  transform: scale(0.94);
 }
 .topbar-title {
   font-size: 0.9rem;
@@ -585,6 +613,18 @@ body.dash-body {
   padding: 20px;
   position: relative;
   overflow: hidden;
+}
+.stat-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.stat-card-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(26, 34, 56, 0.09);
+  border-color: var(--blue);
+  text-decoration: none;
 }
 .stat-label {
   font-size: 0.72rem;
@@ -1229,6 +1269,146 @@ tr:hover td {
   min-width: 34px;
   text-align: right;
 }
+/* REPORTS — RANGE TABS */
+.report-range-tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--bg);
+  border-radius: 9px;
+  padding: 4px;
+}
+.report-range-tab {
+  padding: 7px 16px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--slate);
+  text-decoration: none;
+}
+.report-range-tab:hover {
+  color: var(--blue);
+  text-decoration: none;
+}
+.report-range-tab.active {
+  background: #fff;
+  color: var(--blue);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+/* PIE / DONUT CHART (CSS conic-gradient, no JS dependency) */
+.pie-chart {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.pie-visual-wrap {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+}
+.pie-visual {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.pie-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.pie-center strong {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.1;
+}
+.pie-center span {
+  font-size: 0.66rem;
+  color: var(--slate-light);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.pie-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  flex: 1;
+  min-width: 140px;
+}
+.pie-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--slate);
+}
+.pie-legend-item strong {
+  margin-left: auto;
+  color: var(--ink);
+  font-weight: 700;
+}
+.pie-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+/* VERTICAL (COLUMN) BAR CHART */
+.bar-chart-v {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  height: 200px;
+  padding: 24px 22px 18px;
+}
+.bar-chart-v-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  min-width: 0;
+}
+.bar-chart-v-value {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.bar-chart-v-track {
+  flex: 1;
+  width: 100%;
+  max-width: 36px;
+  display: flex;
+  align-items: flex-end;
+  background: var(--bg);
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+}
+.bar-chart-v-fill {
+  width: 100%;
+  background: var(--blue);
+  border-radius: 6px 6px 0 0;
+  transition: height 0.3s ease;
+}
+.bar-chart-v-label {
+  margin-top: 8px;
+  font-size: 0.72rem;
+  color: var(--slate-light);
+  font-family: var(--font-mono);
+}
 /* RESPONSIVE TABLES — tables are auto-wrapped in .table-scroll by dashboard.js */
 .table-scroll {
   overflow-x: auto;
@@ -1325,7 +1505,7 @@ tr:hover td {
     transform: translateX(0);
   }
   .sb-close {
-    display: block;
+    display: flex;
   }
   .sb-overlay.open {
     display: block;

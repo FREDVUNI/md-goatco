@@ -25,6 +25,8 @@ $routes->group('auth', ['filter' => 'guest'], function ($routes) {
     $routes->post('forgot-password',           'AuthController::doForgotPassword');
     $routes->get('reset-password/(:alphanum)', 'AuthController::resetPassword/$1');
     $routes->post('reset-password',            'AuthController::doResetPassword');
+    $routes->get('google',                     'AuthController::googleRedirect');
+    $routes->get('google/callback',            'AuthController::googleCallback');
     // Old separate portal URLs → redirect to single login
     $routes->get('admin',   'AuthController::redirectToLogin');
     $routes->get('manager', 'AuthController::redirectToLogin');
@@ -90,6 +92,8 @@ $routes->group('admin', ['filter' => 'role:super_admin', 'namespace' => 'App\Mod
     $routes->get('payments',                           'PaymentController::index');
     $routes->get('payments/export',                    'PaymentController::export');
     $routes->post('payments/import',                   'PaymentController::importTransactions');
+    $routes->get('reports',                             'ReportController::index');
+    $routes->get('reports/export',                      'ReportController::export');
     $routes->get('settings',                           'SettingsController::index');
     $routes->post('settings',                          'SettingsController::update');
     $routes->post('settings/logo',                     'SettingsController::updateLogo');

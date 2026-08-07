@@ -19,7 +19,10 @@ class AuthController extends BaseController
 
     public function login(): string
     {
-        return view('auth/login', ['pageTitle' => 'Log In']);
+        return view('auth/login', [
+            'pageTitle'     => 'Log In',
+            'googleEnabled' => ! empty(env('GOOGLE_CLIENT_ID')),
+        ]);
     }
 
     public function doLogin()
@@ -43,13 +46,129 @@ class AuthController extends BaseController
         return redirect()->to('/dashboard')->with('success', 'Welcome back, ' . $user['first_name'] . '!');
     }
 
+    // ── GOOGLE SIGN-IN ───────────────────────────────────────────────────
+    // Google only ever signs in an EXISTING active account — it deliberately
+    // can't create one, since membership requires the KYC steps in the
+    // registration wizard (ID documents, next of kin, admin approval).
+    // Requires GOOGLE_CLIENT_ID / GOOGLE_CLIENT_SECRET in .env; the button
+    // is hidden on the login page until those are set.
+
+    public function googleRedirect()
+    {
+        $clientId = env('GOOGLE_CLIENT_ID');
+        if (empty($clientId)) {
+            return redirect()->to('/auth/login')->with('error', 'Google sign-in is not configured yet.');
+        }
+
+        $state = bin2hex(random_bytes(16));
+        session()->set('google_oauth_state', $state);
+
+        $params = http_build_query([
+            'client_id'     => $clientId,
+            'redirect_uri'  => $this->googleRedirectUri(),
+            'response_type' => 'code',
+            'scope'         => 'openid email profile',
+            'state'         => $state,
+            'prompt'        => 'select_account',
+        ]);
+        return redirect()->to('https://accounts.google.com/o/oauth2/v2/auth?' . $params);
+    }
+
+    public function googleCallback()
+    {
+        $clientId     = env('GOOGLE_CLIENT_ID');
+        $clientSecret = env('GOOGLE_CLIENT_SECRET');
+        if (empty($clientId) || empty($clientSecret)) {
+            return redirect()->to('/auth/login')->with('error', 'Google sign-in is not configured yet.');
+        }
+
+        $state = $this->request->getGet('state');
+        $expectedState = session()->get('google_oauth_state');
+        session()->remove('google_oauth_state');
+        if (! $state || ! $expectedState || ! hash_equals($expectedState, $state)) {
+            return redirect()->to('/auth/login')->with('error', 'Google sign-in session expired — please try again.');
+        }
+
+        $code = $this->request->getGet('code');
+        if (! $code) {
+            return redirect()->to('/auth/login')->with('error', 'Google sign-in was cancelled.');
+        }
+
+        $token = $this->googleHttpPost('https://oauth2.googleapis.com/token', [
+            'code'          => $code,
+            'client_id'     => $clientId,
+            'client_secret' => $clientSecret,
+            'redirect_uri'  => $this->googleRedirectUri(),
+            'grant_type'    => 'authorization_code',
+        ]);
+        if (empty($token['access_token'])) {
+            log_message('error', 'Google OAuth token exchange failed: ' . json_encode($token));
+            return redirect()->to('/auth/login')->with('error', 'Could not sign in with Google. Please try again.');
+        }
+
+        $profile = $this->googleHttpGet('https://www.googleapis.com/oauth2/v3/userinfo', $token['access_token']);
+        $email = strtolower(trim($profile['email'] ?? ''));
+        if ($email === '' || empty($profile['email_verified'])) {
+            return redirect()->to('/auth/login')->with('error', 'Your Google account has no verified email address.');
+        }
+
+        $user = $this->users->findByEmail($email);
+        if (! $user) {
+            session()->setFlashdata('prefill_email', $email);
+            return redirect()->to('/auth/register')->with('warning', "No Goat Banking account found for {$email} yet. Apply below to get started.");
+        }
+        if ($user['status'] !== 'active') {
+            return redirect()->to('/auth/login')->with('warning', match ($user['status']) {
+                'pending'  => 'Your application is still under review. You will receive an email when approved.',
+                'rejected' => 'Your application was not approved. Please contact hello@mdgoatco.farm.',
+                default    => 'Your account is not active. Please contact support.',
+            });
+        }
+
+        $this->startSession($user);
+        $this->users->updateLastLogin((int) $user['id']);
+        return redirect()->to('/dashboard')->with('success', 'Welcome back, ' . $user['first_name'] . '!');
+    }
+
+    private function googleRedirectUri(): string
+    {
+        return rtrim(base_url(), '/') . '/auth/google/callback';
+    }
+
+    private function googleHttpPost(string $url, array $fields): array
+    {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => http_build_query($fields),
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => 10,
+        ]);
+        $raw = curl_exec($ch);
+        curl_close($ch);
+        return json_decode((string) $raw, true) ?? [];
+    }
+
+    private function googleHttpGet(string $url, string $accessToken): array
+    {
+        $ch = curl_init($url . '?access_token=' . urlencode($accessToken));
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_TIMEOUT        => 10,
+        ]);
+        $raw = curl_exec($ch);
+        curl_close($ch);
+        return json_decode((string) $raw, true) ?? [];
+    }
+
     public function redirectToLogin() { return redirect()->to('/auth/login'); }
 
     public function register(): string
     {
         return view('auth/register', [
-            'pageTitle' => 'Apply for Goat Banking',
-            'errors'    => session('errors'),
+            'pageTitle'    => 'Apply for Goat Banking',
+            'errors'       => session('errors'),
+            'prefillEmail' => session()->getFlashdata('prefill_email'),
         ]);
     }
 

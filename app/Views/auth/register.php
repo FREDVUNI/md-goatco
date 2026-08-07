@@ -17,6 +17,8 @@
       <p>Complete all four steps below. Your application will be reviewed within 2–3 working days.</p>
     </div>
 
+    <div class="reg-card">
+
     <?php if (!empty($errors ?? [])): ?>
       <div class="form-errors form-errors-block">
         <strong>Please fix the following:</strong>
@@ -83,7 +85,7 @@
       <div class="field">
         <label for="email">Email address *</label>
         <input type="email" id="email" name="email"
-          value="<?= esc(old('email')) ?>" placeholder="you@example.com" required>
+          value="<?= esc(old('email', $prefillEmail ?? '')) ?>" placeholder="you@example.com" required>
       </div>
       <div class="field">
         <label for="phone">Phone number *</label>
@@ -277,11 +279,12 @@
 
       <div class="step-actions">
         <button type="button" class="btn btn-ghost" onclick="goToStep(3)">← Back</button>
-        <button type="submit" class="btn btn-primary">✓ Submit application</button>
+        <button type="submit" class="btn btn-primary"><i class="fas fa-check-circle"></i> Submit application</button>
       </div>
     </div>
 
     <?= form_close() ?>
+    </div><!-- /reg-card -->
   </div><!-- /reg-body -->
 </div><!-- /reg-page -->
 
