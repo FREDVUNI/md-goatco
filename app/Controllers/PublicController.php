@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\UserModel;
 use App\Models\GoatModel;
 use App\Models\ContactMessageModel;
+use App\Models\TestimonialModel;
 use App\Libraries\EmailService;
 
 class PublicController extends BaseController
@@ -19,6 +20,7 @@ class PublicController extends BaseController
             'goatsOnFarm'     => (new GoatModel())->getStats()['total'] ?? 0,
             'bankingMembers'  => count((new UserModel())->getByRole('member')),
             'farmYears'       => max(0, (int) date('Y') - self::FOUNDED_YEAR),
+            'testimonials'    => (new TestimonialModel())->getActive(),
         ];
     }
 

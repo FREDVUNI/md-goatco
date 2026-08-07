@@ -94,6 +94,15 @@ $routes->group('admin', ['filter' => 'role:super_admin', 'namespace' => 'App\Mod
     $routes->post('payments/import',                   'PaymentController::importTransactions');
     $routes->get('reports',                             'ReportController::index');
     $routes->get('reports/export',                      'ReportController::export');
+    $routes->get('testimonials',                        'TestimonialController::index');
+    $routes->get('testimonials/create',                 'TestimonialController::create');
+    $routes->post('testimonials/create',                'TestimonialController::store');
+    $routes->get('testimonials/(:num)/edit',             'TestimonialController::edit/$1');
+    $routes->post('testimonials/(:num)/edit',            'TestimonialController::update/$1');
+    $routes->post('testimonials/(:num)/delete',          'TestimonialController::delete/$1');
+    $routes->post('testimonials/(:num)/toggle',          'TestimonialController::toggle/$1');
+    $routes->post('testimonials/(:num)/move-up',         'TestimonialController::moveUp/$1');
+    $routes->post('testimonials/(:num)/move-down',       'TestimonialController::moveDown/$1');
     $routes->get('settings',                           'SettingsController::index');
     $routes->post('settings',                          'SettingsController::update');
     $routes->post('settings/logo',                     'SettingsController::updateLogo');

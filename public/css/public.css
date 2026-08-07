@@ -789,6 +789,104 @@ section {
   font-size: 0.76rem;
   color: var(--slate-light);
 }
+.test-avatar-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue-deep);
+  font-weight: 800;
+  font-size: 0.98rem;
+}
+
+/* Carousel — same .test-card design, used once there are >3 active
+   testimonials (see app/Views/public/home.php). Slides scroll horizontally
+   with snap points; prev/next buttons + dots are progressively enhanced by
+   public.js (works as a plain scrollable strip without JS too). */
+.test-carousel {
+  position: relative;
+}
+.test-track {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 4px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.test-track::-webkit-scrollbar {
+  display: none;
+}
+.test-slide {
+  flex: 0 0 calc((100% - 44px) / 3);
+  scroll-snap-align: start;
+  min-width: 280px;
+}
+.test-slide .test-card {
+  height: 100%;
+}
+.test-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--blue-deep);
+  box-shadow: 0 6px 20px -8px rgba(26, 34, 56, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+  z-index: 2;
+}
+.test-nav:hover {
+  background: var(--blue);
+  color: #fff;
+}
+.test-nav-prev {
+  left: -21px;
+}
+.test-nav-next {
+  right: -21px;
+}
+.test-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.test-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+.test-dots button.active {
+  background: var(--blue);
+  transform: scale(1.3);
+}
+@media (max-width: 900px) {
+  .test-slide {
+    flex-basis: calc((100% - 22px) / 2);
+  }
+}
+@media (max-width: 640px) {
+  .test-slide {
+    flex-basis: 88%;
+  }
+  .test-nav {
+    display: none;
+  }
+}
 
 /* ── CTA ─────────────────────────────────────────────────────────── */
 .cta-wrap {

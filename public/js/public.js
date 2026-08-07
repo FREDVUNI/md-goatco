@@ -188,3 +188,67 @@ document.querySelectorAll("table").forEach((table) => {
 
   stats.forEach((el) => observer.observe(el));
 })();
+
+// ── TESTIMONIALS CAROUSEL ──────────────────────────────────────────────
+// Only rendered when there are >3 active testimonials (see
+// app/Views/public/home.php + partials/testimonial_card.php). The track is
+// a native horizontal-scroll strip with scroll-snap, so it's fully usable
+// (swipe/drag/scroll) even if this script fails to load — these buttons
+// and dots are a progressive enhancement on top of that.
+(function () {
+  const carousel = document.querySelector("[data-test-carousel]");
+  if (!carousel) return;
+
+  const track = carousel.querySelector("[data-test-track]");
+  const prevBtn = carousel.querySelector("[data-test-prev]");
+  const nextBtn = carousel.querySelector("[data-test-next]");
+  const dotsWrap = carousel.querySelector("[data-test-dots]");
+  const slides = Array.from(track.children);
+  if (slides.length === 0) return;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.setAttribute("aria-label", "Go to testimonial " + (i + 1));
+    dot.addEventListener("click", () => {
+      slides[i].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+    });
+    dotsWrap.appendChild(dot);
+  });
+  const dots = Array.from(dotsWrap.children);
+
+  function slidesPerView() {
+    const w = track.clientWidth;
+    const slideW = slides[0].getBoundingClientRect().width + 22; // + gap
+    return Math.max(1, Math.round(w / slideW));
+  }
+
+  function scrollBySlides(dir) {
+    const amount = (slides[0].getBoundingClientRect().width + 22) * slidesPerView() * dir;
+    track.scrollBy({ left: amount, behavior: "smooth" });
+  }
+
+  prevBtn?.addEventListener("click", () => scrollBySlides(-1));
+  nextBtn?.addEventListener("click", () => scrollBySlides(1));
+
+  function updateActiveDot() {
+    const trackRect = track.getBoundingClientRect();
+    let closest = 0;
+    let closestDist = Infinity;
+    slides.forEach((slide, i) => {
+      const dist = Math.abs(slide.getBoundingClientRect().left - trackRect.left);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closest = i;
+      }
+    });
+    dots.forEach((d, i) => d.classList.toggle("active", i === closest));
+  }
+
+  let scrollTimer;
+  track.addEventListener("scroll", () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(updateActiveDot, 100);
+  });
+  updateActiveDot();
+})();

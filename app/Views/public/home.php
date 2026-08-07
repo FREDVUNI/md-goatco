@@ -224,40 +224,35 @@
 </section>
 
 <!-- ===== TESTIMONIALS ===== -->
+<?php $testimonials = $testimonials ?? []; ?>
+<?php if (! empty($testimonials)): ?>
 <section class="section-alt">
   <div class="wrap">
     <div class="section-head">
       <div class="eyebrow">From our members</div>
       <h2>"I can see my goats from my phone"</h2>
     </div>
+    <?php if (count($testimonials) <= 3): ?>
     <div class="test-grid">
-      <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <p>"I joined Goat Banking with three goats. I can log in and see exactly how they're growing — no more waiting for a phone call."</p>
-        <div class="test-who">
-          <div class="test-avatar" style="background-image:url('https://images.pexels.com/photos/19911954/pexels-photo-19911954.jpeg?auto=compress&cs=tinysrgb&w=200')"></div>
-          <div><strong>Esther N.</strong><span>Goat Banking member, Mukono</span></div>
-        </div>
-      </div>
-      <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <p>"Vaccination records used to live in a notebook that could get lost. Now every goat's history is one search away."</p>
-        <div class="test-who">
-          <div class="test-avatar" style="background-image:url('https://images.pexels.com/photos/326929/pexels-photo-326929.jpeg?auto=compress&cs=tinysrgb&w=200')"></div>
-          <div><strong>Dr. Wasswa</strong><span>Farm veterinarian</span></div>
-        </div>
-      </div>
-      <div class="test-card">
-        <div class="test-stars">★★★★★</div>
-        <p>"Reports that took a full day in Excel now take minutes. We spend that time actually managing the herd."</p>
-        <div class="test-who">
-          <div class="test-avatar" style="background-image:url('https://images.pexels.com/photos/25549225/pexels-photo-25549225.jpeg?auto=compress&cs=tinysrgb&w=200')"></div>
-          <div><strong>Brian K.</strong><span>Farm manager</span></div>
-        </div>
-      </div>
+      <?php foreach ($testimonials as $t): ?>
+        <?= view('partials/testimonial_card', ['t' => $t]) ?>
+      <?php endforeach ?>
     </div>
+    <?php else: ?>
+    <div class="test-carousel" data-test-carousel>
+      <div class="test-track" data-test-track>
+        <?php foreach ($testimonials as $t): ?>
+          <div class="test-slide"><?= view('partials/testimonial_card', ['t' => $t]) ?></div>
+        <?php endforeach ?>
+      </div>
+      <button type="button" class="test-nav test-nav-prev" data-test-prev aria-label="Previous testimonials"><i class="fas fa-chevron-left"></i></button>
+      <button type="button" class="test-nav test-nav-next" data-test-next aria-label="Next testimonials"><i class="fas fa-chevron-right"></i></button>
+      <div class="test-dots" data-test-dots></div>
+    </div>
+    <?php endif ?>
   </div>
 </section>
+<?php endif ?>
 
 <!-- ===== CTA ===== -->
 <div class="cta-wrap">
