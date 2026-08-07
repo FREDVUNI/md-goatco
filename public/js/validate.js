@@ -100,6 +100,15 @@
       if (lbl && lbl.classList && lbl.classList.contains("file-upload-label")) lbl.classList.add("has-error");
     } else if (field.type === "checkbox" || field.type === "radio") {
       anchor = container || field;
+    } else {
+      // Password fields get wrapped in .pw-toggle-wrap (see the show/hide
+      // toggle below). Anchoring the message directly after the <input>
+      // would insert it *inside* that wrap, growing its box — since the
+      // toggle button is centered with `top:50%` of the wrap, that silently
+      // pushes the eye icon down/off-center as you type. Anchor after the
+      // wrap instead so the wrap's height stays pinned to the input alone.
+      var pwWrap = field.closest(".pw-toggle-wrap");
+      if (pwWrap) anchor = pwWrap;
     }
 
     var msg = document.createElement("div");

@@ -135,8 +135,13 @@ function initPasswordStrength() {
   const passInput = document.getElementById("password");
   if (!passInput) return;
 
-  // Create strength bar
-  const wrap = passInput.parentElement;
+  // Create strength bar. validate.js wraps every password <input> in a
+  // .pw-toggle-wrap for the show/hide eye button — append into that inner
+  // wrap (rather than the .field around it) and the bar/label inflate its
+  // height, which pushes the eye button (centered via top:50%) down with
+  // it. Walk up past the toggle wrap so the bar sits in the actual field
+  // container and the wrap's box stays pinned to the input alone.
+  const wrap = passInput.closest(".pw-toggle-wrap")?.parentElement || passInput.parentElement;
   const bar = document.createElement("div");
   bar.style.cssText =
     "height:3px;border-radius:2px;margin-top:6px;transition:width .3s ease,background .3s ease;width:0;";
