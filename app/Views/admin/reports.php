@@ -15,7 +15,11 @@
     <div style="display:flex;align-items:center;gap:10px;margin-left:auto">
       <a href="<?= site_url('admin/reports') . '?range='.$range.'&offset='.($offset-1) ?>" class="btn btn-ghost btn-sm" title="Previous period"><i class="fas fa-chevron-left"></i></a>
       <strong style="font-size:0.92rem;color:var(--ink);min-width:150px;text-align:center"><?= esc($periodLabel) ?></strong>
+      <?php if ($offset < 0): ?>
       <a href="<?= site_url('admin/reports') . '?range='.$range.'&offset='.($offset+1) ?>" class="btn btn-ghost btn-sm" title="Next period"><i class="fas fa-chevron-right"></i></a>
+      <?php else: ?>
+      <button type="button" class="btn btn-ghost btn-sm" disabled title="This is the current period — no future data to show" style="opacity:0.35;cursor:not-allowed"><i class="fas fa-chevron-right"></i></button>
+      <?php endif ?>
       <?php if ($offset !== 0): ?>
       <a href="<?= site_url('admin/reports') . '?range='.$range ?>" class="btn btn-ghost btn-sm">Today</a>
       <?php endif ?>

@@ -25,6 +25,44 @@
     </div>
   </div>
 
+  <!-- Google sign-in -->
+  <div class="card" style="grid-column:1/-1">
+    <div class="card-head">
+      <h3><i class="fab fa-google"></i> Google Sign-In</h3>
+      <span class="badge <?= empty($googleClientId) ? 'badge-rejected' : 'badge-active' ?>"><?= empty($googleClientId) ? 'Disabled' : 'Enabled' ?></span>
+    </div>
+    <div style="padding:20px">
+      <p style="font-size:0.86rem;color:var(--slate);margin-bottom:16px">
+        Lets an existing member with an active account sign in with Google instead of a password — it never creates new accounts, since membership still requires the application &amp; approval steps. Create an OAuth Client ID at
+        <a href="https://console.cloud.google.com/apis/credentials" target="_blank" rel="noopener">Google Cloud Console</a>
+        (type "Web application") with this exact redirect URI:
+      </p>
+      <p style="font-family:var(--font-mono);font-size:0.78rem;background:var(--bg);padding:10px 14px;border-radius:8px;margin-bottom:18px;word-break:break-all"><?= esc(rtrim(base_url(), '/')) ?>/auth/google/callback</p>
+
+      <?= form_open('admin/settings/google-auth', ['class' => 'dash-form']) ?>
+        <?= csrf_field() ?>
+        <div class="field-row">
+          <div class="field">
+            <label for="google_client_id">Client ID</label>
+            <input type="text" id="google_client_id" name="google_client_id" value="<?= esc($googleClientId ?? '') ?>" placeholder="123456789-abc.apps.googleusercontent.com">
+          </div>
+          <div class="field">
+            <label for="google_client_secret">Client Secret</label>
+            <input type="password" id="google_client_secret" name="google_client_secret" placeholder="<?= ! empty($googleClientSecretSet) ? '•••••••••••••• (unchanged — leave blank to keep it)' : 'Paste the client secret' ?>" autocomplete="new-password">
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Save Google settings</button>
+          <?php if (! empty($googleClientId)): ?>
+          <?= form_open('admin/settings/google-auth/disable', ['style' => 'display:inline']) ?><?= csrf_field() ?>
+            <button type="submit" class="btn btn-ghost" style="color:var(--red)" data-confirm="Disable Google sign-in? The button will disappear from the login page.">Disable</button>
+          <?= form_close() ?>
+          <?php endif ?>
+        </div>
+      <?= form_close() ?>
+    </div>
+  </div>
+
   <!-- Farm details -->
   <div class="card" style="grid-column:1/-1">
     <div class="card-head"><h3>Farm Details</h3></div>

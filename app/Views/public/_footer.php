@@ -22,9 +22,14 @@
       <div>
         <h5>Portals</h5>
         <ul>
+          <?php if ($currentUser ?? null): ?>
+          <li><a href="<?= site_url('dashboard') ?>">My dashboard</a></li>
+          <li><a href="<?= site_url('auth/logout') ?>">Log out</a></li>
+          <?php else: ?>
           <li><a href="<?= site_url('auth/login') ?>">Member login</a></li>
           <li><a href="<?= site_url('auth/register') ?>">Apply for Goat Banking</a></li>
           <li><a href="<?= site_url('auth/admin') ?>">Admin portal</a></li>
+          <?php endif ?>
         </ul>
       </div>
       <div>

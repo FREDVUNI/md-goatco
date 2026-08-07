@@ -51,6 +51,14 @@ a {
 a:hover {
   text-decoration: underline;
 }
+/* The register page also loads public.css for its shared site header/footer
+   (see public/_header.php, public/_footer.php) — those links use their own
+   hover treatment (color change, no underline), so this page's generic
+   a:hover rule above shouldn't reach into them. */
+header a:hover,
+footer a:hover {
+  text-decoration: none;
+}
 img {
   display: block;
   max-width: 100%;

@@ -136,7 +136,11 @@
         <div class="eyebrow">The Goat Banking program</div>
         <h2>Your goats. Your dashboard. Our farm.</h2>
         <p>When you join Goat Banking, your animals are tagged, tracked and visible to you at all times — alongside the specialists who care for them every day.</p>
+        <?php if ($currentUser ?? null): ?>
+        <a href="<?= site_url('dashboard') ?>" class="btn btn-primary">Go to my dashboard</a>
+        <?php else: ?>
         <a href="<?= site_url('auth/register') ?>" class="btn btn-primary">Apply for Goat Banking</a>
+        <?php endif ?>
       </div>
       <div class="banking-img">
         <img src="https://images.pexels.com/photos/19911954/pexels-photo-19911954.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Goat Banking" loading="lazy">
@@ -259,6 +263,14 @@
 <div class="cta-wrap">
   <div class="wrap">
     <div class="cta">
+      <?php if ($currentUser ?? null): ?>
+      <div class="eyebrow">Welcome back</div>
+      <h2>Your dashboard is waiting</h2>
+      <p>Pick up where you left off — check your goats, statements, or farm activity.</p>
+      <div class="cta-actions">
+        <a href="<?= site_url('dashboard') ?>" class="btn btn-white">Go to my dashboard</a>
+      </div>
+      <?php else: ?>
       <div class="eyebrow">Ready when you are</div>
       <h2>Open your Goat Banking account</h2>
       <p>Tell us about yourself and your next of kin. Our team will review your application and contact you within 2–3 working days.</p>
@@ -266,6 +278,7 @@
         <a href="<?= site_url('auth/register') ?>" class="btn btn-white">Register for Goat Banking</a>
         <a href="<?= site_url('auth/login') ?>" class="btn btn-ghost-white">I already have an account</a>
       </div>
+      <?php endif ?>
     </div>
   </div>
 </div>

@@ -39,7 +39,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 <!-- ─────────── ADMIN CONTENT ─────────── -->
 <div class="welcome-banner">
   <div>
-    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper"></i></h2>
+    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! 👋</h2>
     <p>Here's your farm overview for <?= date('l, j F Y') ?></p>
     <div class="wb-stats">
       <div class="wb-stat"><strong><?= esc($totalMembers ?? 0) ?></strong><span>Members</span></div>
@@ -129,7 +129,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 </div>
 
 <div class="card chart-card">
-  <div class="card-head"><h3><i class="fas fa-chart-line"></i> Applications — last 6 months</h3></div>
+  <div class="card-head"><h3><i class="fas fa-chart-line"></i> Applications — last 12 months</h3></div>
   <?= view('partials/bar_chart_vertical', ['labels' => $appLabels ?? [], 'values' => $appValues ?? []]) ?>
 </div>
 
@@ -137,7 +137,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 <!-- ─────────── MANAGER CONTENT ─────────── -->
 <div class="welcome-banner">
   <div>
-    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper"></i></h2>
+    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! 👋</h2>
     <p>Farm overview — <?= date('l, j F Y') ?></p>
     <div class="wb-stats">
       <div class="wb-stat"><strong><?= esc($herdStats['total'] ?? 0) ?></strong><span>Goats</span></div>
@@ -205,7 +205,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 <!-- ─────────── VET CONTENT ─────────── -->
 <div class="welcome-banner wb-with-action">
   <div>
-    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper"></i></h2>
+    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! 👋</h2>
     <p>Your veterinary dashboard — <?= date('l, j F Y') ?></p>
     <div class="wb-stats">
       <div class="wb-stat"><strong><?= esc($flagCount ?? 0) ?></strong><span>Active flags</span></div>
@@ -253,7 +253,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
   <div class="card">
     <div class="card-head"><h3><i class="fas fa-clipboard-list"></i> Recent Visits</h3><a href="<?= site_url('vet/visits/history') ?>" class="btn btn-outline btn-sm">Full history</a></div>
     <?php if (empty($recentVisits)): ?>
-      <div class="empty-state">No visits logged yet. <a href="<?= site_url('vet/visits/log') ?>">Log your first →</a></div>
+      <div class="empty-state">No visits logged yet. <a href="<?= site_url('vet/visits/log') ?>">Log your first <i class="fas fa-arrow-right"></i></a></div>
     <?php else: ?>
     <div class="timeline">
       <?php foreach (array_slice($recentVisits, 0, 6) as $visit): ?>
@@ -280,7 +280,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 <!-- ─────────── MEMBER CONTENT ─────────── -->
 <div class="welcome-banner">
   <div>
-    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper"></i></h2>
+    <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! 👋</h2>
     <p>
       <?php if (($healthyCount ?? 0) === ($goatCount ?? 0) && ($goatCount ?? 0) > 0): ?>
         All <?= esc($goatCount) ?> of your goats are healthy.
@@ -313,7 +313,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
   <a href="<?= site_url('member/statements') ?>" class="stat-card stat-amber stat-card-link">
     <div class="stat-label">Account balance</div>
     <div class="stat-val">UGX <?= number_format($balance ?? 0) ?></div>
-    <div class="stat-sub">View statements →</div>
+    <div class="stat-sub">View statements <i class="fas fa-arrow-right"></i></div>
   </a>
 </div>
 
@@ -321,7 +321,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 <div class="card">
   <div class="card-head">
     <h3><i class="fas fa-paw"></i> Your Goats</h3>
-    <a href="<?= site_url('member/goats') ?>" class="btn btn-outline btn-sm">View all →</a>
+    <a href="<?= site_url('member/goats') ?>" class="btn btn-outline btn-sm">View all <i class="fas fa-arrow-right"></i></a>
   </div>
   <table>
     <thead><tr><th>Tag</th><th>Name</th><th>Breed</th><th>Weight</th><th>Last check</th><th>Health</th></tr></thead>

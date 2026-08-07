@@ -98,6 +98,8 @@ $routes->group('admin', ['filter' => 'role:super_admin', 'namespace' => 'App\Mod
     $routes->post('settings',                          'SettingsController::update');
     $routes->post('settings/logo',                     'SettingsController::updateLogo');
     $routes->post('settings/clear-cache',               'SettingsController::clearCache');
+    $routes->post('settings/google-auth',               'SettingsController::updateGoogleAuth');
+    $routes->post('settings/google-auth/disable',        'SettingsController::disableGoogleAuth');
 });
 
 // MANAGER

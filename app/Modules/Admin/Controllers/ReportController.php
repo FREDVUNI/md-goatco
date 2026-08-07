@@ -38,10 +38,16 @@ class ReportController extends BaseController
         return in_array($range, ['week', 'month', 'year'], true) ? $range : 'month';
     }
 
+    /** Never let the audit report navigate into a future period — nothing has happened there yet. */
+    private function currentOffset(): int
+    {
+        return min(0, (int) ($this->request->getGet('offset') ?? 0));
+    }
+
     public function index(): string
     {
         $range  = $this->currentRange();
-        $offset = (int) ($this->request->getGet('offset') ?? 0);
+        $offset = $this->currentOffset();
         [$start, $end, $label] = $this->periodBounds($range, $offset);
         $startStr = $start->format('Y-m-d H:i:s');
         $endStr   = $end->format('Y-m-d H:i:s');
@@ -75,7 +81,7 @@ class ReportController extends BaseController
     public function export()
     {
         $range  = $this->currentRange();
-        $offset = (int) ($this->request->getGet('offset') ?? 0);
+        $offset = $this->currentOffset();
         [$start, $end, $label] = $this->periodBounds($range, $offset);
 
         $rows = $this->activityLog($start->format('Y-m-d H:i:s'), $end->format('Y-m-d H:i:s'));

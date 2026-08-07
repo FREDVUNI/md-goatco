@@ -91,7 +91,7 @@ class DashboardController extends BaseController
         $applications = new MemberApplicationModel();
         $goats        = new GoatModel();
         $db           = Database::connect();
-        [$appLabels, $appValues] = $this->monthlySeries('member_applications', 'created_at');
+        [$appLabels, $appValues] = $this->monthlySeries('member_applications', 'created_at', null, 12);
 
         $appStatusRows = $db->table('member_applications')->select('status, COUNT(*) as cnt')->groupBy('status')->get()->getResultArray();
         $appStatusCounts = ['pending' => 0, 'info_requested' => 0, 'approved' => 0, 'rejected' => 0];

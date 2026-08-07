@@ -4,7 +4,7 @@
 <?= $this->include('admin/_sidebar') ?>
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
-<a href="<?= site_url('admin/staff') ?>" class="back-link">← Back to staff</a>
+<a href="<?= site_url('admin/staff') ?>" class="back-link"><i class="fas fa-arrow-left"></i> Back to staff</a>
 <div class="card">
   <div class="card-head"><h3><?= isset($staff) ? 'Edit Staff Account' : 'Create Staff Account' ?></h3></div>
   <?php if (!empty($errors??[])): ?><div class="form-errors"><?php foreach($errors as $e): ?><p><?= esc($e) ?></p><?php endforeach ?></div><?php endif ?>

@@ -7,7 +7,7 @@
 
 <?= $this->section('content') ?>
 
-<a href="<?= site_url('vet/animals') ?>" class="back-link">← Back to animal records</a>
+<a href="<?= site_url('vet/animals') ?>" class="back-link"><i class="fas fa-arrow-left"></i> Back to animal records</a>
 
 <div class="account-grid">
   <div class="profile-card">

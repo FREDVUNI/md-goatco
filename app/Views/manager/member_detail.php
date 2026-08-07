@@ -4,7 +4,7 @@
 <?= $this->include('manager/_sidebar') ?>
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
-<a href="<?= site_url('manager/members') ?>" class="back-link">← Back to members</a>
+<a href="<?= site_url('manager/members') ?>" class="back-link"><i class="fas fa-arrow-left"></i> Back to members</a>
 <div class="card">
   <div class="card-head"><h3><?= esc($member['first_name'].' '.$member['last_name']) ?></h3><?= statusBadge($member['status']) ?></div>
   <div style="padding:6px 22px 4px">

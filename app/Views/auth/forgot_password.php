@@ -5,7 +5,7 @@
   <div class="auth-simple-card">
 
     <a href="<?= site_url('auth/login') ?>" class="back-link" style="display:inline-flex;align-items:center;gap:6px;font-size:0.84rem;color:var(--blue);font-weight:600;margin-bottom:24px">
-      ← Back to login
+      <i class="fas fa-arrow-left"></i> Back to login
     </a>
 
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">

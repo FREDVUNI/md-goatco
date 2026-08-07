@@ -8,7 +8,7 @@
     <div class="reg-intro">
       <h1>Apply for Goat Banking</h1>
       <p>Complete all four steps below. Your application will be reviewed within 2–3 working days.</p>
-      <p class="reg-login-hint">Already registered? <a href="<?= site_url('auth/login') ?>">Log in →</a></p>
+      <p class="reg-login-hint">Already registered? <a href="<?= site_url('auth/login') ?>">Log in <i class="fas fa-arrow-right"></i></a></p>
     </div>
 
     <div class="reg-card">
@@ -99,7 +99,7 @@
       </div>
       <div class="step-actions">
         <span></span>
-        <button type="button" class="btn btn-primary" onclick="goToStep(2)">Next: Your ID documents →</button>
+        <button type="button" class="btn btn-primary" onclick="goToStep(2)">Next: Your ID documents <i class="fas fa-arrow-right"></i></button>
       </div>
     </div>
 
@@ -152,8 +152,8 @@
       </div>
 
       <div class="step-actions">
-        <button type="button" class="btn btn-ghost" onclick="goToStep(1)">← Back</button>
-        <button type="button" class="btn btn-primary" onclick="goToStep(3)">Next: Next of kin →</button>
+        <button type="button" class="btn btn-ghost" onclick="goToStep(1)"><i class="fas fa-arrow-left"></i> Back</button>
+        <button type="button" class="btn btn-primary" onclick="goToStep(3)">Next: Next of kin <i class="fas fa-arrow-right"></i></button>
       </div>
     </div>
 
@@ -223,8 +223,8 @@
       </div>
 
       <div class="step-actions">
-        <button type="button" class="btn btn-ghost" onclick="goToStep(2)">← Back</button>
-        <button type="button" class="btn btn-primary" onclick="goToStep(4)">Next: Create account →</button>
+        <button type="button" class="btn btn-ghost" onclick="goToStep(2)"><i class="fas fa-arrow-left"></i> Back</button>
+        <button type="button" class="btn btn-primary" onclick="goToStep(4)">Next: Create account <i class="fas fa-arrow-right"></i></button>
       </div>
     </div>
 
@@ -272,7 +272,7 @@
       </div>
 
       <div class="step-actions">
-        <button type="button" class="btn btn-ghost" onclick="goToStep(3)">← Back</button>
+        <button type="button" class="btn btn-ghost" onclick="goToStep(3)"><i class="fas fa-arrow-left"></i> Back</button>
         <button type="submit" class="btn btn-primary"><i class="fas fa-check-circle"></i> Submit application</button>
       </div>
     </div>
@@ -280,6 +280,20 @@
     <?= form_close() ?>
     </div><!-- /reg-card -->
   </div><!-- /reg-body -->
+
+  <!-- ===== CTA (login-only — we're already on the apply page) ===== -->
+  <div class="cta-wrap">
+    <div class="wrap">
+      <div class="cta">
+        <div class="eyebrow">Already registered?</div>
+        <h2>Welcome back</h2>
+        <p>If you've already applied or have an active Goat Banking account, log in to see your dashboard.</p>
+        <div class="cta-actions">
+          <a href="<?= site_url('auth/login') ?>" class="btn btn-white">I already have an account</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <?= $this->include('public/_footer') ?>
 </div><!-- /reg-page -->

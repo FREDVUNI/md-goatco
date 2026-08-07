@@ -20,7 +20,7 @@
     <div style="background:var(--bg);border-radius:10px;padding:14px 16px;margin-bottom:16px;font-size:0.82rem;color:var(--slate)">
       <i class="fas fa-credit-card"></i> You'll be securely redirected to PesaPal to complete your payment via Mobile Money or card.
     </div>
-    <div class="form-actions"><button type="submit" class="btn btn-primary">Proceed to payment →</button></div>
+    <div class="form-actions"><button type="submit" class="btn btn-primary">Proceed to payment <i class="fas fa-arrow-right"></i></button></div>
   <?= form_close() ?>
 </div>
 <?= $this->endSection() ?>

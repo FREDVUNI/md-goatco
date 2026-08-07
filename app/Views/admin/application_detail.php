@@ -7,7 +7,7 @@
 
 <?= $this->section('content') ?>
 
-<a href="<?= site_url('admin/applications') ?>" class="back-link">← Back to applications</a>
+<a href="<?= site_url('admin/applications') ?>" class="back-link"><i class="fas fa-arrow-left"></i> Back to applications</a>
 
 <div class="grid-2">
 

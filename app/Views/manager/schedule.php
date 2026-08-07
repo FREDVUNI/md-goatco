@@ -15,7 +15,7 @@
     </form>
   </div>
   <?php if (empty($tasks)): ?>
-    <div class="empty-state">No tasks scheduled yet. <a href="<?= site_url('manager/schedule/create') ?>">Add the first →</a></div>
+    <div class="empty-state">No tasks scheduled yet. <a href="<?= site_url('manager/schedule/create') ?>">Add the first <i class="fas fa-arrow-right"></i></a></div>
   <?php else: ?>
   <table>
     <thead><tr><th>Task</th><th>Animals / Pen</th><th>Date &amp; Time</th><th>Assigned vet</th><th>Status</th><th>Actions</th></tr></thead>

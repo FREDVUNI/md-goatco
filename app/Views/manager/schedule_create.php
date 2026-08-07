@@ -7,7 +7,7 @@
 
 <?= $this->section('content') ?>
 
-<a href="<?= site_url('manager/schedule') ?>" class="back-link">← Back to schedule</a>
+<a href="<?= site_url('manager/schedule') ?>" class="back-link"><i class="fas fa-arrow-left"></i> Back to schedule</a>
 
 <div class="card">
   <div class="card-head"><h3>Add Scheduled Task</h3></div>

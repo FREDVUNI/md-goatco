@@ -36,10 +36,13 @@
   });
 
   // ── Active sidebar item from current URL ─────────────────────────
-  const currentPath = window.location.pathname.replace(/^\//, '');
+  // site_url() renders full absolute URLs (http://host/admin/herd), not
+  // relative paths — read link.pathname (a live DOM property the browser
+  // parses out for us) rather than the raw href attribute, so this works
+  // regardless of which form a given link was written in.
+  const currentPath = window.location.pathname.replace(/^\//, '').replace(/\/$/, '');
   document.querySelectorAll('.sb-item').forEach(function(link){
-    const href = link.getAttribute('href') || '';
-    const linkPath = href.replace(/^\//, '');
+    const linkPath = link.pathname.replace(/^\//, '').replace(/\/$/, '');
     if (linkPath && currentPath.startsWith(linkPath) && linkPath !== 'dashboard') {
       link.classList.add('active');
     } else if (linkPath === 'dashboard' && currentPath === 'dashboard') {

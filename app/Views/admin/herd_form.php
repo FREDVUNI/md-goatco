@@ -4,7 +4,7 @@
 <?= $this->include('admin/_sidebar') ?>
 <?= $this->endSection() ?>
 <?= $this->section('content') ?>
-<a href="<?= site_url('admin/herd') ?>" class="back-link">← Back to herd</a>
+<a href="<?= site_url('admin/herd') ?>" class="back-link"><i class="fas fa-arrow-left"></i> Back to herd</a>
 <div class="card">
   <div class="card-head"><h3><?= isset($goat) ? 'Edit — '.esc($goat['name']) : 'Add Animal' ?></h3></div>
   <?php if (!empty($errors??[])): ?><div class="form-errors"><?php foreach($errors as $e): ?><p><?= esc($e)?></p><?php endforeach ?></div><?php endif ?>

@@ -48,7 +48,7 @@
     <?= form_close() ?>
 
     <p class="auth-foot" style="margin-top:18px">
-      <a href="<?= site_url('auth/login') ?>">← Back to login</a>
+      <a href="<?= site_url('auth/login') ?>"><i class="fas fa-arrow-left"></i> Back to login</a>
     </p>
 
   </div>

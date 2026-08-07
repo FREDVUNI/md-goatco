@@ -17,7 +17,7 @@
     <?= view('partials/import_widget', ['importAction' => 'vet/visits/history/import', 'importHint' => 'goat_tag, visit_date, visit_type, clinical_notes, temperature, weight_kg, medication, outcome (healthy/monitoring/treated/critical), is_flagged (yes/no), flag_reason, followup_date']) ?>
   </div>
   <?php if (empty($visits)): ?>
-    <div class="empty-state">No visits logged yet. <a href="<?= site_url('vet/visits/log') ?>">Log your first →</a></div>
+    <div class="empty-state">No visits logged yet. <a href="<?= site_url('vet/visits/log') ?>">Log your first <i class="fas fa-arrow-right"></i></a></div>
   <?php else: ?>
   <table>
     <thead><tr><th>Tag</th><th>Animal</th><th>Type</th><th>Date</th><th>Outcome</th><th>Flagged</th><th>Notes</th></tr></thead>

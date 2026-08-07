@@ -5,7 +5,7 @@
   <div class="auth-simple-card" style="max-width:500px">
 
     <a href="<?= site_url('auth/login') ?>" class="back-link" style="display:inline-flex;align-items:center;gap:6px;font-size:0.84rem;color:var(--blue);font-weight:600;margin-bottom:24px">
-      ← Back to login
+      <i class="fas fa-arrow-left"></i> Back to login
     </a>
 
     <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px">
@@ -54,7 +54,7 @@
             <div>
               <strong>Approved — your account is active!</strong><br>
               Your Goat Banking account has been activated.
-              <a href="<?= site_url('auth/login') ?>" style="font-weight:600">Log in now →</a>
+              <a href="<?= site_url('auth/login') ?>" style="font-weight:600">Log in now <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
 
@@ -92,7 +92,7 @@
             <div>
               <strong>No application found</strong><br>
               We couldn't find an application for that email address.
-              <a href="<?= site_url('auth/register') ?>" style="font-weight:600">Apply now →</a>
+              <a href="<?= site_url('auth/register') ?>" style="font-weight:600">Apply now <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
         <?php endif ?>
@@ -101,7 +101,7 @@
 
     <div style="margin-top:28px;padding-top:20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px">
       <a href="<?= site_url('auth/register') ?>" style="font-size:0.84rem;color:var(--blue);font-weight:600">
-        Apply for Goat Banking →
+        Apply for Goat Banking <i class="fas fa-arrow-right"></i>
       </a>
       <a href="<?= site_url('auth/login') ?>" style="font-size:0.84rem;color:var(--slate)">
         Already have an account? Log in

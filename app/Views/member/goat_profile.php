@@ -7,7 +7,7 @@
 
 <?= $this->section('content') ?>
 
-<a href="<?= site_url('member/goats') ?>" class="back-link">← Back to my goats</a>
+<a href="<?= site_url('member/goats') ?>" class="back-link"><i class="fas fa-arrow-left"></i> Back to my goats</a>
 
 <div class="goat-profile-grid">
 

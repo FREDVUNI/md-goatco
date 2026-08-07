@@ -105,7 +105,7 @@
         <?php endif ?>
 
         <div class="auth-divider">new to Goat Banking?</div>
-        <a href="<?= site_url('auth/register') ?>" class="btn btn-ghost btn-full">Apply for Goat Banking →</a>
+        <a href="<?= site_url('auth/register') ?>" class="btn btn-ghost btn-full">Apply for Goat Banking <i class="fas fa-arrow-right"></i></a>
         <p class="auth-foot">Already applied?
           <a href="#" onclick="switchTab('status');return false">Check your application status</a>
         </p>
@@ -135,7 +135,7 @@
               </div>
             <?php elseif ($status === 'approved'): ?>
               <div class="status-banner status-approved"><span>✓</span>
-                <div><strong>Approved!</strong> <a href="#" onclick="switchTab('login');return false">Log in now →</a></div>
+                <div><strong>Approved!</strong> <a href="#" onclick="switchTab('login');return false">Log in now <i class="fas fa-arrow-right"></i></a></div>
               </div>
             <?php elseif ($status === 'rejected'): ?>
               <div class="status-banner status-rejected"><span>✗</span>
@@ -147,14 +147,14 @@
               </div>
             <?php elseif ($status === 'not_found'): ?>
               <div class="status-banner status-rejected"><span>?</span>
-                <div>No application found. <a href="<?= site_url('auth/register') ?>">Apply now →</a></div>
+                <div>No application found. <a href="<?= site_url('auth/register') ?>">Apply now <i class="fas fa-arrow-right"></i></a></div>
               </div>
             <?php endif ?>
           </div>
         <?php endif ?>
 
         <p class="auth-foot" style="margin-top:16px">
-          <a href="#" onclick="switchTab('login');return false">← Back to login</a>
+          <a href="#" onclick="switchTab('login');return false"><i class="fas fa-arrow-left"></i> Back to login</a>
         </p>
       </div>
 
