@@ -216,4 +216,45 @@
     table.parentNode.insertBefore(wrapper, table);
     wrapper.appendChild(table);
   });
+
+  // ── Modern file upload (click-to-browse card with live preview) ────
+  // Same widget/behavior as the public registration form's .file-input,
+  // ported here so admin forms (e.g. testimonials) get it too.
+  function escHtml(str) {
+    const d = document.createElement('div');
+    d.textContent = str;
+    return d.innerHTML;
+  }
+  document.querySelectorAll('.file-input').forEach(function (input) {
+    input.addEventListener('change', function () {
+      const preview = document.getElementById('preview-' + this.id);
+      const label   = this.previousElementSibling;
+      if (!preview || !this.files[0]) return;
+
+      const file    = this.files[0];
+      const maxSize = parseInt(this.dataset.maxSize || '5242880', 10);
+
+      if (file.size > maxSize) {
+        preview.innerHTML = '<span class="file-name" style="color:var(--red)"><i class="fas fa-exclamation-triangle"></i> File is too large (max ' + Math.round(maxSize / 1024 / 1024) + ' MB)</span>';
+        this.value = '';
+        return;
+      }
+
+      if (file.type.startsWith('image/')) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          const roundClass = input.dataset.round === 'true' ? ' file-thumb-round' : '';
+          preview.innerHTML =
+            '<img src="' + e.target.result + '" class="file-thumb' + roundClass + '" alt="Preview">' +
+            '<span class="file-name">✓ ' + escHtml(file.name) + '</span>';
+        };
+        reader.readAsDataURL(file);
+      } else {
+        preview.innerHTML = '<span class="file-name"><i class="fas fa-file-alt"></i> ' + escHtml(file.name) + '</span>';
+      }
+
+      const strongEl = label && label.querySelector ? label.querySelector('.file-upload-inner strong') : null;
+      if (strongEl) strongEl.textContent = '✓ File selected — click to change';
+    });
+  });
 })();

@@ -1022,6 +1022,14 @@ tr:hover td {
   grid-template-columns: 1fr 1fr;
   gap: 16px;
 }
+.field-row-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+@media (max-width: 760px) {
+  .field-row-3 {
+    grid-template-columns: 1fr;
+  }
+}
 .form-actions {
   display: flex;
   gap: 12px;
@@ -1071,6 +1079,71 @@ tr:hover td {
   font-size: 0.72rem;
   color: var(--slate-light);
   margin-top: 4px;
+}
+
+/* Modern file upload (click-to-browse card with live preview) — same
+   widget as the public registration form, ported here so admin forms
+   (e.g. testimonials) get it too. Driven by the .file-input handler in
+   dashboard.js. */
+.file-upload-label {
+  display: block;
+  cursor: pointer;
+}
+.file-upload-inner {
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  text-align: center;
+  background: var(--bg);
+  transition: border-color 0.15s ease, background 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.file-upload-label:hover .file-upload-inner {
+  border-color: var(--blue);
+  background: var(--white);
+}
+.file-icon {
+  font-size: 1.6rem;
+  color: var(--blue);
+}
+.file-upload-inner div {
+  font-size: 0.86rem;
+  color: var(--slate);
+}
+.file-upload-inner strong {
+  color: var(--blue);
+}
+.file-hint {
+  font-size: 0.76rem;
+  color: var(--slate-light);
+}
+.file-input {
+  display: none;
+}
+.file-preview {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.file-thumb {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.file-thumb-round {
+  border-radius: 50%;
+}
+.file-name {
+  font-size: 0.8rem;
+  color: var(--green);
+  font-weight: 600;
 }
 .form-errors {
   background: #fef2f2;
