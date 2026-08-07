@@ -407,6 +407,20 @@ img {
   max-width: 550px;
   box-shadow: 0 20px 60px -30px rgba(30, 63, 122, 0.18);
   transition: min-height 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+/* The login/status tabs share this card at a pinned height (see
+   equalizeAuthCardHeight() in auth.js) so switching tabs doesn't resize it —
+   but the shorter "status" pane then left a dead gap below its content.
+   flex:1 + justify-content:center lets whichever pane is showing settle in
+   the middle of that pinned height instead of hugging the top. */
+.auth-pane {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Tabs */
@@ -991,7 +1005,23 @@ img {
 .auth-card-home-link {
   display: none;
 }
+.auth-card-back-link {
+  display: none;
+}
 @media (max-width: 860px) {
+  .auth-card-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 16px;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--blue);
+  }
+  .auth-card-back-link:hover {
+    text-decoration: none;
+    color: var(--blue-deep);
+  }
   .auth-split {
     grid-template-columns: 1fr;
   }

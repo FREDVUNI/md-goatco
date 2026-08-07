@@ -33,6 +33,7 @@
         <img src="<?= base_url('img/logo.png') ?>" alt="MD Goatco">
         <span>MD Goatco Farm</span>
       </a>
+      <a href="<?= site_url('/') ?>" class="auth-card-back-link"><i class="fas fa-arrow-left"></i> Back to home</a>
 
       <!-- Tab strip: Log in | Check status -->
       <div class="auth-tabs">
@@ -206,17 +207,4 @@
     color: rgba(255, 255, 255, 0.5);
   }
 </style>
-<script>
-  function switchTab(tab, el) {
-    document.querySelectorAll('.auth-pane').forEach(p => p.style.display = 'none');
-    document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('pane-' + tab).style.display = 'block';
-    if (el) el.classList.add('active');
-    else {
-      const tabs = document.querySelectorAll('.auth-tab');
-      if (tab === 'login') tabs[0].classList.add('active');
-      else tabs[1].classList.add('active');
-    }
-  }
-</script>
 <?= $this->endSection() ?>

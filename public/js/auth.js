@@ -118,7 +118,7 @@ function switchTab(tabName, clickedEl) {
     .forEach((t) => t.classList.remove("active"));
 
   const target = document.getElementById("pane-" + tabName);
-  if (target) target.style.display = "block";
+  if (target) target.style.display = "flex";
 
   if (clickedEl) {
     clickedEl.classList.add("active");
@@ -146,7 +146,7 @@ function equalizeAuthCardHeight() {
   let maxPaneHeight = 0;
   panes.forEach((pane) => {
     const prevDisplay = pane.style.display;
-    pane.style.display = "block";
+    pane.style.display = "flex";
     maxPaneHeight = Math.max(maxPaneHeight, pane.offsetHeight);
     pane.style.display = prevDisplay;
   });
