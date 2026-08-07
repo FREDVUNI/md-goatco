@@ -1030,6 +1030,47 @@ tr:hover td {
     grid-template-columns: 1fr;
   }
 }
+
+/* Slightly-roomier variant for forms that felt cramped at the default
+   density — a bit more gutter and light section grouping, without
+   ballooning into oversized whitespace. Opt in with
+   class="dash-form dash-form-roomy". */
+.dash-form-roomy .field {
+  margin-bottom: 18px;
+}
+.dash-form-roomy .field-row {
+  gap: 20px;
+}
+.dash-form-roomy .form-section-label {
+  margin: 0 0 14px;
+  padding-top: 0;
+  border-top: none;
+}
+.dash-form-roomy .form-section {
+  margin-bottom: 22px;
+}
+.active-toggle-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 0;
+  cursor: pointer;
+}
+.active-toggle-card input {
+  width: 18px !important;
+  height: 18px;
+  accent-color: var(--blue);
+  flex-shrink: 0;
+}
+.active-toggle-card div strong {
+  display: block;
+  font-size: 0.86rem;
+  color: var(--ink);
+}
+.active-toggle-card div span {
+  font-size: 0.76rem;
+  color: var(--slate-light);
+}
 .form-actions {
   display: flex;
   gap: 12px;
