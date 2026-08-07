@@ -53,12 +53,12 @@
         <div class="field">
           <label for="first_name">First name *</label>
           <input type="text" id="first_name" name="first_name"
-            value="<?= esc(old('first_name')) ?>" placeholder="e.g. Esther" required>
+            value="<?= esc(old('first_name')) ?>" placeholder="e.g. Esther" required minlength="2">
         </div>
         <div class="field">
           <label for="last_name">Last name *</label>
           <input type="text" id="last_name" name="last_name"
-            value="<?= esc(old('last_name')) ?>" placeholder="e.g. Nakato" required>
+            value="<?= esc(old('last_name')) ?>" placeholder="e.g. Nakato" required minlength="2">
         </div>
       </div>
       <div class="field-row">
@@ -84,13 +84,13 @@
       <div class="field">
         <label for="phone">Phone number *</label>
         <input type="tel" id="phone" name="phone"
-          value="<?= esc(old('phone')) ?>" placeholder="+256 700 000 000" required
+          value="<?= esc(old('phone')) ?>" placeholder="+256 700 000 000" required minlength="10"
           pattern="[0-9+ ]{7,20}" data-pattern-message="Enter a valid phone number.">
       </div>
       <div class="field">
         <label for="address">Physical / home address *</label>
         <input type="text" id="address" name="address"
-          value="<?= esc(old('address')) ?>" placeholder="Village, Sub-county, District" required>
+          value="<?= esc(old('address')) ?>" placeholder="Village, Sub-county, District" required minlength="5">
       </div>
       <div class="field">
         <label for="occupation">Occupation</label>
@@ -111,7 +111,7 @@
       <div class="field">
         <label for="nid_number">National ID number *</label>
         <input type="text" id="nid_number" name="nid_number"
-          value="<?= esc(old('nid_number')) ?>" placeholder="CM00000000000" required>
+          value="<?= esc(old('nid_number')) ?>" placeholder="CM00000000000" required minlength="6">
       </div>
       <div class="field">
         <label>Upload front of National ID *</label>
@@ -164,7 +164,7 @@
         <div class="field">
           <label for="nok_name">Full name *</label>
           <input type="text" id="nok_name" name="nok_name"
-            value="<?= esc(old('nok_name')) ?>" placeholder="e.g. Joseph Nakato" required>
+            value="<?= esc(old('nok_name')) ?>" placeholder="e.g. Joseph Nakato" required minlength="2">
         </div>
         <div class="field">
           <label for="nok_relationship">Relationship *</label>
@@ -180,7 +180,7 @@
         <div class="field">
           <label for="nok_phone">Phone number *</label>
           <input type="tel" id="nok_phone" name="nok_phone"
-            value="<?= esc(old('nok_phone')) ?>" placeholder="+256 700 000 000" required
+            value="<?= esc(old('nok_phone')) ?>" placeholder="+256 700 000 000" required minlength="10"
             pattern="[0-9+ ]{7,20}" data-pattern-message="Enter a valid phone number.">
         </div>
         <div class="field">
@@ -195,7 +195,7 @@
       <div class="field">
         <label for="nok_nid_number">National ID number *</label>
         <input type="text" id="nok_nid_number" name="nok_nid_number"
-          value="<?= esc(old('nok_nid_number')) ?>" placeholder="CM00000000000" required>
+          value="<?= esc(old('nok_nid_number')) ?>" placeholder="CM00000000000" required minlength="6">
       </div>
       <div class="field">
         <label>Upload next of kin's National ID (front) *</label>
