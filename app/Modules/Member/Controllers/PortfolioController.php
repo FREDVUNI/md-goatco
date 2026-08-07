@@ -21,10 +21,11 @@ class PortfolioController extends BaseController
             'goatCount' => $goatCount,
         ]);
     }
-    public function show(int $id)
+    public function show(string $tag)
     {
-        $goat = (new GoatModel())->find($id);
+        $goat = (new GoatModel())->findByTag($tag);
         if (! $goat || (int) $goat['member_id'] !== $this->currentUserId()) return redirect()->to('/member/goats')->with('error','Goat not found.');
+        $id = (int) $goat['id'];
 
         $db = \Config\Database::connect();
         $goat['is_flagged'] = (bool) $db->table('vet_visits')

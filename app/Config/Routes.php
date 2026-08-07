@@ -159,7 +159,7 @@ $routes->group('member', ['filter' => 'role:member', 'namespace' => 'App\Modules
     $routes->get('/',                          'DashboardController::index');
     $routes->get('dashboard',                  'DashboardController::index');
     $routes->get('goats',                      'PortfolioController::index');
-    $routes->get('goats/(:num)',               'PortfolioController::show/$1');
+    $routes->get('goats/(:segment)',           'PortfolioController::show/$1');
     $routes->get('statements',                 'StatementController::index');
     $routes->get('statements/download',        'StatementController::download');
     $routes->get('wallet/topup',               'WalletController::topup');

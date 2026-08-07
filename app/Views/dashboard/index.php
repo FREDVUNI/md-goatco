@@ -329,7 +329,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
       <?php foreach (array_slice($goats, 0, 5) as $goat): ?>
       <tr>
         <td><span class="tag"><?= esc($goat['tag_number']) ?></span></td>
-        <td><a href="<?= site_url('member/goats/' . $goat['id']) ?>" class="link-strong"><?= esc($goat['name']) ?></a></td>
+        <td><a href="<?= site_url('member/goats/' . rawurlencode($goat['tag_number'])) ?>" class="link-strong"><?= esc($goat['name']) ?></a></td>
         <td><?= esc($goat['breed'] ?? '—') ?></td>
         <td><?= $goat['latest_weight'] ? esc($goat['latest_weight']) . ' kg' : '—' ?></td>
         <td><?= isset($goat['weight_date']) ? date('j M Y', strtotime($goat['weight_date'])) : '—' ?></td>

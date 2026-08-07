@@ -1686,3 +1686,134 @@ tr:hover td {
   color: var(--slate-light);
   margin-bottom: 12px;
 }
+/* GOAT PROFILE (member/goats/{id}) — this page's markup had no matching
+   CSS at all, so it rendered as unstyled stacked text. */
+.goat-profile-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 22px;
+  align-items: start;
+}
+.goat-id-card {
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(26, 34, 56, 0.05), 0 2px 8px rgba(26, 34, 56, 0.05);
+  overflow: hidden;
+}
+.gic-photo {
+  background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue) 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 0;
+}
+.gic-body {
+  padding: 20px 22px;
+}
+.gic-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--slate-light);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.gic-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--ink);
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.gic-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.84rem;
+}
+.gic-row:last-of-type {
+  border-bottom: none;
+}
+.gic-row span:first-child {
+  color: var(--slate-light);
+}
+.gic-row span:last-child {
+  color: var(--ink);
+  font-weight: 600;
+  text-align: right;
+}
+.gic-status {
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gic-healthy {
+  background: #ecfdf5;
+  color: var(--green);
+}
+.gic-flagged {
+  background: #fef2f2;
+  color: var(--red);
+}
+.goat-profile-right {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+/* WEIGHT GROWTH — one horizontal bar per month */
+.growth-bars {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.growth-row {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 12px;
+}
+.growth-month {
+  font-size: 0.74rem;
+  color: var(--slate-light);
+  font-family: var(--font-mono);
+}
+.growth-bar-wrap {
+  background: var(--bg);
+  border-radius: 6px;
+  height: 12px;
+  overflow: hidden;
+}
+.growth-bar {
+  height: 100%;
+  background: var(--blue);
+  border-radius: 6px;
+}
+.growth-weight {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink);
+  min-width: 56px;
+  text-align: right;
+}
+.text-green {
+  color: var(--green);
+  font-weight: 700;
+}
+.text-red {
+  color: var(--red);
+  font-weight: 700;
+}
+@media (max-width: 900px) {
+  .goat-profile-grid {
+    grid-template-columns: 1fr;
+  }
+}

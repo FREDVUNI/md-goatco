@@ -26,7 +26,7 @@
       <?php foreach ($goats as $g): ?>
       <tr>
         <td><span class="tag"><?= esc($g['tag_number']) ?></span></td>
-        <td><a href="<?= site_url('member/goats/'.$g['id']) ?>" class="link-strong"><?= esc($g['name']) ?></a></td>
+        <td><a href="<?= site_url('member/goats/'.rawurlencode($g['tag_number'])) ?>" class="link-strong"><?= esc($g['name']) ?></a></td>
         <td><?= esc($g['breed']??'—') ?></td>
         <td><?= esc(goatAge($g['dob']??null)) ?></td>
         <td><?= isset($g['latest_weight']) ? esc($g['latest_weight']).' kg' : '—' ?></td>

@@ -11,6 +11,12 @@ class GoatModel extends Model
     protected $useTimestamps = true;
     protected $allowedFields = ['tag_number','name','breed','sex','dob','pen_id','member_id','status','notes'];
 
+    /** Tag numbers are unique per goat and human-readable — used as the slug in member-facing URLs instead of the raw numeric id. */
+    public function findByTag(string $tag): ?array
+    {
+        return $this->where('tag_number', $tag)->first();
+    }
+
     public function getStats(): array
     {
         $db    = \Config\Database::connect();
