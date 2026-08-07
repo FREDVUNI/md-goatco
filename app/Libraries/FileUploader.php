@@ -2,6 +2,13 @@
 declare(strict_types=1);
 namespace App\Libraries;
 
+/**
+ * Moves already-validated uploads into place. Extension/MIME/size checks
+ * happen upstream via CI4's own validation rules (uploaded[]/ext_in[]/
+ * mime_in[]/max_size[]) on the controller's $rules array — see
+ * AuthController::doRegister() — so nothing here needs to re-check that;
+ * this only ever runs after validation has already passed.
+ */
 class FileUploader
 {
     private string $basePath;
@@ -30,9 +37,9 @@ class FileUploader
         ];
         foreach ($files as $key => $file) {
             if (! $file || ! $file->isValid() || $file->hasMoved()) continue;
-            $dir  = $this->basePath . ($map[$key] ?? 'other') . DIRECTORY_SEPARATOR . $userId . DIRECTORY_SEPARATOR;
+            $dir = $this->basePath . ($map[$key] ?? 'other') . DIRECTORY_SEPARATOR . $userId . DIRECTORY_SEPARATOR;
             if (! is_dir($dir)) mkdir($dir, 0755, true);
-            $name = $key . '_' . time() . '.' . $file->getExtension();
+            $name = $key . '_' . time() . '.' . strtolower($file->getExtension());
             $file->move($dir, $name);
             $relativePath = ($map[$key] ?? 'other') . '/' . $userId . '/' . $name;
             $paths[$fieldMap[$key] ?? $key . '_path'] = $relativePath;

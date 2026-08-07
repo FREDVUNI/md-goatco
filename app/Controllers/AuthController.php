@@ -27,6 +27,9 @@ class AuthController extends BaseController
 
     public function doLogin()
     {
+        if ($this->tooManyAttempts('login', 10, 300)) {
+            return redirect()->back()->withInput()->with('error', 'Too many login attempts. Please wait a few minutes and try again.');
+        }
         if (! $this->validate(['email' => 'required|valid_email', 'password' => 'required'])) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
@@ -174,6 +177,11 @@ class AuthController extends BaseController
 
     public function doRegister()
     {
+        // Client-side checks (validate.js, the `accept` attribute) are UX only —
+        // an attacker can bypass them entirely, so KYC documents get validated
+        // server-side too: real content-sniffed MIME type (not the client's
+        // claimed Content-Type), extension, and size, before anything is saved.
+        $fileRule = 'max_size[FIELD,5120]|ext_in[FIELD,jpg,jpeg,png,pdf]|mime_in[FIELD,image/jpeg,image/png,application/pdf]';
         $rules = [
             'first_name'=>'required|min_length[2]','last_name'=>'required|min_length[2]',
             'email'=>'required|valid_email|is_unique[users.email]','phone'=>'required|min_length[10]',
@@ -183,6 +191,11 @@ class AuthController extends BaseController
             'nok_phone'=>'required|min_length[10]','nok_nid_number'=>'required|min_length[6]',
             'goats_requested'=>'required','password'=>'required|min_length[8]',
             'password_confirm'=>'required|matches[password]',
+            'nid_front'     => 'uploaded[nid_front]|' . str_replace('FIELD', 'nid_front', $fileRule),
+            'nid_back'      => 'uploaded[nid_back]|' . str_replace('FIELD', 'nid_back', $fileRule),
+            'nok_nid_front' => 'uploaded[nok_nid_front]|' . str_replace('FIELD', 'nok_nid_front', $fileRule),
+            'nok_nid_back'  => 'uploaded[nok_nid_back]|' . str_replace('FIELD', 'nok_nid_back', $fileRule),
+            'headshot'      => 'permit_empty|' . str_replace('FIELD', 'headshot', $fileRule),
         ];
         if (! $this->validate($rules)) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
@@ -268,6 +281,9 @@ class AuthController extends BaseController
 
     public function doForgotPassword()
     {
+        if ($this->tooManyAttempts('forgot_password', 5, 900)) {
+            return redirect()->to('/auth/forgot-password')->with('error', 'Too many requests. Please wait a few minutes and try again.');
+        }
         $email = $this->request->getPost('email');
         $user  = $this->users->findByEmail($email);
         if ($user && $user['status']==='active') {

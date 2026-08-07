@@ -39,6 +39,19 @@ abstract class BaseController extends Controller
     protected function currentUserId(): int   { return (int)    session()->get('user_id');   }
     protected function currentUserRole(): string { return (string) session()->get('user_role'); }
 
+    // ── Rate limiting ────────────────────────────────────────────────────
+    /**
+     * Per-IP token-bucket throttle for sensitive unauthenticated endpoints
+     * (login, password reset, contact form) that have no other brute-force
+     * protection. Returns true — and consumes a token — if the request
+     * should be BLOCKED. $key namespaces separate endpoints from each other.
+     */
+    protected function tooManyAttempts(string $key, int $maxAttempts, int $seconds): bool
+    {
+        $throttler = \Config\Services::throttler();
+        return $throttler->check($key . '_' . $this->request->getIPAddress(), $maxAttempts, $seconds) === false;
+    }
+
     protected function startSession(array $user): void
     {
         session()->set([

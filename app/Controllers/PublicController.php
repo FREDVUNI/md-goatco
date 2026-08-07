@@ -33,6 +33,9 @@ class PublicController extends BaseController
 
     public function sendContact()
     {
+        if ($this->tooManyAttempts('contact_form', 5, 600)) {
+            return redirect()->to('/contact')->withInput()->with('error', 'Too many messages sent. Please wait a few minutes and try again.');
+        }
         if (! $this->validate([
             'name'=>'required','email'=>'required|valid_email','phone'=>'required|min_length[10]',
             'subject'=>'required','message'=>'required|min_length[10]',
