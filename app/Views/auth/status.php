@@ -18,7 +18,9 @@
 
     <h2 style="font-size:1.4rem;font-weight:700;color:var(--blue-deep);margin-bottom:6px">Check application status</h2>
     <p style="color:var(--slate);font-size:0.88rem;margin-bottom:24px">
-      Enter the email address you used when applying to see the current status of your Goat Banking application.
+      This looks up your Goat Banking <strong>membership application</strong> — not a goat's
+      health or account status. Enter the email address you used when applying to see whether
+      it's still pending, approved, rejected, or needs more information from you.
     </p>
 
     <?= form_open('auth/status', ['class' => 'auth-form', 'method' => 'post']) ?>

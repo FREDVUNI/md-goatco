@@ -173,13 +173,13 @@ class DashboardController extends BaseController
             ->select("DATE_FORMAT(wl.logged_at, '%Y-%m') as period, AVG(wl.weight_kg) as avg_weight")
             ->join('goats g', 'g.id = wl.goat_id')
             ->where('g.member_id', $memberId)
-            ->where('wl.logged_at >=', date('Y-m-01', strtotime('-5 months')))
+            ->where('wl.logged_at >=', date('Y-m-01', strtotime('-11 months')))
             ->groupBy('period')->orderBy('period','ASC')->get()->getResultArray();
         $byPeriod = [];
         foreach ($weightRows as $r) $byPeriod[$r['period']] = round((float) $r['avg_weight'], 1);
         $weightLabels = [];
         $weightValues = [];
-        for ($i = 5; $i >= 0; $i--) {
+        for ($i = 11; $i >= 0; $i--) {
             $key = date('Y-m', strtotime("-$i months"));
             $weightLabels[] = date('M', strtotime($key . '-01'));
             $weightValues[] = $byPeriod[$key] ?? 0;

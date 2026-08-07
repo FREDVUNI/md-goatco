@@ -523,6 +523,18 @@ img {
 .pw-toggle-btn:hover {
   color: var(--blue);
 }
+.pw-toggle-wrap input::-ms-reveal,
+.pw-toggle-wrap input::-ms-clear,
+.pw-toggle-wrap input::-webkit-credentials-auto-fill-button,
+.pw-toggle-wrap input::-webkit-contacts-auto-fill-button {
+  display: none !important;
+  visibility: hidden;
+  pointer-events: none;
+}
+.pw-toggle-btn {
+  z-index: 2;
+  background: var(--white, #fff);
+}
 .form-errors {
   background: var(--red-pale);
   border: 1px solid #fecaca;

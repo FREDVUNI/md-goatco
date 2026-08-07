@@ -114,7 +114,12 @@
       <!-- STATUS CHECK PANE -->
       <div class="auth-pane" id="pane-status" style="display:none">
         <h2>Check your status</h2>
-        <p class="auth-sub">Enter the email you used when applying</p>
+        <p class="auth-sub">
+          This looks up your Goat Banking <strong>membership application</strong> —
+          not a goat's health or account status. Enter the email you applied
+          with and we'll show whether it's still pending, approved, or needs
+          more information.
+        </p>
 
         <?= form_open('auth/status', ['class' => 'auth-form', 'method' => 'post']) ?>
         <?= csrf_field() ?>

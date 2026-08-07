@@ -265,6 +265,15 @@
   document.querySelectorAll('input[type="password"]').forEach(function (input) {
     if (input.closest(".pw-toggle-wrap")) return; // already wrapped
 
+    // Password managers (LastPass, 1Password, Bitwarden, Dashlane) inject
+    // their own icon inside password fields, which collides/overlaps with
+    // our toggle button and makes it look like it "jumps". These attributes
+    // are each manager's documented opt-out for a specific field.
+    input.setAttribute("data-lpignore", "true");
+    input.setAttribute("data-1p-ignore", "true");
+    input.setAttribute("data-bwignore", "true");
+    input.setAttribute("data-dashlane-ignore", "true");
+
     var wrap = document.createElement("div");
     wrap.className = "pw-toggle-wrap";
     input.parentNode.insertBefore(wrap, input);
