@@ -231,14 +231,31 @@ class AuthController extends BaseController
                 'info',
                 'admin/applications/'.$app['id']
             );
-            return redirect()->to('/auth/status')->with('success', 'Application submitted! We\'ve sent a confirmation email to your inbox. Your application is now pending review — we\'ll get you approved as soon as possible.');
+            return redirect()->to('/auth/status?email=' . urlencode($this->request->getPost('email')))
+                ->with('success', 'Application submitted! We\'ve sent a confirmation email to your inbox. Your application is now pending review — we\'ll get you approved as soon as possible.');
         } catch (\Throwable $e) {
             $db->transRollback();
             return redirect()->back()->withInput()->with('error', 'Registration failed: '.$e->getMessage());
         }
     }
 
-    public function checkStatus(): string { return view('auth/status', ['pageTitle'=>'Check Application Status']); }
+    public function checkStatus(): string
+    {
+        // Landing here right after registration (?email=...) — run the same
+        // lookup immediately instead of making the applicant re-type their
+        // email into the form they just came from.
+        $email = $this->request->getGet('email');
+        if (! $email) {
+            return view('auth/status', ['pageTitle' => 'Check Application Status']);
+        }
+        $app = $this->applications->findByEmail($email);
+        return view('auth/status', [
+            'pageTitle'   => 'Check Application Status',
+            'email'       => $email,
+            'status'      => $app ? $app['status'] : 'not_found',
+            'application' => $app,
+        ]);
+    }
 
     public function doCheckStatus(): string
     {
