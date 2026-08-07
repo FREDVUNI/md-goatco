@@ -2,19 +2,13 @@
 <?= $this->section('content') ?>
 
 <div class="reg-page">
-  <!-- Header -->
-  <div class="reg-header">
-    <a href="<?= site_url() ?>" class="auth-logo">
-      <img src="<?= base_url('img/logo.png') ?>" alt="MD Goatco">
-      <div><strong>MD Goatco Farm Limited</strong><small>Ethics · Service · Genetics</small></div>
-    </a>
-    <a href="<?= site_url('auth/login') ?>" class="btn btn-ghost btn-sm">Already registered? Log in →</a>
-  </div>
+  <?= $this->include('public/_header') ?>
 
   <div class="reg-body">
     <div class="reg-intro">
       <h1>Apply for Goat Banking</h1>
       <p>Complete all four steps below. Your application will be reviewed within 2–3 working days.</p>
+      <p class="reg-login-hint">Already registered? <a href="<?= site_url('auth/login') ?>">Log in →</a></p>
     </div>
 
     <div class="reg-card">
@@ -286,9 +280,16 @@
     <?= form_close() ?>
     </div><!-- /reg-card -->
   </div><!-- /reg-body -->
+
+  <?= $this->include('public/_footer') ?>
 </div><!-- /reg-page -->
 
 <?= $this->endSection() ?>
 
+<?= $this->section('head') ?>
+<link rel="stylesheet" href="<?= base_url('css/public.css') ?>">
+<?= $this->endSection() ?>
+
 <?= $this->section('scripts') ?>
+<script src="<?= base_url('js/public.js') ?>"></script>
 <?= $this->endSection() ?>

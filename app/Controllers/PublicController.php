@@ -3,16 +3,30 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use App\Models\UserModel;
+use App\Models\GoatModel;
 use App\Models\ContactMessageModel;
 use App\Libraries\EmailService;
 
 class PublicController extends BaseController
 {
-    public function index(): string   { return view('public/home',        ['pageTitle'=>'MD Goatco Farm Limited — Ethics · Service · Genetics','currentUser'=>$this->currentUser(),'errors'=>session('errors')]); }
-    public function about(): string   { return view('public/home',        ['pageTitle'=>'About — MD Goatco Farm Limited','currentUser'=>$this->currentUser(),'errors'=>session('errors')]); }
-    public function services(): string{ return view('public/home',        ['pageTitle'=>'Services — MD Goatco Farm Limited','currentUser'=>$this->currentUser(),'errors'=>session('errors')]); }
-    public function goatBanking(): string { return view('public/home',    ['pageTitle'=>'Goat Banking — MD Goatco Farm Limited','currentUser'=>$this->currentUser(),'errors'=>session('errors')]); }
-    public function contact(): string { return view('public/home',        ['pageTitle'=>'Contact — MD Goatco Farm Limited','currentUser'=>$this->currentUser(),'errors'=>session('errors')]); }
+    /** MD Goatco Farm was founded in 2012 — drives the "N yrs experience" hero stat. */
+    private const FOUNDED_YEAR = 2012;
+
+    /** Real, live counts for the homepage hero stats — no more made-up numbers. */
+    private function homeStats(): array
+    {
+        return [
+            'goatsOnFarm'     => (new GoatModel())->getStats()['total'] ?? 0,
+            'bankingMembers'  => count((new UserModel())->getByRole('member')),
+            'farmYears'       => max(0, (int) date('Y') - self::FOUNDED_YEAR),
+        ];
+    }
+
+    public function index(): string   { return view('public/home',        $this->homeStats() + ['pageTitle'=>'MD Goatco Farm Limited — Ethics · Service · Genetics','currentUser'=>$this->currentUser(),'errors'=>session('errors')]); }
+    public function about(): string   { return view('public/home',        $this->homeStats() + ['pageTitle'=>'About — MD Goatco Farm Limited','currentUser'=>$this->currentUser(),'errors'=>session('errors')]); }
+    public function services(): string{ return view('public/home',        $this->homeStats() + ['pageTitle'=>'Services — MD Goatco Farm Limited','currentUser'=>$this->currentUser(),'errors'=>session('errors')]); }
+    public function goatBanking(): string { return view('public/home',    $this->homeStats() + ['pageTitle'=>'Goat Banking — MD Goatco Farm Limited','currentUser'=>$this->currentUser(),'errors'=>session('errors')]); }
+    public function contact(): string { return view('public/home',        $this->homeStats() + ['pageTitle'=>'Contact — MD Goatco Farm Limited','currentUser'=>$this->currentUser(),'errors'=>session('errors')]); }
     public function privacy(): string { return view('public/privacy',     ['pageTitle'=>'Privacy Policy — MD Goatco Farm Limited','currentUser'=>$this->currentUser()]); }
     public function terms(): string   { return view('public/terms',       ['pageTitle'=>'Terms & Conditions — MD Goatco Farm Limited','currentUser'=>$this->currentUser()]); }
     public function notFound(): string{ return view('errors/404',         ['pageTitle'=>'Page Not Found']); }

@@ -1,57 +1,7 @@
 <?= $this->extend('layouts/public') ?>
 <?= $this->section('content') ?>
 
-<!-- ===== HEADER ===== -->
-<header>
-  <nav class="nav wrap">
-    <a href="<?= site_url('/') ?>" class="logo">
-      <img src="<?= base_url('img/logo.png') ?>" alt="MD Goatco Farm Limited">
-      <div class="logo-text">
-        <strong>MD Goatco Farm Limited</strong>
-        <small>Ethics · Service · Genetics</small>
-      </div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#goat-banking">Goat Banking</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <?php if ($currentUser ?? null): ?>
-        <a href="<?= site_url('dashboard') ?>" class="btn btn-outline btn-sm">Dashboard</a>
-        <a href="<?= site_url('auth/logout') ?>" class="btn btn-primary btn-sm">
-          <i class="fas fa-sign-out-alt"></i>
-          Log out
-        </a>
-      <?php else: ?>
-        <a href="<?= site_url('auth/login') ?>" class="btn btn-outline btn-sm">Log in</a>
-        <a href="<?= site_url('auth/register') ?>" class="btn btn-primary btn-sm">Join Goat Banking</a>
-      <?php endif ?>
-    </div>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-  <!-- Mobile menu -->
-  <div class="nav-mobile-menu wrap">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#goat-banking">Goat Banking</a>
-    <a href="#contact">Contact</a>
-    <div class="nav-mobile-actions">
-      <?php if ($currentUser ?? null): ?>
-        <a href="<?= site_url('dashboard') ?>" class="btn btn-outline">Dashboard</a>
-        <a href="<?= site_url('auth/logout') ?>" class="btn btn-primary">Log out</a>
-      <?php else: ?>
-        <a href="<?= site_url('auth/login') ?>" class="btn btn-outline">Log in</a>
-        <a href="<?= site_url('auth/register') ?>" class="btn btn-primary">Join Goat Banking</a>
-      <?php endif ?>
-    </div>
-  </div>
-</header>
+<?= $this->include('public/_header') ?>
 
 <!-- ===== HERO ===== -->
 <section class="hero" id="home">
@@ -65,9 +15,9 @@
         <a href="#services" class="btn btn-ghost-white">What we do</a>
       </div>
       <div class="hero-stats">
-        <div class="hero-stat"><strong>1,247</strong><span>Goats on farm</span></div>
-        <div class="hero-stat"><strong>380</strong><span>Banking members</span></div>
-        <div class="hero-stat"><strong>12 yrs</strong><span>Experience</span></div>
+        <div class="hero-stat"><strong><?= esc(number_format($goatsOnFarm ?? 0)) ?></strong><span>Goats on farm</span></div>
+        <div class="hero-stat"><strong><?= esc(number_format($bankingMembers ?? 0)) ?></strong><span>Banking members</span></div>
+        <div class="hero-stat"><strong><?= esc($farmYears ?? 0) ?> yrs</strong><span>Experience</span></div>
       </div>
     </div>
     <div class="hero-img">
@@ -407,53 +357,6 @@
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <div class="foot-logo">
-          <img src="<?= base_url('img/logo.png') ?>" alt="MD Goatco">
-          <strong>MD Goatco Farm Limited</strong>
-        </div>
-        <p class="foot-tagline">A working goat farm in Mukono, Uganda — rearing, veterinary care and a member-owned Goat Banking program on one digital record.</p>
-      </div>
-      <div>
-        <h5>Explore</h5>
-        <ul>
-          <li><a href="#about">About us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#goat-banking">Goat Banking</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Portals</h5>
-        <ul>
-          <li><a href="<?= site_url('auth/login') ?>">Member login</a></li>
-          <li><a href="<?= site_url('auth/register') ?>">Apply for Goat Banking</a></li>
-          <li><a href="<?= site_url('auth/admin') ?>">Admin portal</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Legal</h5>
-        <ul>
-          <li><a href="<?= site_url('privacy-policy') ?>">Privacy Policy</a></li>
-          <li><a href="<?= site_url('terms') ?>">Terms &amp; Conditions</a></li>
-        </ul>
-        <h5 style="margin-top:20px">Address</h5>
-        <ul>
-          <li>Mukono–Kayunga Road</li>
-          <li>Mukono District, Uganda</li>
-          <li><a href="mailto:hello@mdgoatco.farm">hello@mdgoatco.farm</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© <?= date('Y') ?> MD Goatco Farm Limited · Registered in Uganda</span>
-      <span>Ethics · Service · Genetics</span>
-    </div>
-  </div>
-</footer>
+<?= $this->include('public/_footer') ?>
 
 <?= $this->endSection() ?>

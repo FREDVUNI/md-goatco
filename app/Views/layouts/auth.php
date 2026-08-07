@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?= base_url('css/auth.css') ?>">
     <link rel="stylesheet" href="<?= base_url('css/loader.css') ?>">
 <link rel="stylesheet" href="<?= base_url('css/validate.css') ?>">
+<?= $this->renderSection('head') ?>
 </head>
 
 <body>

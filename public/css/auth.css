@@ -639,6 +639,14 @@ img {
   color: var(--slate);
   font-size: 0.96rem;
 }
+.reg-login-hint {
+  margin-top: 10px;
+  font-size: 0.88rem;
+}
+.reg-login-hint a {
+  font-weight: 700;
+  color: var(--blue);
+}
 .reg-card {
   background: #fff;
   border: 1px solid var(--border);
