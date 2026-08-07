@@ -97,6 +97,7 @@ $routes->group('admin', ['filter' => 'role:super_admin', 'namespace' => 'App\Mod
     $routes->get('settings',                           'SettingsController::index');
     $routes->post('settings',                          'SettingsController::update');
     $routes->post('settings/logo',                     'SettingsController::updateLogo');
+    $routes->post('settings/clear-cache',               'SettingsController::clearCache');
 });
 
 // MANAGER

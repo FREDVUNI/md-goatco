@@ -29,4 +29,13 @@ class SettingsController extends BaseController
         $file->move(FCPATH . 'img', 'logo.png', true);
         return redirect()->to('/admin/settings')->with('success', 'Logo updated.');
     }
+
+    public function clearCache()
+    {
+        $cleared = cache()->clean();
+        return redirect()->to('/admin/settings')->with(
+            $cleared ? 'success' : 'error',
+            $cleared ? 'Application cache cleared.' : 'Could not clear the cache — check the writable/cache directory is writable.'
+        );
+    }
 }

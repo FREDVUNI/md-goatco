@@ -198,12 +198,12 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 
 <div class="card chart-card">
   <div class="card-head"><h3><i class="fas fa-flag"></i> Health flags — last 6 months</h3></div>
-  <?= view('partials/bar_chart', ['labels' => $flagLabels ?? [], 'values' => $flagValues ?? []]) ?>
+  <?= view('partials/bar_chart_vertical', ['labels' => $flagLabels ?? [], 'values' => $flagValues ?? []]) ?>
 </div>
 
 <?php elseif ($isVet): ?>
 <!-- ─────────── VET CONTENT ─────────── -->
-<div class="welcome-banner">
+<div class="welcome-banner wb-with-action">
   <div>
     <h2>Good <?= $greeting ?>, <?= esc($currentUser['first_name']) ?>! <i class="fas fa-hand-paper"></i></h2>
     <p>Your veterinary dashboard — <?= date('l, j F Y') ?></p>
@@ -212,9 +212,10 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
       <div class="wb-stat"><strong><?= count($recentVisits ?? []) ?></strong><span>Recent visits</span></div>
     </div>
   </div>
+  <a href="<?= site_url('vet/visits/log') ?>" class="btn btn-white">+ Log a visit</a>
 </div>
 
-<div class="stat-grid stat-grid-3">
+<div class="stat-grid stat-grid-2">
   <a href="<?= site_url('vet/flags') ?>" class="stat-card <?= ($flagCount ?? 0) > 0 ? 'stat-red' : 'stat-green' ?> stat-card-link">
     <div class="stat-label">My Active Flags</div>
     <div class="stat-val"><?= esc($flagCount ?? 0) ?></div>
@@ -225,12 +226,6 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
     <div class="stat-val"><?= count($recentVisits ?? []) ?></div>
     <div class="stat-sub">Showing below</div>
   </a>
-  <div class="stat-card stat-amber">
-    <div class="stat-label">Quick Log</div>
-    <div class="stat-val" style="font-size:1rem;margin-top:8px">
-      <a href="<?= site_url('vet/visits/log') ?>" class="btn btn-primary btn-sm">+ Log a visit</a>
-    </div>
-  </div>
 </div>
 
 <div class="grid-2">
@@ -278,7 +273,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 
 <div class="card chart-card">
   <div class="card-head"><h3><i class="fas fa-clipboard-list"></i> Visits logged — last 6 weeks</h3></div>
-  <?= view('partials/bar_chart', ['labels' => $visitLabels ?? [], 'values' => $visitValues ?? []]) ?>
+  <?= view('partials/bar_chart_vertical', ['labels' => $visitLabels ?? [], 'values' => $visitValues ?? []]) ?>
 </div>
 
 <?php else: ?>
@@ -354,7 +349,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 
 <div class="card chart-card">
   <div class="card-head"><h3><i class="fas fa-balance-scale"></i> Average goat weight — last 6 months</h3></div>
-  <?= view('partials/bar_chart', ['labels' => $weightLabels ?? [], 'values' => $weightValues ?? []]) ?>
+  <?= view('partials/bar_chart_vertical', ['labels' => $weightLabels ?? [], 'values' => $weightValues ?? []]) ?>
 </div>
 
 <?php if (!empty($notifications)): ?>

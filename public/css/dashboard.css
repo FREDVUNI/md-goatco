@@ -600,6 +600,9 @@ body.dash-body {
   gap: 16px;
   margin-bottom: 22px;
 }
+.stat-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
 .stat-grid-3 {
   grid-template-columns: repeat(3, 1fr);
 }
@@ -675,6 +678,16 @@ body.dash-body {
   padding: 28px 32px;
   margin-bottom: 22px;
   color: #fff;
+}
+.wb-with-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.wb-with-action .btn-white {
+  flex-shrink: 0;
 }
 .welcome-banner h2 {
   font-size: 1.4rem;
@@ -803,6 +816,14 @@ tr:hover td {
   gap: 6px;
   white-space: nowrap;
 }
+.btn-white {
+  background: #fff;
+  color: var(--blue-deep);
+  border-color: #fff;
+}
+.btn-white:hover {
+  background: var(--bg);
+}
 .btn-primary {
   background: var(--blue);
   color: #fff;
@@ -905,6 +926,20 @@ tr:hover td {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
+}
+/* When two cards share a row and one has far less content (e.g. a short
+   table next to an empty-state message), stretch both to equal height and
+   center the empty-state within its share instead of leaving it stranded
+   at the top with a wall of blank space beneath it. */
+.grid-2 > .card {
+  display: flex;
+  flex-direction: column;
+}
+.grid-2 > .card > .empty-state {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /* STAFF OVERVIEW */
 .staff-overview {
@@ -1522,7 +1557,8 @@ tr:hover td {
 }
 @media (max-width: 480px) {
   .stat-grid-4,
-  .stat-grid-3 {
+  .stat-grid-3,
+  .stat-grid-2 {
     grid-template-columns: 1fr;
   }
   .wb-stats {

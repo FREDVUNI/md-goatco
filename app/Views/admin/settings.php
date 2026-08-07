@@ -103,7 +103,9 @@
           <strong>Clear application cache</strong><br>
           Removes cached views and config. Safe to run anytime.
         </p>
-        <a href="#" class="btn btn-ghost btn-sm" onclick="alert('Cache cleared (demo)');return false">Clear cache</a>
+        <?= form_open('admin/settings/clear-cache', ['style' => 'display:inline']) ?><?= csrf_field() ?>
+          <button type="submit" class="btn btn-ghost btn-sm" data-confirm="Clear the application cache?">Clear cache</button>
+        <?= form_close() ?>
       </div>
       <div style="border-top:1px solid var(--border);padding-top:14px">
         <p style="font-size:0.88rem;color:var(--slate);margin-bottom:10px">

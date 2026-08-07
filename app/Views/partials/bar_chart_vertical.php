@@ -9,7 +9,7 @@ $max = ! empty($values) ? max($values) : 0;
 ?>
 <div class="bar-chart-v">
   <?php if (empty($values) || $max <= 0): ?>
-    <div class="empty-state">No data yet</div>
+    <?= view('partials/empty_state', ['icon' => 'fas fa-chart-bar', 'title' => 'No data yet', 'message' => 'This chart will fill in once there\'s activity to show.']) ?>
   <?php else: ?>
     <?php foreach ($values as $i => $v): $pct = $max > 0 ? round(($v / $max) * 100) : 0; ?>
     <div class="bar-chart-v-col">

@@ -9,3 +9,4 @@
 !/writable/session/index.html
 /writable/logs/*
 !/writable/logs/index.html
+/build

@@ -13,7 +13,7 @@ $total   = array_sum($values ?? []);
 ?>
 <div class="pie-chart">
   <?php if (empty($values) || $total <= 0): ?>
-    <div class="empty-state">No data yet</div>
+    <?= view('partials/empty_state', ['icon' => 'fas fa-chart-pie', 'title' => 'No data yet', 'message' => 'This chart will fill in once there\'s activity to show.']) ?>
   <?php else: ?>
     <?php
       $segments = [];

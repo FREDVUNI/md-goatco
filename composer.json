@@ -22,10 +22,16 @@
       "Config\\": "app/Config/"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
   "scripts": {
     "post-update-cmd": [
       "CodeIgniter\\ComposerScripts::postUpdate"
-    ]
+    ],
+    "test": "phpunit"
   },
   "config": {
     "optimize-autoloader": true,

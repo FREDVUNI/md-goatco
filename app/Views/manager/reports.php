@@ -35,15 +35,15 @@
 <div class="stat-grid stat-grid-3" style="margin-bottom:28px;align-items:start">
   <div class="card chart-card" style="margin-bottom:0">
     <div class="card-head"><h3>Herd growth</h3></div>
-    <?= view('partials/bar_chart', ['labels' => $herdLabels ?? [], 'values' => $herdValues ?? []]) ?>
+    <?= view('partials/bar_chart_vertical', ['labels' => $herdLabels ?? [], 'values' => $herdValues ?? []]) ?>
   </div>
   <div class="card chart-card" style="margin-bottom:0">
     <div class="card-head"><h3>Health flags</h3></div>
-    <?= view('partials/bar_chart', ['labels' => $healthLabels ?? [], 'values' => $healthValues ?? []]) ?>
+    <?= view('partials/bar_chart_vertical', ['labels' => $healthLabels ?? [], 'values' => $healthValues ?? []]) ?>
   </div>
   <div class="card chart-card" style="margin-bottom:0">
     <div class="card-head"><h3>Membership growth</h3></div>
-    <?= view('partials/bar_chart', ['labels' => $memberLabels ?? [], 'values' => $memberValues ?? []]) ?>
+    <?= view('partials/bar_chart_vertical', ['labels' => $memberLabels ?? [], 'values' => $memberValues ?? []]) ?>
   </div>
 </div>
 
