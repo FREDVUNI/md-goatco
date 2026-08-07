@@ -132,7 +132,7 @@ class DashboardController extends BaseController
             ->orderBy('scheduled_at', 'ASC')
             ->get()->getResultArray();
         $activeFlags = $visitModel->getActiveFlags();
-        [$flagLabels, $flagValues] = $this->monthlySeries('vet_visits', 'visit_date', 'is_flagged = 1');
+        [$flagLabels, $flagValues] = $this->monthlySeries('vet_visits', 'visit_date', 'is_flagged = 1', 12);
         return [
             'pageTitle'      => 'Manager Dashboard',
             'herdStats'      => $goatModel->getStats(),

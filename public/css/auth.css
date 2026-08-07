@@ -72,8 +72,8 @@ img {
   right: 0;
   z-index: 500;
   padding: 14px 24px;
-  font-size: 0.88rem;
-  font-weight: 500;
+  font-size: 0.94rem;
+  font-weight: 700;
   text-align: center;
 }
 .auth-flash-error {
@@ -496,6 +496,32 @@ img {
   text-align: right;
   margin: -8px 0 16px;
   font-size: 0.8rem;
+}
+
+/* ── Password show/hide toggle (injected by validate.js) ────────── */
+.pw-toggle-wrap {
+  position: relative;
+}
+.pw-toggle-wrap input {
+  padding-right: 42px !important;
+}
+.pw-toggle-btn {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--slate-light);
+  font-size: 0.92rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+.pw-toggle-btn:hover {
+  color: var(--blue);
 }
 .form-errors {
   background: var(--red-pale);

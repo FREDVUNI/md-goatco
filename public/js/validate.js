@@ -256,4 +256,33 @@
   );
 
   window.MDValidate = { validateField: validateField, validateFields: validateFields };
+
+  // ── Show/hide toggle for password fields ──────────────────────────
+  // Wraps every <input type="password"> in a positioned container and
+  // adds an eye/eye-slash button that flips the input's type. Runs on
+  // every page that loads this script (both the auth and dashboard
+  // layouts), so no per-view markup is needed.
+  document.querySelectorAll('input[type="password"]').forEach(function (input) {
+    if (input.closest(".pw-toggle-wrap")) return; // already wrapped
+
+    var wrap = document.createElement("div");
+    wrap.className = "pw-toggle-wrap";
+    input.parentNode.insertBefore(wrap, input);
+    wrap.appendChild(input);
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "pw-toggle-btn";
+    btn.setAttribute("aria-label", "Show password");
+    btn.tabIndex = -1;
+    btn.innerHTML = '<i class="fas fa-eye"></i>';
+    wrap.appendChild(btn);
+
+    btn.addEventListener("click", function () {
+      var showing = input.type === "text";
+      input.type = showing ? "password" : "text";
+      btn.innerHTML = showing ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+      btn.setAttribute("aria-label", showing ? "Show password" : "Hide password");
+    });
+  });
 })();

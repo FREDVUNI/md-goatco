@@ -197,7 +197,7 @@ $greeting  = date('H') < 12 ? 'morning' : (date('H') < 17 ? 'afternoon' : 'eveni
 </div>
 
 <div class="card chart-card">
-  <div class="card-head"><h3><i class="fas fa-flag"></i> Health flags — last 6 months</h3></div>
+  <div class="card-head"><h3><i class="fas fa-flag"></i> Health flags — last 12 months</h3></div>
   <?= view('partials/bar_chart_vertical', ['labels' => $flagLabels ?? [], 'values' => $flagValues ?? []]) ?>
 </div>
 
